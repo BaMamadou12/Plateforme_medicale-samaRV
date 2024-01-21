@@ -22,8 +22,11 @@ Route::get('/pharmacie', [PharmaciesController::class ,'pharmacie'])->name('phar
 Route::get('/apropos', [AproposController::class ,'apropos'])->name('apropos');
 
 Route::get('/login', [LoginController::class ,'login'])->name('login');
+Route::post('/login',[LoginController::class , 'authenticate']);
+
 
 Route::get('/register', [RegisterController::class ,'register'])->name('register');
+Route::post('/register',[RegisterController::class,'validateInscription']);
 
 Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 

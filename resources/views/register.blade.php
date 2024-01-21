@@ -5,8 +5,8 @@
     shadow-md">
 {{--        nom, prenom, adresse, Email, telephone, Date de naissance, lieux de naissance--}}
         <h1 class="text-3xl font-bold font-kanit italic tracking-wide mb-12">Formulaire de d'inscription</h1>
-        <form action="" method="post" class="flex flex-wrap relative w-full justify-between items-center">
-
+        <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
+            @csrf
             <div class="w-[48%] mb-10  flex justify-between items-center" >
                 <label for="nom" class="mr-2"> nom : </label>
                 <input type="text" name="nom" id="nom" placeholder="votre nom" class="bg-gray-100 grow px-4 py-1.5
