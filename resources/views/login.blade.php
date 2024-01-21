@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('section')
-    <section class="min-h-full w-5/12 mx-auto relative p-8 flex justify-center my-12 bg-white rounded-lg">
+    <section class="min-h-full w-5/12 mx-auto relative p-8 flex justify-center my-12 bg-white rounded-lg shadow-md">
 
         <div class="w-full">
 
@@ -28,6 +28,13 @@
                     <button type="submit" id="connect" class="text-center w-full py-3 font-bold tracking-wide">Se connecter</button>
                 </div>
             </form>
+            <div class="flex mt-4">
+                <p class="mr-3 text-sm"> Vous n'avez pas encore de compte </p>
+                <a href="{{ route("register") }}" class="font-bold transition duration-300 hover:ease-in
+                hover:underline text-sm">
+                    S'inscrire
+                </a>
+            </div>
         </div>
     </section>
 @endsection
