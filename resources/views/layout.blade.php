@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
     <title>Plateforme De Prise De rendez-vous </title>
 </head>
-<body class="bg-green-50 font-verdana text-gray-600">
+<body class="bg-[#f6fef8] font-verdana text-gray-600">
 @include("header")
 <main>
     @yield("section")

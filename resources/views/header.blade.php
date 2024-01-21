@@ -16,7 +16,9 @@
                 </a>
             </li>
             <li>
-                <a href=""  class="inline-block p-2 mr-3 border-b-[3px] border-b-white hover:text-gray-500 hover:border-b-{3px}
+                <a href="{{ route("hopital") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+                hover:text-gray-500
+                hover:border-b-{3px}
                 hover:border-green-500 transition duration-{.08s} hover:ease-in">
                     Hôpitaux
                 </a>
