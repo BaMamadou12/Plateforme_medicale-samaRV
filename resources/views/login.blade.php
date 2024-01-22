@@ -1,26 +1,47 @@
 @extends('layout')
 
 @section('section')
+    @if(session('success'))
+        <div class="mt-10 rounded-md bg-green-50  p-4">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm font-medium text-green-800">{{ session('success') }}</p>
+                </div>
+            </div>
+        </div>
+    @endif
     <section class="min-h-full w-5/12 mx-auto relative p-8 flex justify-center my-12 bg-white rounded-lg shadow-md">
 
         <div class="w-full">
 
             <h1 class="text-3xl font-bold font-kanit italic tracking-wide mb-12">Formulaire de connexion</h1>
 
-            <form action="" method="post" class="flex flex-col relative">
+            <form action="{{ route('login') }}" method="post" class="flex flex-col relative">
+                @csrf
                 <div class="w-full mb-8">
                     <label for="username" class="block mb-2 ">votre email</label>
-                    <input type="email" placeholder="mamadou123@gmail.com" name="username" id="username" required
+                    <input type="email" placeholder="mamadou123@gmail.com" value="{{@old('username')}}" name="username" id="username" required
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-100
                     outline-none focus:border-[#2ea8bf] transition duration-100 ease mb-2">
-{{--                    <div class="text-red-800 text-xs">champ required</div>--}}
+<<<<<<< HEAD
+                    @error('username')
+                    <div class="text-red-800 text-[small]">champ required</div>
+                    @enderror
+=======
+{{--                    <div class="text-red-800 text-[small]">champ required</div>--}}
+>>>>>>> 0373ddd7f92948297907c060aa5b0b494a029b03
                 </div>
                 <div class="w-[full] mb-8">
                     <label for="password" class="block mb-2 ">votre mot de passe</label>
-                    <input type="password" name="password" id="password" placeholder="mot de passe" required
+                    <input type="password" name="password" id="password"  placeholder="mot de passe" required
                            class="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none bg-gray-100
                            focus:border-[#2ea8bf] transition duration-200 ease mb-2">
-{{--                    <div class="text-red-800 text-xs">champ required</div>--}}
+{{--                    <div class="text-red-800 text-[small]">champ required</div>--}}
 
                 </div>
 
