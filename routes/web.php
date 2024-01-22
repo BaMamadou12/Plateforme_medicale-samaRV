@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardPatientController;
 use App\Http\Controllers\RendezvousController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilController;
@@ -31,6 +32,9 @@ Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 
 Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
+
+Route::get('/dashboard', [DashboardPatientController::class ,'index'])->name('dashboard');
+
 
 
 
