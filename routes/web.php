@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RendezvousController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\AproposController;
@@ -28,6 +29,8 @@ Route::get('/register', [RegisterController::class ,'register'])->name('register
 Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
+
+Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
 
 
 
