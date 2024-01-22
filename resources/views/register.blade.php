@@ -59,9 +59,7 @@
                     focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('password')
-
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
-
+                    <div class="text-red-800 text-[small] mt-2">champ required</div>
                 @enderror
 
             </div>
