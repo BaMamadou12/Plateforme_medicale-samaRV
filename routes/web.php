@@ -36,7 +36,7 @@ Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 
 Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
 
-Route::get('/dashboard', [DashboardPatientController::class ,'index'])->name('dashboard');
+Route::get('/patient/dashboard', [DashboardPatientController::class ,'index'])->name('patient/dashboard');
 
 
 
