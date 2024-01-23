@@ -27,7 +27,6 @@
             </button>
         </div>
 
-
         <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
             <img src="{{ asset("images/hpd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]">
             <div class="mb-6">
