@@ -11,14 +11,11 @@
 </head>
 <body class="bg-green-50 font-verdana text-gray-600">
 @include("header")
+
 <main>
     @yield("section")
 </main>
 
-<footer>
-
-</footer>
+@include("footer")
 
 
-</body>
-</html>
