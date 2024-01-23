@@ -15,7 +15,7 @@
                 </div>
                 @error('nom')
 
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez votre nom</div>
 
                 @enderror
 
@@ -24,13 +24,13 @@
             <div class="w-[47%] mb-10">
                 <div class="flex justify-between items-center">
 
-                    <label for="prenom" class="mr-2"> prenom : </label>
+                    <label for="prenom" class="mr-2"> prénom : </label>
                     <input type="text" name="prenom" id="prenom" placeholder="votre prenom"  value="{{ @old('prenom') }}" class="bg-gray-100 grow px-4
                     py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('prenom')
 
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
 
                 @enderror
 
@@ -45,7 +45,7 @@
                 </div>
                 @error('email')
 
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
+                <div class="text-red-800 text-[small] mt-2">l'e-mail est  requiris</div>
 
                 @enderror
 
@@ -60,7 +60,7 @@
                 </div>
                 @error('password')
 
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
+                <div class="text-red-800 text-[small] mt-2">votre mot de pass doit contenir au moins 8 caracteres</div>
 
                 @enderror
 
@@ -102,14 +102,14 @@
 
             <div class="w-[47%] mb-10">
                 <div class="flex justify-between items-center">
-                    <label for="tel" class="mr-2"> telephone : </label>
+                    <label for="tel" class="mr-2"> téléphone : </label>
 
-                    <input type="text" name="tel" id="tel" placeholder="ex: 78 621 12 97"  value="{{ @old('tel') }}" class="bg-gray-100 grow px-4
+                    <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{ @old('tel') }}" class="bg-gray-100 grow px-4
                     py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('tel')
 
-              <div class="text-red-800 text-[small] mt-2">champ required</div>
+              <div class="text-red-800 text-[small] mt-2">confirmation de votre mot de passe</div>
 
                 @enderror
 
@@ -124,7 +124,7 @@
                 </div>
                 @error('date')
 
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
+                <div class="text-red-800 text-[small] mt-2">saississez votre date de naissance</div>
 
                 @enderror
 
@@ -139,7 +139,7 @@
                 </div>
                 @error('lieux')
 
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
+                <div class="text-red-800 text-[small] mt-2">saissisz votre lieu de naissance</div>
 
                 @enderror
 
