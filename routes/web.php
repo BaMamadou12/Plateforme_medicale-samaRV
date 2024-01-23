@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashboardMedecinController;
-use App\Http\Controllers\DashboardPatientController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RendezvousController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilController;
@@ -23,7 +22,7 @@ Route::get('/pharmacie', [PharmaciesController::class ,'pharmacie'])->name('phar
 Route::get('/apropos', [AproposController::class ,'apropos'])->name('apropos');
 
 Route::get('/login', [LoginController::class ,'login'])->name('login');
-Route::post('/login',[LoginController::class , 'authenticate']);
+Route::post('/login',[LoginController::class , 'authenticate'])->name('authenticate');
 
 
 Route::get('/register', [RegisterController::class ,'register'])->name('register');
@@ -35,10 +34,14 @@ Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 
 Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
 
-Route::get('/patient/dashboard', [DashboardPatientController::class ,'index'])->name('patient/dashboard');
+//route pour l'admin
 
 
-Route::get('/medecin/dashboard', [DashboardMedecinController::class ,'index'])->name('medecin/dashboard');
+    Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
+
+
+
+
 
 
 

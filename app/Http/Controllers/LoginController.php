@@ -20,16 +20,29 @@ class LoginController extends Controller
         ]);
 
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        if (Auth::guard('admin')->attempt($credentials)) {
 
-            return redirect()->intended('dashboard');
+            return redirect()->route('admin');
+
+        } else if (Auth::guard('web')->attempt($credentials)) {
+
+            return redirect()->route('patient');
+
+        } else if (Auth::guard('medecin')->attempt($credentials)) {
+
+            return redirect()->route('medecin');
+
+        } else {
+            // Erreur d'authentification rediriger vers le formulaire de connexion
+
+            return back()->withErrors([
+                'email' => 'nom d\'utlisateur erroné',
+            ])->onlyInput('email');
         }
 
-        return back()->withErrors([
-            'email' => 'nom d\'utlisateur erroné',
-        ])->onlyInput('email');
+
     }
+
     public function login():View{
 
         return view('login');

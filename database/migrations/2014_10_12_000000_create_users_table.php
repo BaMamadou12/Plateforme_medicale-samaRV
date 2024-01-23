@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('lieux');
             $table->string('password');
             $table->rememberToken();
+            $table->string('role')->default('patient');
             $table->timestamps();
         });
     }
