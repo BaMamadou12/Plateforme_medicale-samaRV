@@ -15,6 +15,17 @@
                     Accueil
                 </a>
             </li>
+<<<<<<< HEAD
+=======
+            <li>
+                <a href="{{ route("patient") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+                hover:text-gray-500
+                hover:border-b-{3px}
+                hover:border-green-500 transition duration-{.1s} hover:ease-in">
+                    Dashboard
+                </a>
+            </li>
+>>>>>>> ac664af6566025adb1776da5a7b0120a1bf0dafc
 
 {{--            <li>--}}
 {{--                <a href="{{ route("patient/dashboard") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white--}}

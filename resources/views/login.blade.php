@@ -25,7 +25,7 @@
                 @csrf
                 <div class="w-full mb-8">
                     <label for="username" class="block mb-2 ">votre email</label>
-                    <input type="email" placeholder="mamadou123@gmail.com" value="{{@old('username')}}" name="email" id="username" required
+                    <input type="email" placeholder="mamadou123@gmail.com" value="{{@old('email')}}" name="email" id="username" required
                     class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-100
                     outline-none focus:border-[#2ea8bf] transition duration-100 ease mb-2">
                     @error('email')
