@@ -13,15 +13,12 @@ return new class extends Migration
     {
         Schema::create('medecins', function (Blueprint $table) {
             $table->id();
-            $table->string('Nom');
-            $table->string('Prenom');
-            $table->string('Specialite');
-            $table->string('Email');
-            $table->string('Telephone');
-            $table->string('Disponibilite');
-            $table->unsignedBigInteger('id_hopital');
-
-            $table->foreign('id_hopital')->references('id')->on('hopitals');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('specialite');
+            $table->string('email');
+            $table->string('telephone');
+            $table->string('disponibilite');
             $table->timestamps();
         });
     }

@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->id();
-            $table->string('Plaintes_Symptomes');
-            $table->string('Autre_Examens_Para_Clinique');
-            $table->string('Diagnostic');
-            $table->string('Traitement');
-            $table->string('Observations');
+            $table->string('plaintes_Symptomes');
+            $table->string('autre_Examens_Para_Clinique');
+            $table->string('diagnostic');
+            $table->string('traitement');
+            $table->string('observations');
             $table->unsignedBigInteger('id_patient');
             $table->unsignedBigInteger('id_medecin');
 

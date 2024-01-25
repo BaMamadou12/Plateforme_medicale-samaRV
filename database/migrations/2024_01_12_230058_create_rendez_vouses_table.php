@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('rendez_vouses', function (Blueprint $table) {
             $table->id();
-            $table->date('HeureRendezVous');
-            $table->string('Statut');
+            $table->date('heure');
+            $table->string('statut');
             $table->unsignedBigInteger('id_patient');
             $table->unsignedBigInteger('id_medecin');
 
