@@ -16,30 +16,22 @@
                 </a>
             </li>
 
-            <li>
-                <a href="{{ route("patient") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
-                hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
-                hover:ease-in">
-                    Dashboard
-                </a>
-            </li>
-
 {{--            <li>--}}
-{{--                <a href="{{ route("patient/dashboard") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white--}}
-{{--                hover:text-gray-500--}}
-{{--                hover:border-b-{3px}--}}
-{{--                hover:border-green-500 transition duration-{.1s} hover:ease-in">--}}
-{{--                    Dashboard--}}
-{{--                </a>--}}
-{{--            </li>--}}
-
-{{--            <li>--}}
-{{--                <a href="{{ route("medecin") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white--}}
+{{--                <a href="{{ route("patient") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white--}}
 {{--                hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}--}}
 {{--                hover:ease-in">--}}
 {{--                    Dashboard--}}
 {{--                </a>--}}
 {{--            </li>--}}
+
+
+            <li>
+                <a href="{{ route("medecin") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+                hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
+                hover:ease-in">
+                    Dashboard
+                </a>
+            </li>
 
             <li>
                 <a href="{{ route("hopital") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white

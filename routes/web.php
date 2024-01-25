@@ -35,9 +35,12 @@ Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
 
 //route pour l'admin
+Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
+
+Route::get('/consultation', [AdminController::class ,'consultation'])->name('consultation');
 
 
-    Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
+
 
 
 

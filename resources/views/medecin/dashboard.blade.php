@@ -2,7 +2,7 @@
 
 @section("section")
 
-    <section class="w-[60%] mx-auto relative">
+    <section class="w-[70%] mx-auto relative">
 
         <div class="w-full flex items-center justify-center mt-4 ">
             <div class="">
@@ -28,13 +28,141 @@
         </div>
 
 
-        <div class="mb-12">
-            <h1>RV du matin : </h1>
+        <div class="mb-20 ">
+            <div class="font-kanit flex items-center">
+                <p class="mr-3 font-semibold italic">RV du matin :</p>
+                <div class="flex justify-center items-center gap-2 px-4 py-2 bg-green-100 rounded-lg text-[small]">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3">
+                        <path d="m256 8c-137 0-248 111-248 248s111 248 248 248 248-111 248-248-111-248-248-248zm0 448c-110.5 0-200-89.5-200-200s89.5-200 200-200 200 89.5 200 200-89.5 200-200 200zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7v-164.2c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8l-18.8 25.9c-3.9 5.3-11.4 6.5-16.8 2.6z"/>
+                    </svg>
+                    <span class="font-bold  tracking-widest">08:15 à 13:45</span>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white rounded text-sm overflow-hidden shadow-md">
+                <div class="flex items-center bg-gray-100 px-4">
+                    <span class="w-1/12 px-2 py-3">rang</span>
+                    <span class="w-3/12 px-2 py-3">Prénom et Nom</span>
+                    <span class="w-2/12 px-2 py-3">Age</span>
+                    <span class="w-1/12 px-2 py-3">Sexe</span>
+                    <span class="w-3/12 px-2 py-3">Adresse Exact</span>
+                    <span class="w-3/12 px-2 py-3">Action</span>
+                </div>
+
+                <div class="flex border-t border-gray-200 items-center px-4 py-3">
+                    <div class="w-1/12">
+                        <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">01</span>
+                    </div>
+                    <span class="w-3/12 px-2 py-1">Djibril Seye Wague</span>
+                    <span  class="w-2/12 px-2 py-1">22 ans</span>
+                    <span class="w-1/12 px-2 py-1">M</span>
+                    <span class="w-3/12 px-2 py-1">Rufisque</span>
+                    <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
+                        <a href="">
+                            Consulter le patient
+                        </a>
+                    </span>
+                </div>
+
+                <div class="flex border-t border-gray-200 items-center px-4 py-3">
+                    <div class="w-1/12">
+                        <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">02</span>
+                    </div>
+                    <span class="w-3/12 px-2 py-1">Djibril Seye Wague</span>
+                    <span  class="w-2/12 px-2 py-1">22 ans</span>
+                    <span class="w-1/12 px-2 py-1">M</span>
+                    <span class="w-3/12 px-2 py-1">Rufisque</span>
+                    <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
+                        <a href="">
+                            Consulter le patient
+                        </a>
+                    </span>
+                </div>
+
+                <div class="flex border-t border-gray-200 items-center px-4 py-3">
+                    <div class="w-1/12">
+                        <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">03</span>
+                    </div>
+                    <span class="w-3/12 px-2 py-1">Djibril Seye Wague</span>
+                    <span  class="w-2/12 px-2 py-1">22 ans</span>
+                    <span class="w-1/12 px-2 py-1">M</span>
+                    <span class="w-3/12 px-2 py-1">Rufisque</span>
+                    <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
+                        <a href="">
+                            Consulter le patient
+                        </a>
+                    </span>
+                </div>
+            </div>
 
         </div>
 
         <div class="mb-12">
-            <h1>RV de l'après midi : </h1>
+            <div class="font-kanit flex items-center">
+                <p class="mr-3 font-semibold italic">RV du soir : </p>
+                <div class="flex justify-center items-center gap-2 px-4 py-2 bg-green-100 rounded-lg text-[small]">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3">
+                        <path d="m256 8c-137 0-248 111-248 248s111 248 248 248 248-111 248-248-111-248-248-248zm0 448c-110.5 0-200-89.5-200-200s89.5-200 200-200 200 89.5 200 200-89.5 200-200 200zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7v-164.2c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8l-18.8 25.9c-3.9 5.3-11.4 6.5-16.8 2.6z"/>
+                    </svg>
+                    <span class="font-bold  tracking-widest">15:00 à 18:00</span>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white rounded text-sm overflow-hidden shadow-md">
+                <div class="flex items-center bg-gray-100 px-4">
+                    <span class="w-1/12 px-2 py-3">rang</span>
+                    <span class="w-3/12 px-2 py-3">Prénom et Nom</span>
+                    <span class="w-2/12 px-2 py-3">Age</span>
+                    <span class="w-1/12 px-2 py-3">Sexe</span>
+                    <span class="w-3/12 px-2 py-3">Adresse Exact</span>
+                    <span class="w-3/12 px-2 py-3">Action</span>
+                </div>
+
+                <div class="flex border-t border-gray-200 items-center px-4 py-3">
+                    <div class="w-1/12">
+                        <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">01</span>
+                    </div>
+                    <span class="w-3/12 px-2 py-1">Djibril Seye Wague</span>
+                    <span  class="w-2/12 px-2 py-1">22 ans</span>
+                    <span class="w-1/12 px-2 py-1">M</span>
+                    <span class="w-3/12 px-2 py-1">Rufisque</span>
+                    <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
+                        <a href="">
+                            Consulter le patient
+                        </a>
+                    </span>
+                </div>
+
+                <div class="flex border-t border-gray-200 items-center px-4 py-3">
+                    <div class="w-1/12">
+                        <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">02</span>
+                    </div>
+                    <span class="w-3/12 px-2 py-1">Djibril Seye Wague</span>
+                    <span  class="w-2/12 px-2 py-1">22 ans</span>
+                    <span class="w-1/12 px-2 py-1">M</span>
+                    <span class="w-3/12 px-2 py-1">Rufisque</span>
+                    <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
+                        <a href="">
+                            Consulter le patient
+                        </a>
+                    </span>
+                </div>
+
+                <div class="flex border-t border-gray-200 items-center px-4 py-3">
+                    <div class="w-1/12">
+                        <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">03</span>
+                    </div>
+                    <span class="w-3/12 px-2 py-1">Djibril Seye Wague</span>
+                    <span  class="w-2/12 px-2 py-1">22 ans</span>
+                    <span class="w-1/12 px-2 py-1">M</span>
+                    <span class="w-3/12 px-2 py-1">Rufisque</span>
+                    <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
+                        <a href="">
+                            Consulter le patient
+                        </a>
+                    </span>
+                </div>
+            </div>
 
         </div>
 

@@ -4,7 +4,7 @@
 
     <section class="min-h-full w-8/12 mx-auto relative p-8 flex justify-center flex-col my-12 bg-white rounded-lg shadow-md">
 
-        <h1 class="text-3xl font-bold font-kanit italic tracking-wide mb-12">Formulaire de d'inscription</h1>
+        <h1 class="text-3xl font-bold font-kanit italic tracking-wide mb-12">Registre De Consultation General</h1>
         <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
             @csrf
 
@@ -79,7 +79,7 @@
                     focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('password')
-                    <div class="text-red-800 text-[small] mt-2">champ required</div>
+                <div class="text-red-800 text-[small] mt-2">champ required</div>
 
                 <div class="text-red-800 text-[small] mt-2">votre mot de pass doit contenir au moins 8 caracteres</div>
 
@@ -114,7 +114,7 @@
                 </div>
                 @error('adresse')
 
-              <div class="text-red-800 text-[small] mt-2">champ required</div>
+                <div class="text-red-800 text-[small] mt-2">champ required</div>
 
                 @enderror
 
@@ -130,12 +130,12 @@
                 </div>
                 @error('tel')
 
-              <div class="text-red-800 text-[small] mt-2">confirmation de votre mot de passe</div>
+                <div class="text-red-800 text-[small] mt-2">confirmation de votre mot de passe</div>
 
                 @enderror
 
 
-                </div>
+            </div>
 
             <div class="w-[47%] mb-8">
                 <div class="flex flex-col">
@@ -169,8 +169,9 @@
             <div class="mt-4 w-full flex justify-center">
                 <button type="submit" class="px-8 py-3  rounded-lg bg-green-400 hover:bg-[#4DCF7D] transition duration-100 ease-in mb-4"> S'inscrire</button>
             </div>
-    </form>
+        </form>
 
     </section>
 
 @endsection
+
