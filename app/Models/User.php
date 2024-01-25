@@ -26,6 +26,7 @@ class User extends Authenticatable
         'lieux',
         'tel',
         'date',
+        'sexe'
 
     ];
 

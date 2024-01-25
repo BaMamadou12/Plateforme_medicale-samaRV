@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('Montant');
-            $table->date('DateDePaiement');
-            $table->string('ModePaiement');
+            $table->integer('montant');
+            $table->date('dateDePaiement');
+            $table->string('modePaiement');
             $table->unsignedBigInteger('id_patient');
 
             //declaration de la cle etrangere
 
-            $table->foreign('id_patient')->references('id')->on('patients');
+            $table->foreign('id_patient')->references('id')->on('users');
             $table->timestamps();
         });
     }
