@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends("layout")
 
 @section("section")
@@ -195,3 +196,5 @@
 
 @endsection
 
+=======
+>>>>>>> f659ba0395cd14c19e65fcc1c0c596c166d4c9b0
