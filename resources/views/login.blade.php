@@ -19,7 +19,7 @@
 
         <div class="w-full">
 
-            <h1 class="text-3xl font-bold font-kanit italic tracking-wide mb-12">Formulaire de connexion</h1>
+            <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Formulaire de connexion</h1>
 
             <form action="{{ route('login') }}" method="post" class="flex flex-col relative">
                 @csrf

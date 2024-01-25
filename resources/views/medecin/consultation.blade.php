@@ -2,180 +2,146 @@
 
 @section("section")
 
-    <section class="min-h-full w-8/12 mx-auto relative p-8 flex justify-center  bg-green-100 rounded-lg flex-col
+    <section class="min-h-full w-7/12 mx-auto relative p-8 flex justify-center  bg-green-100 rounded-lg flex-col
     my-12 ">
 
         <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Registre De Consultation Generale</h1>
         <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
             @csrf
 
-            <div class="w-[47%] mb-8" >
+{{--            PARTIE SYMPTOMES--}}
+            <div class="w-[100%] mb-8" >
                 <div class="flex flex-col">
-                    <label for="nom" class="mb-2 text-[small]"> nom : </label>
-                    <input type="text" name="nom" id="nom" placeholder="votre nom" value="{{ @old('nom') }}"
-                           class="bg-green-50 grow px-4 py-1.5 rounded border border-gray-300 outline-none
-                           focus:border-[#2ea8bf] transition duration-100 ease">
+                    <div class="mb-3 flex items-center gap-4">
+                        <label for="sympt" class=" italic font-kanit"> Plaintes, Symptômes : </label>
+                        <div>
+                            <input type="text" id="sympt" placeholder="Préciser Un Symptômes"
+                               class="text-xs px-2 py-1 rounded-lg border border-gray-300 outline-none
+                               focus:border-[#2ea8bf]
+                               transition duration-100 ease">
+                            <button class="text-xs px-2 py-1 rounded-lg bg-green-200">ajouter</button>
+                        </div>
+                    </div>
+
+
+
+{{--                    les symptomes les plus frequents chez les patients j'en ai selectionné 11--}}
+                    <div class="text-xs flex flex-col gap-2" id="sympt-container">
+                        <p class="font-kanit italic tracking-wide text-base text-amber-600">Les Plus Fréquents</p>
+                        <div>
+                            <input type="checkbox" name="symp1" id="sympt" value="maux_de_tete">
+                            <label for="sympt1">Maux de tête fréquents ou persistants.</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="sympt2" id="sympt" value="fatigue">
+                            <label for="sympt2">Fatigue excessive.</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="sympt3" id="sympt" value="douleurs_articulaires">
+                            <label for="sympt3">Douleurs articulaires ou musculaires.</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="sympt4" id="sympt" value="fievre">
+                            <label for="sympt4">Fièvre inexpliquée.</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="sympt5" id="sympt" value="difficultes_respiratoires">
+                            <label for="sympt5">Difficultés respiratoires.</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="sympt6" id="sympt" value="problemes_gastro_intestinaux">
+                            <label for="sympt6">Problèmes gastro-intestinaux tels que nausées, vomissements, ou diarrhée.</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="sympt7" id="sympt" value="problemes_de_vision">
+                            <label for="sympt7">Problèmes de vision ou changements dans la  vision.</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="sympt8" id="sympt" value="perte_de_poids">
+                            <label for="sympt8">Perte de poids.</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="sympt9" id="sympt" value="vertiges">
+                            <label for="sympt9">Vertiges ou étourdissements.</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" name="sympt10" id="sympt" value="problemes_urinaires">
+                            <label for="sympt10">Problèmes urinaires, tels que douleur en urinant ou changements dans la fréquence.</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="sympt11" id="sympt" value="sensations_de_picotements">
+                            <label for="sympt11">Sensations de picotements, engourdissements ou faiblesse.</label>
+                        </div>
+                    </div>
                 </div>
-                @error('nom')
-
-                <div class="text-red-800 text-[small] mt-2">saisissez votre nom</div>
-
-                @enderror
-
             </div>
 
+{{--            PARTIE Autre Examen para clinique --}}
             <div class="w-[47%] mb-8">
                 <div class="flex flex-col">
-
-                    <label for="prenom" class="mb-2 text-[small]"> prénom : </label>
-                    <input type="text" name="prenom" id="prenom" placeholder="votre prenom"  value="{{ @old('prenom')
-                     }}" class="bg-green-50 grow px-4
-                    py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
-                </div>
-                @error('prenom')
-
-                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
-
-                @enderror
-
-            </div>
-
-            <div class="w-[47%] mb-8">
-                <div class="flex flex-col">
-
-                    <label for="prenom" class="mb-2 text-[small]"> Sexe : </label>
-                    <select name="" id="" class="bg-green-50 grow px-4
-                    py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
-                        <option value="M">Masculin</option>
-                        <option value="F">Féminin</option>
-
+                    <label for="exam" class="mb-2 italic font-kanit">Autre Examen para clinique : </label>
+                    <select name="exam" id="exam" class="bg-green-50 grow px-4
+                    py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
+                    duration-100 ease">
+                        <option value="M">Non</option>
+                        <option value="F">Oui</option>
                     </select>
                 </div>
-                @error('prenom')
+            </div>
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
 
-                @enderror
-
+            <div class="w-[47%] mb-8 ">
+                <div class="flex flex-col">
+                    <label for="ordonnance" class="mb-2 italic font-kanit">Traitement et ordonnances  : </label>
+                    <select name="ordonnance" id="ordonnance" class="bg-green-50 grow px-4 py-2 rounded-lg text-[small]
+                    border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
+                        <option value="M">Prescrire de médicaments</option>
+                        <option value="F">Hospitaliser le patient</option>
+                    </select>
+                </div>
             </div>
 
             <div class="w-[47%] mb-8 ">
                 <div class="flex flex-col">
-                    <label for="email" class="mb-2 text-[small]"> email : </label>
-                    <input type="email" name="email" id="email" placeholder="exemple@gmail.com"  value="{{ @old
-                    ('email') }}" class="bg-green-50 grow
-                    px-4 py-1.5 rounded border  border-gray-300 outline-none focus:border-[#2ea8bf] transition
-                    duration-100 ease">
+                    <label for="email" class="mb-2 italic font-kanit"> observation : </label>
+                    <p class="font-kanit italic tracking-wide mb-1 text-xs text-amber-600">aimeriez-vous suivre le
+                        patient ?</p>
+                    <div>
+                        <div class="mb-4">
+                            <button class="text-xs px-2 py-1 mr-1 rounded-lg bg-green-200" id="obs1">
+                                Suivre le patient
+                            </button>
+                            <button class="text-xs px-2 py-1 rounded-lg bg-green-200" id="obs2">
+                                ne pas suivre
+                            </button>
+                        </div>
+                        <div id="obs-container">
+{{--                            le input de prochain Rv est intégré directement a partir du javascript--}}
+                            <input type="hidden" name="observation" value="patient no suivi.">
+                        </div>
+                    </div>
                 </div>
-                @error('email')
-
-                <div class="text-red-800 text-[small] mt-2">l'e-mail est  requiris</div>
-
-                @enderror
-
             </div>
 
-            <div class="w-[47%] mb-8 ">
+            <div class="w-[100%] mb-8">
                 <div class="flex flex-col">
-                    <label for="password" class="mb-2 text-[small]"> mot de passe : </label>
-                    <input type="password" name="password" id="password" placeholder="créer un mot de passe puissant"
-                           class="bg-green-50 grow px-4 py-1.5 rounded border border-gray-300 outline-none
-                    focus:border-[#2ea8bf] transition duration-100 ease">
+                    <label for="diagnostic" class="mb-2 italic font-kanit"> Diagnostic : </label>
+                    <textarea name="diagnostic" id="diagnostic" cols="30" rows="8" placeholder="Rédiger votre diagnostic ici !"
+                    class="rounded-lg p-4 border  border-gray-300 outline-none bg-green-50 text-[small]
+                    focus:border-[#2ea8bf] transition duration-100 ease"></textarea>
                 </div>
-                @error('password')
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
-
-                <div class="text-red-800 text-[small] mt-2">votre mot de pass doit contenir au moins 8 caracteres</div>
-
-                @enderror
-
             </div>
 
-            <div class="w-[47%] mb-8 ">
-                <div class="flex flex-col">
-                    <label for="confirm" class="mb-2 text-[small]"> confirmation : </label>
-
-                    <input type="password" name="password_confirmation" id="confirm" placeholder="confirmer le mot de passe"
-                           class="bg-green-50 grow px-4 py-1.5 rounded border border-gray-300 outline-none
-                       focus:border-[#2ea8bf] transition duration-100 ease">
-                </div>
-                @error('password_confirmation')
-
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
-
-                @enderror
-
-
-            </div>
-
-            <div class="w-[47%] mb-8">
-                <div class="flex flex-col">
-                    <label for="adresse" class="mb-2 text-[small]"> adresse : </label>
-
-                    <input type="text" name="adresse" id="adresse" placeholder="votre adresse"  value="{{ @old
-                    ('adresse') }}" class="bg-green-50 grow
-                    px-4 py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition
-                    duration-100 ease">
-                </div>
-                @error('adresse')
-
-                <div class="text-red-800 text-[small] mt-2">champ required</div>
-
-                @enderror
-
-
-            </div>
-
-            <div class="w-[47%] mb-8">
-                <div class="flex flex-col">
-                    <label for="tel" class="mb-2 text-[small]"> téléphone : </label>
-
-                    <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{ @old('tel') }}"
-                           class="bg-green-50 grow px-4
-                    py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
-                </div>
-                @error('tel')
-
-                <div class="text-red-800 text-[small] mt-2">confirmation de votre mot de passe</div>
-
-                @enderror
-
-
-            </div>
-
-            <div class="w-[47%] mb-8">
-                <div class="flex flex-col">
-                    <label for="date" class="mb-2 text-[small]"> date de naiss : </label>
-
-                    <input type="date" name="date" id="date" value="{{ @old('date') }}" class="bg-green-50 grow px-4
-                    py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
-                </div>
-                @error('date')
-
-                <div class="text-red-800 text-[small] mt-2">saississez votre date de naissance</div>
-
-                @enderror
-
-            </div>
-
-            <div class="w-[47%] mb-8 ">
-                <div class="flex flex-col">
-                    <label for="lieux" class="mb-2 text-[small]"> lieux de naissance : </label>
-
-                    <input type="text" name="lieux" id="lieux" placeholder="ex : Touba"  value="{{ @old('lieux') }}"
-                           class="bg-green-50 grow px-4 py-1.5
-                    rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
-                </div>
-                @error('lieux')
-
-                <div class="text-red-800 text-[small] mt-2">saissisz votre lieu de naissance</div>
-
-                @enderror
-
-            </div>
 
             <div class="mt-4 w-full flex justify-center">
-                <button type="submit" class="px-8 py-3  rounded-lg bg-green-400 hover:bg-[#4DCF7D] transition duration-100 ease-in mb-4"> S'inscrire</button>
+                <button type="submit" class="px-8 py-3  rounded-lg bg-green-400 hover:bg-[#4DCF7D] transition duration-100 ease-in mb-4">
+                    Valider la consultation
+                </button>
             </div>
         </form>
 
