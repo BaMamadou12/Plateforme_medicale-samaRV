@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\RendezvousController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccueilController;
@@ -37,7 +38,7 @@ Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
 //route pour l'admin
 Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
 
-Route::get('/consultation', [AdminController::class ,'consultation'])->name('consultation');
+Route::get('/consultation', [ConsultationController::class ,'index'])->name('consultation');
 
 
 

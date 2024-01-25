@@ -2,9 +2,10 @@
 
 @section("section")
 
-    <section class="min-h-full w-8/12 mx-auto relative p-8 flex justify-center flex-col my-12 bg-white rounded-lg shadow-md">
+    <section class="min-h-full w-8/12 mx-auto relative p-8 flex justify-center  bg-green-100 rounded-lg flex-col
+    my-12 ">
 
-        <h1 class="text-3xl font-bold font-kanit italic tracking-wide mb-12">Registre De Consultation General</h1>
+        <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Registre De Consultation Generale</h1>
         <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
             @csrf
 
@@ -12,7 +13,8 @@
                 <div class="flex flex-col">
                     <label for="nom" class="mb-2 text-[small]"> nom : </label>
                     <input type="text" name="nom" id="nom" placeholder="votre nom" value="{{ @old('nom') }}"
-                           class="bg-gray-100 grow px-4 py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
+                           class="bg-green-50 grow px-4 py-1.5 rounded border border-gray-300 outline-none
+                           focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('nom')
 
@@ -26,7 +28,8 @@
                 <div class="flex flex-col">
 
                     <label for="prenom" class="mb-2 text-[small]"> prénom : </label>
-                    <input type="text" name="prenom" id="prenom" placeholder="votre prenom"  value="{{ @old('prenom') }}" class="bg-gray-100 grow px-4
+                    <input type="text" name="prenom" id="prenom" placeholder="votre prenom"  value="{{ @old('prenom')
+                     }}" class="bg-green-50 grow px-4
                     py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('prenom')
@@ -41,7 +44,7 @@
                 <div class="flex flex-col">
 
                     <label for="prenom" class="mb-2 text-[small]"> Sexe : </label>
-                    <select name="" id="" class="bg-gray-100 grow px-4
+                    <select name="" id="" class="bg-green-50 grow px-4
                     py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                         <option value="M">Masculin</option>
                         <option value="F">Féminin</option>
@@ -59,7 +62,8 @@
             <div class="w-[47%] mb-8 ">
                 <div class="flex flex-col">
                     <label for="email" class="mb-2 text-[small]"> email : </label>
-                    <input type="email" name="email" id="email" placeholder="exemple@gmail.com"  value="{{ @old('email') }}" class="bg-gray-100 grow
+                    <input type="email" name="email" id="email" placeholder="exemple@gmail.com"  value="{{ @old
+                    ('email') }}" class="bg-green-50 grow
                     px-4 py-1.5 rounded border  border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
                 </div>
@@ -75,7 +79,7 @@
                 <div class="flex flex-col">
                     <label for="password" class="mb-2 text-[small]"> mot de passe : </label>
                     <input type="password" name="password" id="password" placeholder="créer un mot de passe puissant"
-                           class="bg-gray-100 grow px-4 py-1.5 rounded border border-gray-300 outline-none
+                           class="bg-green-50 grow px-4 py-1.5 rounded border border-gray-300 outline-none
                     focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('password')
@@ -92,7 +96,7 @@
                     <label for="confirm" class="mb-2 text-[small]"> confirmation : </label>
 
                     <input type="password" name="password_confirmation" id="confirm" placeholder="confirmer le mot de passe"
-                           class="bg-gray-100 grow px-4 py-1.5 rounded border border-gray-300 outline-none
+                           class="bg-green-50 grow px-4 py-1.5 rounded border border-gray-300 outline-none
                        focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('password_confirmation')
@@ -108,7 +112,8 @@
                 <div class="flex flex-col">
                     <label for="adresse" class="mb-2 text-[small]"> adresse : </label>
 
-                    <input type="text" name="adresse" id="adresse" placeholder="votre adresse"  value="{{ @old('adresse') }}" class="bg-gray-100 grow
+                    <input type="text" name="adresse" id="adresse" placeholder="votre adresse"  value="{{ @old
+                    ('adresse') }}" class="bg-green-50 grow
                     px-4 py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
                 </div>
@@ -125,7 +130,8 @@
                 <div class="flex flex-col">
                     <label for="tel" class="mb-2 text-[small]"> téléphone : </label>
 
-                    <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{ @old('tel') }}" class="bg-gray-100 grow px-4
+                    <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{ @old('tel') }}"
+                           class="bg-green-50 grow px-4
                     py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('tel')
@@ -141,7 +147,8 @@
                 <div class="flex flex-col">
                     <label for="date" class="mb-2 text-[small]"> date de naiss : </label>
 
-                    <input type="date" name="date" id="date" value="{{ @old('date') }}" class="bg-gray-100 grow px-4 py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
+                    <input type="date" name="date" id="date" value="{{ @old('date') }}" class="bg-green-50 grow px-4
+                    py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('date')
 
@@ -155,7 +162,8 @@
                 <div class="flex flex-col">
                     <label for="lieux" class="mb-2 text-[small]"> lieux de naissance : </label>
 
-                    <input type="text" name="lieux" id="lieux" placeholder="ex : Touba"  value="{{ @old('lieux') }}" class="bg-gray-100 grow px-4 py-1.5
+                    <input type="text" name="lieux" id="lieux" placeholder="ex : Touba"  value="{{ @old('lieux') }}"
+                           class="bg-green-50 grow px-4 py-1.5
                     rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                 </div>
                 @error('lieux')

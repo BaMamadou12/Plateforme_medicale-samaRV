@@ -58,7 +58,7 @@
                     <span class="w-1/12 px-2 py-1">M</span>
                     <span class="w-3/12 px-2 py-1">Rufisque</span>
                     <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
-                        <a href="">
+                        <a href="{{ route("consultation") }}">
                             Consulter le patient
                         </a>
                     </span>
