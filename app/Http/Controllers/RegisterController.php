@@ -23,7 +23,8 @@ class RegisterController extends Controller
             'nom' => ['required', 'string', 'between:2,25'],
             'prenom' => ['required', 'string', 'between:3,25'],
             'email' => ['required', 'email', 'unique:users'],
-            'adresse' => ['required', 'string', 'between:2,255'], //
+            'adresse' => ['required', 'string', 'between:2,255'],
+            'sexe'=>['required','string','in:M,F'],
             'tel' => ['required', 'string', 'digits:9', 'unique:users'],
             'date' => ['required', 'string'],
             'lieux' => ['required', 'string', 'max:50'],

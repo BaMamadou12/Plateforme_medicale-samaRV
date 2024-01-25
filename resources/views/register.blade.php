@@ -41,7 +41,7 @@
                 <div class="flex flex-col">
 
                     <label for="prenom" class="mb-2 text-[small]"> Sexe : </label>
-                    <select name="" id="" class="bg-gray-100 grow px-4
+                    <select name="sexe" id=""  value="{{ @old('sexe') }}" class="bg-gray-100 grow px-4
                     py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                         <option value="M">Masculin</option>
                         <option value="F">Féminin</option>

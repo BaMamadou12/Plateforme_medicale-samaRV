@@ -21,7 +21,7 @@ return new class extends Migration
 
             //declaration de la cle etrangere
 
-            $table->foreign('id_patient')->references('id')->on('patients');
+            $table->foreign('id_patient')->references('id')->on('users');
             $table->foreign('id_medecin')->references('id')->on('medecins');
             $table->timestamps();
         });

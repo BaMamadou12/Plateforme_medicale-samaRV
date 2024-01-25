@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hopital extends Model
 {
+
+    protected $fillable=[
+        'nom',
+        'adresse',
+        'email',
+        'telephone',
+        'ville'
+    ];
     use HasFactory;
 }

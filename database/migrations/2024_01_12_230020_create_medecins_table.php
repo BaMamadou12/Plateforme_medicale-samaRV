@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('telephone');
             $table->string('disponibilite');
+            $table->string('role');
             $table->timestamps();
         });
     }
