@@ -38,22 +38,23 @@
             </div>
         </div>
     </div>
-    <section class="w-[90%]  min-h-[100vh] mx-auto p-8 grid gap-8 grid-cols-3
-    grid-rows-3 ">
+    <section class="w-[80%]  min-h-[100vh] mx-auto p-4 grid gap-6 grid-cols-3 grid-rows-3 ">
 
         {{-- debut  de la liste des hopitaux--}}
 
         @foreach($request as $info)
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
+        <div class="min-h-[300px] bg-[#fefefe] rounded-xl shadow-md overflow-hidden pt-2 pb-4 px-3">
             <img src="{{ asset("images/hdd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]" >
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm">  {{$info->nom}}</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">{{$info->ville}}</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">{{$info->adresse}}</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">{{$info->telephone}}</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
+            <div class="mb-4">
+                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-semibold  italic font-kanit">
+                    {{$info->nom}}</h3>
+                <p class="text-[small]"> Ville : <span class="text-gray-500 text-[small]">{{$info->ville}}</span></p>
+                <p class="text-[small]"> Adresse : <span class="text-gray-500
+                text-[small]">{{$info->adresse}}</span></p>
+                <p class="text-[small]"> Tel : <span class="text-gray-500 text-[small]">{{$info->telephone}}</span></p>
+                <p class="text-[small]"> Médecin : <span class="text-gray-500 text-[small]">Abdoulaye Sow</span></p>
             </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
+            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-xs hover:bg-[#38cb6e] transition
             duration-100 ease-in-out">
                 <a href="{{route("rv")}}">Prenez Rendez-vous</a>
             </button>
