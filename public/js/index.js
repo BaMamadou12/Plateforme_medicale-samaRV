@@ -37,5 +37,73 @@ obs1.addEventListener('click', function(e){
 
 // Ajouter un symptome specifique
 parent = document.querySelector("#sympt-container");
-size = document.querySelectorAll("#sympt")
+addSympt = document.querySelector("#add-sympt");
+ul = document.querySelector("#sympt-parent");
+let deleteSympt;
+
+
+addSympt.addEventListener('click', function(e){
+    e.preventDefault();
+    let sympt = document.querySelector("#sympt");
+    let li;
+    let input;
+    if (sympt.value) {
+        let size = document.querySelectorAll("#sympt-container input").length;
+        li = document.createElement('li');
+        li.className = "flex gap-4 items-center px-4 py-0.5 bg-green-50 rounded-full";
+        li.innerHTML = `
+            <p>${sympt.value}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                 width="16" class="cursor-pointer">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224
+                224-56 56-224-224-224 224Z"/></svg>
+        `;
+        ul.appendChild(li);
+        // type="checkbox" name="symp1" id="sympt" value="maux_de_tete"
+        let input = document.createElement('input');
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('name', 'sympt'+(size + 1));
+        input.setAttribute('id', 'sympt'+(size + 1));
+        input.value = sympt.value;
+        parent.appendChild(input);
+        sympt.value = "";
+
+        // supprimer des symptomes
+        deleteSympt = document.querySelectorAll("#sympt-parent li svg");
+        deleteSympt.forEach((item)=>{
+            item.addEventListener("click", (e)=>{
+                // let size = document.querySelectorAll("#sympt-container input").length;
+                let val = e.currentTarget.parentNode.children[0].textContent;
+                let inputs = document.querySelectorAll("#sympt-container > input");
+                let cible ;
+                inputs.forEach(item => {
+                    if(item.value === val){
+                        document.querySelector("#sympt-container").removeChild(item);
+                    }
+                })
+                if(e.currentTarget.parentNode.parentNode){
+                    e.currentTarget.parentNode.parentNode.removeChild(e.currentTarget.parentNode);
+                }
+                reorganize ();
+
+            })
+        })
+    }
+
+});
+function reorganize (){
+    let x = document.querySelectorAll("#sympt-container > input");
+    let i = 12;
+    if(x){
+        x.forEach(( item) =>{
+            item.setAttribute('name', 'sympt'+ i)
+            item.setAttribute('id', 'sympt'+ i)
+            i++;
+        })
+
+    }
+}
+
+
+
 

@@ -16,24 +16,23 @@
                 </a>
             </li>
             @if(Auth::guard('web'))
-
-            <li>
-              <a href="{{ route("patient") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white--}}
-                hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}--}}
-                hover:ease-in">
-                   Dashboard
-                </a>
-           </li>
+                <li>
+                  <a href="{{ route("patient") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+                    hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
+                    hover:ease-in">
+                       Dashboard
+                    </a>
+               </li>
             @endif
 
             @if(Auth::guard('medecin'))
-            <li>
-                <a href="{{ route("medecin") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
-                hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
-                hover:ease-in">
-                    Dashboard
-                </a>
-            </li>
+                <li>
+                    <a href="{{ route("medecin") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+                    hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
+                    hover:ease-in">
+                        Dashboard
+                    </a>
+                </li>
             @endif
             <li>
                 <a href="{{ route("hopital") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
@@ -75,13 +74,15 @@
         @else
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
+                <button type="submit">
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Se déconnecter
+                    </a>
+                </button>
             </form>
-            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Se déconnecter
-            </a>
+
             <a href="{{route("patient")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
-        rounded-lg hover:bg-green-200
-        hover:text-gray-600 transition duration-800 hover:ease">
+                rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
                 {{ auth()->user()->prenom   }}
                 {{auth()->user()->nom}}
             </a>
