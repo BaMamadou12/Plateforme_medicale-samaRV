@@ -41,12 +41,13 @@
     <section class="w-[90%]  min-h-[100vh] mx-auto p-8 grid gap-8 grid-cols-3
     grid-rows-3 ">
 
+        {{-- debut  de la liste des hopitaux--}}
 
         @foreach($request as $info)
         <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
             <img src="{{ asset("images/hdd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]" >
             <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hôpital Régional {{$info->nom}}</h3>
+                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm">  {{$info->nom}}</h3>
                 <p class="text-[small]"> Ville : <span class="text-gray-500">{{$info->ville}}</span></p>
                 <p class="text-[small]"> Adresse : <span class="text-gray-500">{{$info->adresse}}</span></p>
                 <p class="text-[small]"> Tel : <span class="text-gray-500">{{$info->telephone}}</span></p>
@@ -59,134 +60,10 @@
         </div>
         @endforeach
 
+  {{--  fin de la liste des hopitaux--}}
 
 
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
-            <img src="{{ asset("images/hpd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]">
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hopital Régional Tambacounda</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">TAMBACOUNDA</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">Av Leopold Senghor</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">33 981 12 17</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
-            </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
-            duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
-            </button>
-        </div>
 
-
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
-            <img src="{{ asset("images/hld.png") }}" alt="" class="rounded-lg mb-4 h-[190px]">
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hopital Régional Tambacounda</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">TAMBACOUNDA</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">Av Leopold Senghor</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">33 981 12 17</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
-            </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
-            duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
-            </button>
-        </div>
-
-
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
-            <img src="{{ asset("images/hpd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]">
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hopital Régional Tambacounda</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">TAMBACOUNDA</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">Av Leopold Senghor</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">33 981 12 17</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
-            </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
-            duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
-            </button>
-        </div>
-
-
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
-            <img src="{{ asset("images/hpd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]">
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hopital Régional Tambacounda</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">TAMBACOUNDA</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">Av Leopold Senghor</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">33 981 12 17</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
-            </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
-            duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
-            </button>
-        </div>
-
-
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
-            <img src="{{ asset("images/hpd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]">
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hopital Régional Tambacounda</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">TAMBACOUNDA</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">Av Leopold Senghor</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">33 981 12 17</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
-            </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
-            duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
-            </button>
-        </div>
-
-
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
-            <img src="{{ asset("images/hpd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]">
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hopital Régional Tambacounda</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">TAMBACOUNDA</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">Av Leopold Senghor</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">33 981 12 17</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
-            </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
-            duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
-            </button>
-        </div>
-
-
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
-            <img src="{{ asset("images/hpd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]">
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hopital Régional Tambacounda</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">TAMBACOUNDA</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">Av Leopold Senghor</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">33 981 12 17</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
-            </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
-            duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
-            </button>
-        </div>
-
-
-        <div class="min-h-[300px] bg-white rounded-xl shadow-md overflow-hidden pt-4 pb-6 px-6">
-            <img src="{{ asset("images/hpd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]">
-            <div class="mb-6">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-bold text-sm"> Hopital Régional Tambacounda</h3>
-                <p class="text-[small]"> Ville : <span class="text-gray-500">TAMBACOUNDA</span></p>
-                <p class="text-[small]"> Adresse : <span class="text-gray-500">Av Leopold Senghor</span></p>
-                <p class="text-[small]"> Tel : <span class="text-gray-500">33 981 12 17</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500">Abdoulaye Sow</span></p>
-            </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-[small] hover:bg-[#38cb6e] transition
-            duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
-            </button>
-        </div>
     </section>
 
 @endsection

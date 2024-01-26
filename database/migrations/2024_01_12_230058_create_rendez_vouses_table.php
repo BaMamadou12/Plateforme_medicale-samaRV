@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('rendez_vouses', function (Blueprint $table) {
             $table->id();
-            $table->date('heure');
-            $table->string('statut');
+            $table->string('heure');
+            $table->string('statut')->default('encours');
+            $table->date('date');
             $table->unsignedBigInteger('id_patient');
             $table->unsignedBigInteger('id_medecin');
 

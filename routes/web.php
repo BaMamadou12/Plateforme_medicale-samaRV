@@ -35,6 +35,12 @@ Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 
 Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
+Route::post('/rv_today',[RendezvousController::class,'rvtoday']);
+
+Route::post('/rv_apres',[RendezvousController::class,'rvapres'])->name('rv_apres');
+Route::post('/rv_demain', [RendezvousController::class, 'rvdemain'])->name('rv_demain');
+
+
 
 //route pour l'admin
 Route::get('/admin', [AdminController::class ,'admin'])->name('admin');

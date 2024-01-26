@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @extends("layout")
 
 @section("section")
@@ -46,12 +46,9 @@
             <div class="w-[47%] mb-8">
                 <div class="flex flex-col">
                     <label for="sexe" class="mb-2 text-[small]"> Sexe : </label>
-                    <select name="sexe" id="sexe" class="bg-green-50 grow px-4
+                    <select name="sexe" id="sexe" value="{{@old('sexe')}}" class="bg-green-50 grow px-4
                     py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
-                    <label for="prenom" class="mb-2 text-[small]"> Sexe : </label>
-                    <select name="sexe" id=""  value="{{ @old('sexe') }}" class="bg-gray-100 grow px-4
-                    py-1.5 rounded border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                         <option value="M">Masculin</option>
                         <option value="F">Féminin</option>
                     </select>
@@ -196,5 +193,4 @@
 
 @endsection
 
-=======
->>>>>>> f659ba0395cd14c19e65fcc1c0c596c166d4c9b0
+
