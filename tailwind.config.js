@@ -11,7 +11,19 @@ export default {
             'verdana':['Verdana', 'serif'],
             'copp': ['Copperplate Gothic', 'serif']
         },
-        extend: {},
+        extend: {
+            zIndex: {
+                '900': '900',
+                '800': '800',
+                '700': '700',
+                '600': '600',
+                '500': '500',
+                '400': '400',
+                '300': '300',
+                '200': '200',
+                '100': '100',
+            }
+        },
     },
     plugins: [],
 }

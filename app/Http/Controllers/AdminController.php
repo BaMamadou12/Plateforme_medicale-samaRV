@@ -12,6 +12,6 @@ class AdminController extends Controller
 
     public function admin():View{
 
-        return view('admin.dashboard');
+        return view('admin.table_medecin');
     }
 }

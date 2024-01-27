@@ -1,4 +1,19 @@
-// Messages éphémères
+//changer la position du header en position statique
+
+document.onscroll = function (e){
+    if(scrollY > 30){
+        document.querySelector('header').classList.add('fixed', 'top-0', 'z-900', );
+        document.querySelector('header').classList.replace("shadow-sm", 'shadow-xl');
+        document.querySelector('body').classList.add("pt-32")
+    }else if(scrollY < 5){
+        document.querySelector('header').classList.remove('fixed', 'top-0', 'z-900', );
+        document.querySelector('header').classList.replace('shadow-xl', "shadow-sm");
+        document.querySelector('body').classList.remove("pt-32")
+
+    }
+}
+
+// Messages éphémères : le message disparait après 5 seconds
 closer = document.querySelector("#closer")
 main = document.querySelector("main")
 

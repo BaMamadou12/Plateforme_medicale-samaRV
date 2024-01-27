@@ -1,4 +1,17 @@
-<header class="px-12 py-1.5 bg-white flex items-center justify-between w-full ">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{--    <link rel="stylesheet" href="{{asset("css/style.css")}}">--}}
+    @vite('resources/css/app.css')
+    <title>Plateforme De Prise De rendez-vous </title>
+</head>
+<body class="bg-green-50 font-verdana text-gray-600 ">
+<header class="px-12 py-1.5 bg-white flex items-center justify-between w-full text-sm transition-all ease-in-out
+duration-200 shadow-sm">
     <div class="logoSante">
         <a href=""  class="flex items-center">
             <img src="{{asset("images/logo_sante.png")}}" class="w-16 mr-0.5" alt="logo santé">
@@ -67,29 +80,6 @@
             hover:text-gray-600 transition duration-800 hover:ease">
                 Déconnexion
             </a>
-
-<<<<<<< HEAD
-            <a href="{{route("login")}}" class="inline-block px-6 py-1.5 rounded-lg hover:bg-green-50
-             transition duration-800 hover:ease">
-                Connexion
-            </a>
-            <a href="{{route("register")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
-            rounded-lg hover:bg-green-200
-            hover:text-gray-600 transition duration-800 hover:ease">
-                Inscription
-            </a>
-        @else
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-                <button type="submit">
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Se déconnecter
-                    </a>
-                </button>
-            </form>
-=======
->>>>>>> 521125f680b36ec04fe84e8e7e72fe1be5227caf
-
             <a href="{{route("patient")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
                 rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
                 {{ auth()->user()->prenom   }}
