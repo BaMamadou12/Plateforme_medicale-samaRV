@@ -9,4 +9,10 @@ class ConsultationController extends Controller
     public function index(){
         return view("medecin.consultation");
     }
+
+
+    public function consultation(Request $request){
+
+
+    }
 }

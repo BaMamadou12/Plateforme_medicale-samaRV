@@ -10,6 +10,7 @@
             @csrf
 
 {{--            PARTIE SYMPTOMES--}}
+
             <div class="w-[100%] mb-8" >
                 <div class="flex flex-col">
                     <div class="mb-3 flex items-center gap-4">

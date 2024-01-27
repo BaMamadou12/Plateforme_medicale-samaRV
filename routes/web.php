@@ -24,7 +24,7 @@ Route::get('/apropos', [AproposController::class ,'apropos'])->name('apropos');
 
 Route::get('/login', [LoginController::class ,'login'])->name('login');
 Route::post('/login',[LoginController::class , 'authenticate'])->name('authenticate');
-Route::post('/logout',[LoginController::class , 'logout'])->name('logout');
+Route::get('/logout',[LoginController::class , 'logout'])->name('logout');
 
 
 Route::get('/register', [RegisterController::class ,'register'])->name('register');
@@ -46,6 +46,7 @@ Route::post('/rv_demain', [RendezvousController::class, 'rvdemain'])->name('rv_d
 Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
 
 Route::get('/consultation', [ConsultationController::class ,'index'])->name('consultation');
+Route::post('/consultation',[ConsultationController::class,'consultation'])->name('consultation');
 
 //route de deconnexion
 
