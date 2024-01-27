@@ -60,8 +60,15 @@
     </nav>
 
     <div>
-        @if(! auth()->check())
+        @if(auth()->check())
 
+            <a href="{{route("logout")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
+            rounded-lg hover:bg-green-200
+            hover:text-gray-600 transition duration-800 hover:ease">
+                Déconnexion
+            </a>
+
+<<<<<<< HEAD
             <a href="{{route("login")}}" class="inline-block px-6 py-1.5 rounded-lg hover:bg-green-50
              transition duration-800 hover:ease">
                 Connexion
@@ -80,6 +87,8 @@
                     </a>
                 </button>
             </form>
+=======
+>>>>>>> 521125f680b36ec04fe84e8e7e72fe1be5227caf
 
             <a href="{{route("patient")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
                 rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
@@ -87,6 +96,16 @@
                 {{auth()->user()->nom}}
             </a>
 
+        @else
+            <a href="{{route("login")}}" class="inline-block px-6 py-1.5 rounded-lg hover:bg-green-50
+             transition duration-800 hover:ease">
+                Connexion
+            </a>
+            <a href="{{route("register")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
+            rounded-lg hover:bg-green-200
+            hover:text-gray-600 transition duration-800 hover:ease">
+                Inscription
+            </a>
         @endif
 
     </div>
