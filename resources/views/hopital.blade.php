@@ -1,8 +1,8 @@
 @extends("layout")
 
 @section("section")
-    <div>
         <div class="w-full  flex justify-center items-center flex-col">
+
             <div class="mt-12">
                 <svg enable-background="new 0 0 512 512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
                      class="w-16" >
@@ -18,6 +18,7 @@
                     <path d="m329.803 20.062h-284.037c-3.976 0-7.2 3.224-7.2 7.2v16.99c0 4.697 3.808 8.505 8.505 8.505h281.427c4.697 0 8.505-3.808 8.505-8.505v-16.99c0-3.977-3.224-7.2-7.2-7.2z" fill="#95aaad"/>
                 </svg>
             </div>
+
             <div class="flex items-center">
                 <h1 class="text-3xl font-bold font-kanit italic tracking-wide mb-6 mt-2
                 px-4 py-2">
@@ -25,23 +26,64 @@
                 </h1>
                 <img src="{{ asset("images/sn.jpg") }}" alt="" class="w-10 rounded relative right-1 top-[-7px] ">
             </div>
+
             <div class="w-1/2 mb-12">
-                <form action="" class="w-full relative" >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                         class="w-6 h-6 absolute left-3 top-3">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                    </svg>
+                <form action="#" class="w-full relative mb-3" method="get" >
                     <input type="text" name="" id="" placeholder="Recherche rapide"
-                           class="px-4 py-3 w-full rounded-lg pl-10 bg-gray-50 outline-none border
+                           class="px-4 py-3 w-full rounded-lg pl-10 bg-[#fbfcfc] outline-none border
                            focus:border-green-300 text-sm shadow-sm shadow-green-100">
+
+                    <button class="absolute left-3 top-3" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                             class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                    </button>
                 </form>
+
+                <div class="flex mt-8 gap-2 items-center justify-center">
+                    <h3 class="flex items-center gap-2 mr-4 font-kanit px-2 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3 h-3">
+                            <path d="M14 2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2.172a2 2 0 0 0 .586 1.414l2.828 2.828A2 2 0 0 1 6 9.828v4.363a.5.5 0 0 0 .724.447l2.17-1.085A2 2 0 0 0 10 11.763V9.829a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 0 14 4.172V2Z" />
+                        </svg>
+                        filtrage :
+                    </h3>
+                    <form action="" method="get" id="filter" >
+                        <select name="" id="" onchange="f()" class="px-4 py-1.5 rounded bg-green-100 text-xs">
+                            <option value="">Filtrer par région</option>
+                            <option value="Dakar">Dakar</option>
+                            <option value="Thies">Thies</option>
+                            <option value="Diourbel">Diourbel</option>
+                            <option value="Louga">Louga</option>
+                            <option value="Saint-Louis">Saint Louis</option>
+                            <option value="Fatick">Fatick</option>
+                            <option value="Kaolack">Kaolack</option>
+                            <option value="Kaffrine">Kaffrine</option>
+                            <option value="Ziguinchor">Ziguinchor</option>
+                            <option value="Kolda">Kolda</option>
+                            <option value="Sedhiou">Sedhiou</option>
+                            <option value="Matam">Matam</option>
+                            <option value="Tambacounda">Tambacounda</option>
+                            <option value="Kédougou">Kédougou</option>
+                        </select>
+                    </form>
+                    <form action="" method="get">
+                        <button type="submit" class="px-4 py-1.5 rounded bg-green-100 text-xs">par nom</button>
+                    </form>
+                    <form action="">
+                        <button type="submit" class="px-4 py-1.5 rounded bg-green-100 text-xs">par ville</button>
+                    </form>
+                </div>
             </div>
         </div>
+
+
+    <div class="bg-green-100">
+
     </div>
     <section class="w-[80%]  min-h-[100vh] mx-auto p-4 grid gap-6 grid-cols-3 grid-rows-3 ">
 
         {{-- debut  de la liste des hopitaux--}}
-
         @foreach($request as $info)
         <div class="min-h-[300px] bg-[#fefefe] rounded-xl shadow-md overflow-hidden pt-2 pb-4 px-3">
             <img src="{{ asset("images/hdd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]" >
@@ -54,7 +96,7 @@
                 <p class="text-[small]"> Tel : <span class="text-gray-500 text-[small]">{{$info->telephone}}</span></p>
                 <p class="text-[small]"> Médecin : <span class="text-gray-500 text-[small]">Abdoulaye Sow</span></p>
             </div>
-            <button class="px-4 py-1.5 bg-green-500 rounded-lg text-xs hover:bg-[#38cb6e] transition
+            <button class="px-4 py-1.5 bg-green-200 rounded-lg text-xs hover:bg-green-300 transition
             duration-100 ease-in-out">
                 <a href="{{route("rv")}}">Prenez Rendez-vous</a>
             </button>

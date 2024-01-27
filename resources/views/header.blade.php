@@ -62,15 +62,15 @@
     <div>
         @if(! auth()->check())
 
-        <a href="{{route("login")}}" class="inline-block px-6 py-1.5 rounded-lg hover:bg-green-50
-         transition duration-800 hover:ease">
-            Connexion
-        </a>
-        <a href="{{route("register")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
-        rounded-lg hover:bg-green-200
-        hover:text-gray-600 transition duration-800 hover:ease">
-            Inscription
-        </a>
+            <a href="{{route("login")}}" class="inline-block px-6 py-1.5 rounded-lg hover:bg-green-50
+             transition duration-800 hover:ease">
+                Connexion
+            </a>
+            <a href="{{route("register")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
+            rounded-lg hover:bg-green-200
+            hover:text-gray-600 transition duration-800 hover:ease">
+                Inscription
+            </a>
         @else
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

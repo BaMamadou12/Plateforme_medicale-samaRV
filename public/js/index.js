@@ -105,5 +105,11 @@ function reorganize (){
 }
 
 
+// filtrer par region
+function f(){
+    document.getElementById("filter").submit();
+}
+
+
 
 

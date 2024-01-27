@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .op{
     width: 100%;
     height: 100%;
@@ -19,3 +20,8 @@
     position: absolute;
     object-fit: cover;
 }
+
+#filter select option:hover{
+    background: #dcfce7;
+}
+
