@@ -128,6 +128,6 @@ class RendezvousController extends Controller
 
     // la methode qui permet de retourner la vue des rendez-vous
     public function rv():View{
-        return view("rv");
+        return view("patient.rv");
     }
 }

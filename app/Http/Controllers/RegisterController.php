@@ -15,7 +15,7 @@ class RegisterController extends Controller
     }
 
   public function register(){
-      return view('register');
+      return view('auth.register');
   }
     public function validateInscription(Request $request)
     {
@@ -39,7 +39,7 @@ class RegisterController extends Controller
         //authentifier le user
         Auth::login($user);
 
-        return redirect()->route('login')->withSuccess('Inscription réussie');
+        return redirect()->route('auth.login')->withSuccess('Inscription réussie');
 
     }
 

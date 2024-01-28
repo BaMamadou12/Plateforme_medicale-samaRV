@@ -22,23 +22,23 @@ Route::get('/pharmacie', [PharmaciesController::class ,'pharmacie'])->name('phar
 
 Route::get('/apropos', [AproposController::class ,'apropos'])->name('apropos');
 
-Route::get('/login', [LoginController::class ,'login'])->name('login');
-Route::post('/login',[LoginController::class , 'authenticate'])->name('authenticate');
-Route::get('/logout',[LoginController::class , 'logout'])->name('logout');
+Route::get('/auth/login', [LoginController::class ,'login'])->name('login');
+Route::post('/auth/login',[LoginController::class , 'authenticate'])->name('authenticate');
+Route::get('/auth/logout',[LoginController::class , 'logout'])->name('logout');
 
 
-Route::get('/register', [RegisterController::class ,'register'])->name('register');
-Route::post('/register',[RegisterController::class,'validateInscription']);
+Route::get('/auth/register', [RegisterController::class ,'register'])->name('register');
+Route::post('/auth/register',[RegisterController::class,'validateInscription']);
 
 Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 
-Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
-Route::post('/rv_today',[RendezvousController::class,'rvtoday']);
+Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
+Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday']);
 
-Route::post('/rv_apres',[RendezvousController::class,'rvapres'])->name('rv_apres');
-Route::post('/rv_demain', [RendezvousController::class, 'rvdemain'])->name('rv_demain');
+Route::post('/patient/rv_apres',[RendezvousController::class,'rvapres'])->name('rv_apres');
+Route::post('/patient/rv_demain', [RendezvousController::class, 'rvdemain'])->name('rv_demain');
 
 
 

@@ -3,16 +3,15 @@
 document.onscroll = function (e){
     console.log("header");
     if(scrollY > 30){
-        document.querySelector('header').classList.add('fixed', 'top-0', 'z-900', );
-        document.querySelector('header').classList.replace("shadow-sm", 'shadow-xl');
-        document.querySelector('body').classList.add("pt-32")
+        document.querySelector('header').classList.add("nav");
+        document.querySelector('body').style = "padding-top:32;";
     }else if(scrollY < 5){
-        document.querySelector('header').classList.remove('fixed', 'top-0', 'z-900', );
-        document.querySelector('header').classList.replace('shadow-xl', "shadow-sm");
-        document.querySelector('body').classList.remove("pt-32")
-
+        
+        document.querySelector('header').classList.remove("nav");
+        document.querySelector('body').style = "";
     }
 }
+
 
 // Messages éphémères : le message disparait après 5 seconds
 closer = document.querySelector("#closer")
