@@ -47,6 +47,7 @@ Route::post('/rv_demain', [RendezvousController::class, 'rvdemain'])->name('rv_d
 Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
 Route::get('/admin/table_patient', [AdminController::class ,'admin'])->name('table_patient');
 
+
 Route::get('/consultation', [ConsultationController::class ,'index'])->name('consultation');
 Route::post('/consultation',[ConsultationController::class,'consultation'])->name('consultation');
 
