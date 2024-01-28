@@ -1,6 +1,7 @@
 //changer la position du header en position statique
 
 document.onscroll = function (e){
+    console.log("header");
     if(scrollY > 30){
         document.querySelector('header').classList.add('fixed', 'top-0', 'z-900', );
         document.querySelector('header').classList.replace("shadow-sm", 'shadow-xl');
