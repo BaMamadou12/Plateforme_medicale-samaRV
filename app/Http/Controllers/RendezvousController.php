@@ -17,6 +17,7 @@ class RendezvousController extends Controller
         $date = DateTime::createFromFormat('d/m/Y', date("d/m/Y"));
         $date_mysql = $date->format('Y-m-d');
 
+        $id_medecin = $request->id_medecin;
 
         if (($matin == 'on' && $soir == 'on') || ($matin == null && $soir == null)){
 
@@ -31,7 +32,7 @@ class RendezvousController extends Controller
                 RendezVous::create([
                     'heure' => $heure,
                     'id_patient' =>auth()->user()->getAuthIdentifier(),
-                    'id_medecin' => 1,
+                    'id_medecin' => $id_medecin,
                     'date'=>$date_mysql,
                 ]);
 
@@ -57,6 +58,7 @@ class RendezvousController extends Controller
         $date_demain=$date->modify('+ 1 day');
         $date_mysql = $date_demain->format('Y-m-d');
 
+        $id_medecin = $request->id_medecin;
 
         if (($matin == 'on' && $soir == 'on') || ($matin == null && $soir == null)){
 
@@ -71,7 +73,7 @@ class RendezvousController extends Controller
                 RendezVous::create([
                     'heure' => $heure,
                     'id_patient' => auth()->user()->getAuthIdentifier(),
-                    'id_medecin' => 1,
+                    'id_medecin' =>$id_medecin,
                     'date'=>$date_mysql,
                 ]);
 
@@ -96,6 +98,7 @@ class RendezvousController extends Controller
         $date_apresdemain=$date->modify('+ 2 day');
         $date_mysql = $date_apresdemain->format('Y-m-d');
 
+        $id_medecin = $request->id_medecin;
 
         if (($matin == 'on' && $soir == 'on') || ($matin == null && $soir == null)){
 
@@ -110,7 +113,7 @@ class RendezvousController extends Controller
                 RendezVous::create([
                     'heure' => $heure,
                     'id_patient' => auth()->user()->getAuthIdentifier(),
-                    'id_medecin' => 1,
+                    'id_medecin' => $id_medecin,
                     'date'=>$date_mysql,
                 ]);
 
@@ -127,7 +130,13 @@ class RendezvousController extends Controller
 
 
     // la methode qui permet de retourner la vue des rendez-vous
+<<<<<<< HEAD
     public function rv():View{
         return view("patient.rv");
+=======
+    public function rv(Request $request):View{
+        $id_medecin=$request->id_medecin;
+        return view("rv",compact('id_medecin'));
+>>>>>>> 74fb2bb24874cf6c68c73aca22bcec90264fefbb
     }
 }

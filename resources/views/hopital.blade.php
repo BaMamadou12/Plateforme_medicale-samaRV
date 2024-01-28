@@ -98,7 +98,8 @@
             </div>
             <button class="px-4 py-1.5 bg-green-200 rounded-lg text-xs hover:bg-green-300 transition
             duration-100 ease-in-out">
-                <a href="{{route("rv")}}">Prenez Rendez-vous</a>
+                <?php $id_medecin=$info->medecin->id ?>
+                <a href="{{route("rv",compact('id_medecin'))}}">Prenez Rendez-vous</a>
             </button>
         </div>
         @endforeach
