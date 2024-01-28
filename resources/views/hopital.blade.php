@@ -94,7 +94,7 @@
                 <p class="text-[small]"> Adresse : <span class="text-gray-500
                 text-[small]">{{$info->adresse}}</span></p>
                 <p class="text-[small]"> Tel : <span class="text-gray-500 text-[small]">{{$info->telephone}}</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500 text-[small]">Abdoulaye Sow</span></p>
+                <p class="text-[small]"> Médecin : <span class="text-gray-500 text-[small]">{{ $info->medecin->prenom }}  {{ $info->medecin->nom }}</span></p>
             </div>
             <button class="px-4 py-1.5 bg-green-200 rounded-lg text-xs hover:bg-green-300 transition
             duration-100 ease-in-out">

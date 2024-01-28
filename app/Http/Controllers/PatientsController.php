@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patient;
+use App\Models\RendezVous;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class PatientsController extends Controller
@@ -14,6 +18,9 @@ class PatientsController extends Controller
     }
     public  function patient():View{
 
-        return  view('patient.dashboard');
+$user =Auth::user();
+$info_rv =  $user->rendezvous()->with('medecin.hopital')->get();
+
+        return  view('patient.dashboard',compact('info_rv'));
     }
 }

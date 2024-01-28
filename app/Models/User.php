@@ -49,4 +49,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function rendezvous(){
+
+        return $this->hasMany('App\Models\RendezVous','id_patient','id');
+    }
 }

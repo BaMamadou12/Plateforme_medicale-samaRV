@@ -16,4 +16,8 @@ class Hopital extends Model
         'ville'
     ];
     use HasFactory;
+    public function medecin(){
+
+        return $this->belongsTo('App\Models\Medecin','id_medecin','id');
+    }
 }

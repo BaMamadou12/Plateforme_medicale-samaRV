@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class HopitalsController extends Controller
 {
     public function hopital( Request $request):View{
-        $request=Hopital::all();
+        $request=Hopital::with('medecin')->get();
         return view("hopital",compact('request'));
     }
 }

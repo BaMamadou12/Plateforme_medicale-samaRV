@@ -30,7 +30,7 @@ class RendezvousController extends Controller
 
                 RendezVous::create([
                     'heure' => $heure,
-                    'id_patient' => 1,
+                    'id_patient' =>auth()->user()->getAuthIdentifier(),
                     'id_medecin' => 1,
                     'date'=>$date_mysql,
                 ]);
@@ -70,7 +70,7 @@ class RendezvousController extends Controller
 
                 RendezVous::create([
                     'heure' => $heure,
-                    'id_patient' => 1,
+                    'id_patient' => auth()->user()->getAuthIdentifier(),
                     'id_medecin' => 1,
                     'date'=>$date_mysql,
                 ]);
@@ -109,7 +109,7 @@ class RendezvousController extends Controller
 
                 RendezVous::create([
                     'heure' => $heure,
-                    'id_patient' => 1,
+                    'id_patient' => auth()->user()->getAuthIdentifier(),
                     'id_medecin' => 1,
                     'date'=>$date_mysql,
                 ]);
