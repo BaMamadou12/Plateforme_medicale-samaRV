@@ -20,7 +20,7 @@
                              a été bien pris en compte
                          </p>
                          <p>RV N° : <span class="font-semibold font-kanit tracking-widest">{{ $info->id }}</span></p>
-                         <p>Médecin : <span class="font-semibold font-kanit tracking-widest">{{ $info->medecin->nom }}</span></p>
+                         <p>Médecin : <span class="font-semibold font-kanit tracking-widest">{{ $info->medecin->prenom }} {{ $info->medecin->nom }}</span></p>
                          <p>
                              Heure de consultation : <span class="font-semibold font-kanit tracking-widest">{{ $info->date }}  / {{ $info->heure }}</span>
                          </p>

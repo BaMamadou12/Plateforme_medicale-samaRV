@@ -1,8 +1,9 @@
+
 @extends('layout')
 
 @section('section')
     <section class="w-8/12 mx-auto mb-10">
-        <?php   $url=route('rv_demain');?>
+        <?php   ;?>
 
         <div>
             {{-- Gerer les messages de retour apres la saisi des rv --}}
@@ -60,8 +61,9 @@
                     <h1 class="text-xl font-bold font-kanit">Les Horaires : </h1>
                     <p class="text-[small]">Sur quel interval aimeriez vous prendre un RV ? </p>
                 </div>
-                <form action="{{'rv_today'}}" method="post">
+                <form action="{{route('rv_today',compact('id_medecin'))}}" method="post">
                     @csrf
+                    <input type="hidden" name="id_medecin" value="{{ $id_medecin }}">
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="matin">Matin : 8h 00 - 14h 00 </label>
                         <input type="radio" name="matin" id="matin"  class="w-4">
@@ -95,8 +97,11 @@
                 </div>
 
 
-                <form action="{{$url}}" method="post">
-                    @csrf
+                <form action="{{ route('rv_demain', compact('id_medecin')) }}" method="post">
+
+                @csrf
+                    <input type="hidden" name="id_medecin" value="{{ $id_medecin }}">
+
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="matin">Matin : 8h 00 - 14h 00 </label>
                         <input type="radio" name="matin" id="matin"  class="w-4">
@@ -125,8 +130,9 @@
                     <h1 class="text-xl font-bold font-kanit">Les Horaires : </h1>
                     <p class="text-[small]">Sur quel interval aimeriez vous prendre un RV ? </p>
                 </div>
-                <form action=" {{route('rv_apres')}}" method="post">
+                <form action=" {{route('rv_apres',compact('id_medecin'))}}" method="post">
                     @csrf
+                    <input type="hidden" name="id_medecin" value="{{ $id_medecin }}">
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="matin">Matin : 8h 00 - 14h 00 </label>
                         <input type="radio" name="matin" id="matin"  class="w-4">
