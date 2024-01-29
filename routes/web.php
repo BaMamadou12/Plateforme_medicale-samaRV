@@ -34,14 +34,9 @@ Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 
-<<<<<<< HEAD
-Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
-Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday']);
-=======
-Route::get('/rv', [RendezvousController::class ,'rv'])->name('rv');
-Route::post('/rv_today',[RendezvousController::class,'rvtoday'])->name('rv_today');
 
->>>>>>> 74fb2bb24874cf6c68c73aca22bcec90264fefbb
+Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
+Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday'])->name('rv_today');
 
 Route::post('/patient/rv_apres',[RendezvousController::class,'rvapres'])->name('rv_apres');
 Route::post('/patient/rv_demain', [RendezvousController::class, 'rvdemain'])->name('rv_demain');

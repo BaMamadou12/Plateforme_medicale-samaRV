@@ -39,7 +39,7 @@ class RegisterController extends Controller
         //authentifier le user
         Auth::login($user);
 
-        return redirect()->route('auth.login')->withSuccess('Inscription réussie');
+        return redirect()->route('login')->withSuccess('Inscription réussie');
 
     }
 

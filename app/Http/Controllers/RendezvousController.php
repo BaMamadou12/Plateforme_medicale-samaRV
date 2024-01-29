@@ -130,13 +130,9 @@ class RendezvousController extends Controller
 
 
     // la methode qui permet de retourner la vue des rendez-vous
-<<<<<<< HEAD
-    public function rv():View{
-        return view("patient.rv");
-=======
+
     public function rv(Request $request):View{
         $id_medecin=$request->id_medecin;
-        return view("rv",compact('id_medecin'));
->>>>>>> 74fb2bb24874cf6c68c73aca22bcec90264fefbb
+        return view("patient.rv",compact('id_medecin'));
     }
 }
