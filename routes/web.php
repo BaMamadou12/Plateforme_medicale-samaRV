@@ -38,6 +38,9 @@ Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
 Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday'])->name('rv_today');
 
+
+
+
 Route::post('/patient/rv_apres',[RendezvousController::class,'rvapres'])->name('rv_apres');
 Route::post('/patient/rv_demain', [RendezvousController::class, 'rvdemain'])->name('rv_demain');
 

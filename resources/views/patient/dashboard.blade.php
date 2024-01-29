@@ -9,7 +9,7 @@
              </h1>
 
              @foreach($info_rv as $info)
-                 <div class="relative bg-amber-200 rounded-xl p-6 text-[small] flex items-center gap-6">
+                 <div class="relative bg-amber-200 rounded-xl p-6 text-[small] flex items-center gap-6 mb-4">
                      <!-- ... -->
                      <div>
                          <img src="{{ asset("images/logo_rv.png") }}" alt="" class="w-[70px]">

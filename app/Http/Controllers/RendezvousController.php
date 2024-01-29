@@ -12,20 +12,20 @@ use Illuminate\View\View;
 class RendezvousController extends Controller
 {
     public function rvtoday(Request $request){
-        $soir = $request->input('soir');
-        $matin = $request->input('matin');
+        $heure = $request->input('crenaux');
+
         $date = DateTime::createFromFormat('d/m/Y', date("d/m/Y"));
         $date_mysql = $date->format('Y-m-d');
 
         $id_medecin = $request->id_medecin;
 
-        if (($matin == 'on' && $soir == 'on') || ($matin == null && $soir == null)){
+        if ($heure == null ){
 
             return back()->with('errors','Vous devez faire un choix de creneau avant de valider votre rendez-vous');
 
         } else {
 
-            $heure = ($matin == 'on') ? 'matin' : 'soir';
+
             $nombre = RendezVous::whereDate('date', Carbon::today())->count();
             if ($nombre <=30 ){
 
@@ -52,21 +52,21 @@ class RendezvousController extends Controller
 
     public function rvdemain(Request $request): \Illuminate\Http\RedirectResponse
     {
-        $soir = $request->input('soir');
-        $matin = $request->input('matin');
+
+        $heure= $request->input('crenaux');
         $date = DateTime::createFromFormat('d/m/Y', date("d/m/Y"));
         $date_demain=$date->modify('+ 1 day');
         $date_mysql = $date_demain->format('Y-m-d');
 
         $id_medecin = $request->id_medecin;
 
-        if (($matin == 'on' && $soir == 'on') || ($matin == null && $soir == null)){
+        if ($heure == null){
 
             return back()->with('errors','Vous devez faire un choix de creneau avant de valider votre rendez-vous');
 
         } else {
 
-            $heure = ($matin == 'on') ? 'matin' : 'soir';
+
             $nombre = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(1))->count();
             if ($nombre <=30 ){
 
@@ -92,21 +92,20 @@ class RendezvousController extends Controller
     //methode pour gerer les rendez-vous d'apres demain
     public function rvapres(Request $request){
 
-        $soir = $request->input('soir');
-        $matin = $request->input('matin');
+
+        $heure = $request->input('crenaux');
         $date = DateTime::createFromFormat('d/m/Y', date("d/m/Y"));
         $date_apresdemain=$date->modify('+ 2 day');
         $date_mysql = $date_apresdemain->format('Y-m-d');
 
         $id_medecin = $request->id_medecin;
 
-        if (($matin == 'on' && $soir == 'on') || ($matin == null && $soir == null)){
+        if ($heure == null){
 
             return back()->with('errors','Vous devez faire un choix de creneau avant de valider votre rendez-vous');
 
         } else {
 
-            $heure = ($matin == 'on') ? 'matin' : 'soir';
             $nombre = RendezVous::whereDate('date', Carbon::today())->count();
             if ($nombre <=30 ){
 
@@ -134,5 +133,6 @@ class RendezvousController extends Controller
     public function rv(Request $request):View{
         $id_medecin=$request->id_medecin;
         return view("patient.rv",compact('id_medecin'));
+
     }
 }

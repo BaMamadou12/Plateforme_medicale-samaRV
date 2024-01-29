@@ -71,11 +71,13 @@
                     <input type="hidden" name="id_medecin" value="{{ $id_medecin }}">
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="matin">Matin : 8h 00 - 14h 00 </label>
-                        <input type="radio" name="matin" id="matin" class="w-4">
+                        {{-- <input type="radio" name="matin" id="matin" class="w-4"> --}}
+                        <input type="radio" name="crenaux" value="matin"  id="matin"  class="w-4">
+
                     </div>
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="soir">Soir : 15h 00 - 17h 00</label>
-                        <input type="radio" name="soir" id="soir" class="w-4">
+                        <input type="radio" name="crenaux"  value="soir"  id="soir" class="w-4">
                     </div>
 
                     <button type="submit"
@@ -111,11 +113,11 @@
 
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="matin">Matin : 8h 00 - 14h 00 </label>
-                        <input type="radio" name="matin" id="matin" class="w-4">
+                        <input type="radio" name="crenaux"  value="matin" id="matin"  class="w-4">
                     </div>
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="soir">Soir : 15h 00 - 17h 00</label>
-                        <input type="radio" name="soir" id="soir" class="w-4">
+                        <input type="radio" name="crenaux" value="soir"  id="soir" class="w-4">
                     </div>
 
                     <button type="submit"
@@ -144,11 +146,11 @@
                     <input type="hidden" name="id_medecin" value="{{ $id_medecin }}">
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="matin">Matin : 8h 00 - 14h 00 </label>
-                        <input type="radio" name="matin" id="matin" class="w-4">
+                        <input type="radio" name="crenaux" value="matin" id="matin"  class="w-4">
                     </div>
                     <div class="w-full flex justify-between py-3 px-4 bg-green-50 rounded-lg mb-4">
                         <label for="soir">Soir : 15h 00 - 17h 00</label>
-                        <input type="radio" name="soir" id="soir" class="w-4">
+                        <input type="radio" name="crenaux" value="soir" id="soir" class="w-4">
                     </div>
 
                     <button type="submit"
