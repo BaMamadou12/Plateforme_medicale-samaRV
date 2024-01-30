@@ -1,12 +1,10 @@
 //changer la position du header en position statique
 
 document.onscroll = function (e){
-    console.log("header");
-    if(scrollY > 30){
+    if(scrollY > 20){
         document.querySelector('header').classList.add("nav");
-        document.querySelector('body').style = "padding-top:32;";
+        document.querySelector('body').style = "padding-top: 88px;";
     }else if(scrollY < 5){
-        
         document.querySelector('header').classList.remove("nav");
         document.querySelector('body').style = "";
     }

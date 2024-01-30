@@ -48,7 +48,7 @@ Route::post('/patient/rv_demain', [RendezvousController::class, 'rvdemain'])->na
 
 //route pour l'admin
 Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
-Route::get('/admin/table_patient', [AdminController::class ,'admin'])->name('table_patient');
+
 
 
 Route::get('/consultation', [ConsultationController::class ,'index'])->name('consultation');

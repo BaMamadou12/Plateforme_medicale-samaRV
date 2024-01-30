@@ -5,7 +5,7 @@
     <section class="min-h-full w-7/12 mx-auto relative p-8 flex justify-center  bg-green-100 rounded-lg flex-col
     my-12 ">
 
-        <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Formulaire d'inscription</h1>
+        <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Formulaire d'ajout d'un medecin</h1>
         <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
             @csrf
 
@@ -191,5 +191,3 @@
     </section>
 
 @endsection
-
-

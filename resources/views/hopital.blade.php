@@ -88,8 +88,9 @@
         <div class="min-h-[300px] bg-[#fefefe] rounded-xl shadow-md overflow-hidden pt-2 pb-4 px-3">
             <img src="{{ asset("images/hdd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]" >
             <div class="mb-4">
-                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-semibold  italic font-kanit">
-                    {{$info->nom}}</h3>
+                <h3 class="mb-2 px-2 border-l-4 border-green-600 font-medium  italic font-kanit">
+                    {{$info->nom}}
+                </h3>
                 <p class="text-[small]"> Ville : <span class="text-gray-500 text-[small]">{{$info->ville}}</span></p>
                 <p class="text-[small]"> Adresse : <span class="text-gray-500
                 text-[small]">{{$info->adresse}}</span></p>
