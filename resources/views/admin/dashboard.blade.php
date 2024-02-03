@@ -48,7 +48,7 @@
                     </form>
                 </div>
 
-                <a href=""  class="px-4 py-1 text-xs bg-green-300 rounded-md">ajouter un medecin</a>
+                <a href="{{route("admin.medecin")}}"  class="px-4 py-1 text-xs bg-green-300 rounded-md">ajouter un medecin</a>
 
             </div>
     
