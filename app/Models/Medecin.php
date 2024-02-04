@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Medecin extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nom',
+        'email',
+        'password',
+        'prenom',
+        'telephone',
+        'disponibilite',
+        'specialite',
+
+    ];
 
     public function hopital(): \Illuminate\Database\Eloquent\Relations\HasOne
     {

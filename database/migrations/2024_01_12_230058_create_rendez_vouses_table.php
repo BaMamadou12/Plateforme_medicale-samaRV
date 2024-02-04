@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('heure');
             $table->string('statut')->default('encours');
             $table->date('date');
+            $table->integer('rang')->default(0);
             $table->unsignedBigInteger('id_patient');
             $table->unsignedBigInteger('id_medecin');
 

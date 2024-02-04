@@ -6,7 +6,7 @@
     my-12 ">
 
         <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Formulaire d'ajout d'un médecin</h1>
-        <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
+        <form action="{{route('admin.addmedecin')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
             @csrf
 
             <div class="w-[47%] mb-8" >
@@ -19,7 +19,7 @@
                 </div>
                 @error('nom')
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre nom</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez son nom</div>
 
                 @enderror
 
@@ -36,7 +36,7 @@
                 </div>
                 @error('prenom')
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez son prénom</div>
 
                 @enderror
 
@@ -46,21 +46,19 @@
             <div class="w-[47%] mb-8">
                 <div class="flex flex-col">
 
-                    <label for="prenom" class="mb-2 text-[small]"> spécialié : </label>
-                    <input type="text" name="specialite" id="specialite" placeholder="Spécialité"  value="{{ @old('specialite')
-                     }}" class="bg-green-50 grow px-4
-                    py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
+                    <label for="specialite" class="mb-2 text-[small]"> spécialié : </label>
+                    <input type="text" name="specialite" id="specialite" placeholder="Spécialité"  value="{{ @old('specialite')}}" class="bg-green-50 grow px-4  py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
                 </div>
                 @error('specialite')
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez son prénom</div>
 
                 @enderror
 
             </div>
 
-            
+
 
             <div class="w-[47%] mb-8 ">
                 <div class="flex flex-col">
@@ -83,7 +81,7 @@
                 <div class="flex flex-col">
                     <label for="tel" class="mb-2 text-[small]"> téléphone : </label>
 
-                    <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{ @old('tel') }}"
+                    <input type="text" name="telephone" id="tel" placeholder="ex: 786211297"  value="{{ @old('telephone') }}"
                            class="bg-green-50 grow px-4
                     py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
@@ -133,24 +131,24 @@
             <div class="w-[47%] mb-8">
                 <div class="flex flex-col">
                     <label for="dispo" class="mb-2 text-[small]"> disponiblité : </label>
-                    <select name="disponibilite" id="dispo" value="{{@old('sexe')}}" class="bg-green-50 grow px-4
+                    <select name="disponibilite" id="dispo" value="{{@old('disponibilite')}}" class="bg-green-50 grow px-4
                     py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
-                        <option value="1">oui</option>
-                        <option value="0">non</option>
+                        <option value="oui">oui</option>
+                        <option value="non">non</option>
                     </select>
                 </div>
                 @error('disponibilite')
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez sa disponibilité</div>
 
                 @enderror
 
             </div>
 
-            
 
-            
+
+
 
             <div class="mt-4 w-full flex justify-center">
                 <button type="submit" class="px-8 py-3  rounded-lg bg-green-400 hover:bg-[#4DCF7D] transition duration-100 ease-in mb-4"> S'inscrire</button>

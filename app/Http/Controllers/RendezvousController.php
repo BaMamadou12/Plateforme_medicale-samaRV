@@ -19,6 +19,9 @@ class RendezvousController extends Controller
 
         $id_medecin = $request->id_medecin;
 
+
+
+
         if ($heure == null ){
 
             return back()->with('errors','Vous devez faire un choix de creneau avant de valider votre rendez-vous');
@@ -26,14 +29,18 @@ class RendezvousController extends Controller
         } else {
 
 
+
             $nombre = RendezVous::whereDate('date', Carbon::today())->count();
             if ($nombre <=30 ){
+                $nombre_rv_parjour = RendezVous::whereDate('date', Carbon::today())->count();
+                $rang = $nombre_rv_parjour + 1;
 
                 RendezVous::create([
                     'heure' => $heure,
                     'id_patient' =>auth()->user()->getAuthIdentifier(),
                     'id_medecin' => $id_medecin,
                     'date'=>$date_mysql,
+                    'rang'=>$rang,
                 ]);
 
                 return redirect()->route('rv')->with('success','Votre prise de rendez-vous est prise en compte ');
@@ -60,6 +67,7 @@ class RendezvousController extends Controller
 
         $id_medecin = $request->id_medecin;
 
+
         if ($heure == null){
 
             return back()->with('errors','Vous devez faire un choix de creneau avant de valider votre rendez-vous');
@@ -69,12 +77,14 @@ class RendezvousController extends Controller
 
             $nombre = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(1))->count();
             if ($nombre <=30 ){
-
+                $nombre_rv_parjour = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(1))->count();
+                $rang=$nombre_rv_parjour +1;
                 RendezVous::create([
                     'heure' => $heure,
                     'id_patient' => auth()->user()->getAuthIdentifier(),
                     'id_medecin' =>$id_medecin,
                     'date'=>$date_mysql,
+                    'rang'=>$rang,
                 ]);
 
                 return redirect()->route('rv')->with('success','Votre prise de rendez-vous est prise en compte ');
@@ -100,20 +110,23 @@ class RendezvousController extends Controller
 
         $id_medecin = $request->id_medecin;
 
+
         if ($heure == null){
 
             return back()->with('errors','Vous devez faire un choix de creneau avant de valider votre rendez-vous');
 
         } else {
 
-            $nombre = RendezVous::whereDate('date', Carbon::today())->count();
+            $nombre = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(2))->count();
             if ($nombre <=30 ){
-
+                $nombre_rv_par_jour = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(2))->count();
+                $rang=$nombre_rv_par_jour +1;
                 RendezVous::create([
                     'heure' => $heure,
                     'id_patient' => auth()->user()->getAuthIdentifier(),
                     'id_medecin' => $id_medecin,
                     'date'=>$date_mysql,
+                    'rang'=> $rang,
                 ]);
 
                 return redirect()->route('rv')->with('success','Votre prise de rendez-vous est prise en compte ');
