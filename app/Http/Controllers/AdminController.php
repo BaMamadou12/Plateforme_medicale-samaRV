@@ -62,7 +62,7 @@ class AdminController extends Controller
     }
 
     public function edit($id){
-        $hopital = Hopital::findOrFail(3);
+        $hopital = Hopital::findOrFail($id);
         return view("admin.edit_hopital", compact('hopital'));
     }
 
