@@ -49,6 +49,9 @@ Route::post('/patient/rv_demain', [RendezvousController::class, 'rvdemain'])->na
 //route pour l'admin
 Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
 Route::get('/admin/medecin', [AdminController::class ,'medecin'])->name('admin.medecin');
+Route::get('/admin/hopital', [AdminController::class ,'hopital'])->name('admin.hopital');
+Route::get('/admin/hopital/edit-{id}', [AdminController::class ,'edit'])->name('admin.hopital.edit');
+Route::put('/admin/hopital/update-{id}', [AdminController::class ,'update'])->name('admin.hopital.update');
 
 
 

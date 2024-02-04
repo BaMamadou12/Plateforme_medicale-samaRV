@@ -98,13 +98,13 @@
                     </form>
                 </div>
 
-                <a href=""  class="px-4 py-1 text-xs bg-green-300 rounded-md">ajouter un hopital</a>
+                <a href="{{route("admin.hopital")}}"  class="px-4 py-1 text-xs bg-green-300 rounded-md">ajouter un hopital</a>
 
             </div>
 
             <div class="mt-6 bg-white rounded text-sm overflow-hidden shadow-md">
                 
-                <div class="flex items-center bg-gray-100 px-4">
+                <div class="flex items-center bg-gray-100 px-4 text-[small]">
                     <span class="w-3/12 px-2 py-3">Nom</span>
                     <span class="w-2/12 px-2 py-3">Ville</span>
                     <span class="w-3/12 px-2 py-3">Adresse</span>
@@ -112,86 +112,25 @@
                     <span class="w-2/12 px-2 py-3">Action</span>
                 </div>
         
-                <div class="flex border-t border-gray-200 items-center px-4 py-3">
-                    
-                    <span class="w-3/12 px-2 py-1">Roi baudouin</span>
-                    <span class="w-2/12 px-2 py-1">Guediawaye</span>
-                    <span  class="w-3/12 px-2 py-1">Notaire</span>
-                    <span  class="w-3/12 px-2 py-1">Abdoulaye Touré</span>
-                    <div class="w-2/12 text-xs flex gap-4">
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
-                            </button>
-                        </form>
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
-                            </button>
-                        </form>
+                @foreach ($hopitals as $hopital)
+                    <div class="flex border-t border-gray-200 items-center px-4 py-3 text-[small]">
+                        <span class="w-3/12 px-2 py-1">{{$hopital->nom}}</span>
+                        <span class="w-2/12 px-2 py-1">{{$hopital->ville}}</span>
+                        <span  class="w-3/12 px-2 py-1">{{$hopital->adresse}}</span>
+                        <span  class="w-3/12 px-2 py-1">{{$hopital->medecin->prenom}} {{$hopital->medecin->nom}}</span>
+                        <div class="w-2/12 text-xs flex gap-2 justify-center items-center">
+                            <a href="{{ route("admin.hopital.edit", $hopital->id) }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
+                            <form action="">
+                                <button>
+                                    <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                @endforeach
 
                 
-                <div class="flex border-t border-gray-200 items-center px-4 py-3">
-                    
-                    <span class="w-3/12 px-2 py-1">Roi baudouin</span>
-                    <span class="w-2/12 px-2 py-1">Guediawaye</span>
-                    <span  class="w-3/12 px-2 py-1">Notaire</span>
-                    <span  class="w-3/12 px-2 py-1">Abdoulaye Touré</span>
-                    <div class="w-2/12 text-xs flex gap-4">
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
-                            </button>
-                        </form>
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="flex border-t border-gray-200 items-center px-4 py-3">
-                    
-                    <span class="w-3/12 px-2 py-1">Roi baudouin</span>
-                    <span class="w-2/12 px-2 py-1">Guediawaye</span>
-                    <span  class="w-3/12 px-2 py-1">Notaire</span>
-                    <span  class="w-3/12 px-2 py-1">Abdoulaye Touré</span>
-                    <div class="w-2/12 text-xs flex gap-4">
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
-                            </button>
-                        </form>
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="flex border-t border-gray-200 items-center px-4 py-3">
-                    
-                    <span class="w-3/12 px-2 py-1">Roi baudouin</span>
-                    <span class="w-2/12 px-2 py-1">Guediawaye</span>
-                    <span  class="w-3/12 px-2 py-1">Notaire</span>
-                    <span  class="w-3/12 px-2 py-1">Abdoulaye Touré</span>
-                    <div class="w-2/12 text-xs flex gap-4">
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
-                            </button>
-                        </form>
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                
 
 
         

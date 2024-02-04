@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('hopitals', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('adresse');
             $table->string('email');
+            $table->string('region');
             $table->string('ville');
+            $table->string('adresse');
             $table->string('telephone');
             $table->unsignedBigInteger('id_medecin');
             $table->timestamps();
