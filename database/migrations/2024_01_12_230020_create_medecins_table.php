@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('specialite');
+            $table->string('specialite')->default('docteur');
             $table->string('email');
             $table->string('telephone');
-            $table->string('disponibilite');
-            $table->string('role');
+            $table->string('disponibilite')->default('non');
+            $table->string('role')->default('medecin');
+            $table->string('password');
             $table->timestamps();
         });
     }

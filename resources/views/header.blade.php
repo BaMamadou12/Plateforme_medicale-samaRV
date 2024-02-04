@@ -69,7 +69,7 @@
         </nav>
 
         <div>
-            @if(auth()->check())
+            @if(auth()->check() )
 
                 <a href="{{route("patient")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
                     rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">

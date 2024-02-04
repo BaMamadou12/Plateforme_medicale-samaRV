@@ -35,6 +35,7 @@ Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 
 
+
 Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
 Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday'])->name('rv_today');
 
@@ -49,6 +50,7 @@ Route::post('/patient/rv_demain', [RendezvousController::class, 'rvdemain'])->na
 //route pour l'admin
 Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
 Route::get('/admin/medecin', [AdminController::class ,'medecin'])->name('admin.medecin');
+Route::post('/admin/medecin', [AdminController::class ,'addmedecin'])->name('admin.addmedecin');
 
 
 
