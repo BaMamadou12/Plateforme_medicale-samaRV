@@ -46,7 +46,7 @@ return [
         ],
         'medecin' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'medecins',
         ],
     ],
 

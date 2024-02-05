@@ -27,25 +27,40 @@
                         Accueil
                     </a>
                 </li>
-                @if(Auth::guard('web'))
+                @if(Auth::guard('web')->check())
                     <li>
-                      <a href="{{ route("patient") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
-                        hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
-                        hover:ease-in">
-                           Dashboard
+                        <a href="{{ route("patient") }}" class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+            hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
+            hover:ease-in">
+                            Dashboard
                         </a>
-                   </li>
-                @endif
-
-                @if(Auth::guard('medecin'))
+                    </li>
+                @elseif(Auth::guard('medecin')->check())
                     <li>
-                        <a href="{{ route("medecin") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
-                        hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
-                        hover:ease-in">
+                        <a href="{{ route("medecin") }}" class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+            hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
+            hover:ease-in">
+                            Dashboard
+                        </a>
+                    </li>
+                @elseif(Auth::guard('admin')->check())
+                    <li>
+                        <a href="{{ route("admin") }}" class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+            hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
+            hover:ease-in">
+                            Dashboard
+                        </a>
+                    </li>
+                @else
+                    <li>
+                        <a href="{{ route("patient") }}" class="inline-block p-2 mr-3 border-b-[3px] border-b-white
+            hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.1s}
+            hover:ease-in">
                             Dashboard
                         </a>
                     </li>
                 @endif
+
                 <li>
                     <a href="{{ route("hopital") }}"  class="inline-block p-2 mr-3 border-b-[3px] border-b-white
                     hover:text-gray-500 hover:border-b-{3px} hover:border-green-500 transition duration-{.08s}
@@ -69,7 +84,7 @@
         </nav>
 
         <div>
-            @if(auth()->check() )
+            @if(Auth::guard('web')->check() )
 
                 <a href="{{route("patient")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
                     rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
