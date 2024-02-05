@@ -6,7 +6,7 @@
     my-12 ">
 
         <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Formulaire d'ajout d'un hopital</h1>
-        <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
+        <form action="{{route('admin.addhopital')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
             @csrf
 
             <div class="w-[47%] mb-8" >
@@ -19,7 +19,7 @@
                 </div>
                 @error('nom')
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre nom</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez le nom</div>
 
                 @enderror
 
@@ -37,7 +37,7 @@
                 </div>
                 @error('adresse')
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez son adresse</div>
 
                 @enderror
 
@@ -54,7 +54,7 @@
                 </div>
                 @error('region')
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez sa région</div>
 
                 @enderror
 
@@ -64,14 +64,14 @@
                 <div class="flex flex-col">
 
                     <label for="adresse" class="mb-2 text-[small]"> Ville : </label>
-                    <input type="text" name="ville" id="ville" placeholder="Adresse"  value="{{ @old('ville')
+                    <input type="text" name="ville" id="ville" placeholder="Ville"  value="{{ @old('ville')
                      }}" class="bg-green-50 grow px-4
                     py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
                 </div>
                 @error('ville')
 
-                <div class="text-red-800 text-[small] mt-2">saisissez votre prénom</div>
+                <div class="text-red-800 text-[small] mt-2">saisissez sa ville</div>
 
                 @enderror
 
@@ -79,7 +79,7 @@
 
 
 
-            
+
 
             <div class="w-[47%] mb-8 ">
                 <div class="flex flex-col">
@@ -103,24 +103,24 @@
                 <div class="flex flex-col">
                     <label for="tel" class="mb-2 text-[small]"> téléphone : </label>
 
-                    <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{ @old('tel') }}"
+                    <input type="text" name="telephone" id="tel" placeholder="ex: 786211297"  value="{{ @old('telephone') }}"
                            class="bg-green-50 grow px-4
                     py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
                 </div>
 
                 @error('tel')
-                    
+                <div class="text-red-800 text-[small] mt-2">le numero de téléphone est obligatoire</div>
                 @enderror
             </div>
 
-            
 
-            
 
-            
 
-            
+
+
+
+
 
             <div class="mt-4 w-full flex justify-center">
                 <button type="submit" class="px-8 py-3  rounded-lg bg-green-400 hover:bg-[#4DCF7D] transition duration-100 ease-in mb-4"> S'inscrire</button>

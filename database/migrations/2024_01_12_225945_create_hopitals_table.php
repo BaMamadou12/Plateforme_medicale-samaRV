@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('ville');
             $table->string('adresse');
             $table->string('telephone');
-            $table->unsignedBigInteger('id_medecin');
+            $table->unsignedBigInteger('id_medecin')->nullable();
             $table->timestamps();
         });
     }

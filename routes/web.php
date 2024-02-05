@@ -52,11 +52,15 @@ Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
 Route::get('/admin/medecin', [AdminController::class ,'medecin'])->name('admin.medecin');
 Route::post('/admin/medecin', [AdminController::class ,'addmedecin'])->name('admin.addmedecin');
 Route::put('/admin/affecter', [AdminController::class ,'affecter'])->name('affecter');
+Route::delete('/admin/medecin/{id}',[AdminController::class,'delete_medecin'])->name('delete_medecin');
+
 
 
 Route::get('/admin/hopital', [AdminController::class ,'hopital'])->name('admin.hopital');
+Route::post('/admin/hopital', [AdminController::class ,'addhopital'])->name('admin.addhopital');
 Route::get('/admin/hopital/edit-{id}', [AdminController::class ,'edit'])->name('admin.hopital.edit');
 Route::put('/admin/hopital/update-{id}', [AdminController::class ,'update'])->name('admin.hopital.update');
+Route::delete('/admin/hopital/{id}',[AdminController::class,'delete_hopital'])->name('delete_hopital');
 
 
 

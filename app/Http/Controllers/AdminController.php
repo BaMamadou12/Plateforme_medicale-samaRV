@@ -45,7 +45,36 @@ class AdminController extends Controller
 
 
     }
+//methode qui permet d'ajouter un hopital
+public function addhopital(Request $request){
 
+        $validated = $request->validate(
+            [
+                'nom' => ['required', 'string', 'between:2,25'],
+                'adresse'=>['required','string','between:3,25'],
+                'email' => ['required', 'email', 'unique:hopitals'],
+                'telephone' => ['required', 'string', 'digits:9', 'unique:hopitals'],
+                'ville' => ['required', 'string'],
+                'region' => ['required', 'string'],
+            ]
+        );
+        Hopital::create([
+                'nom' => $validated['nom'],
+                'ville' => $validated['ville'],
+                'email' => $validated['email'],
+                'telephone' => $validated['telephone'],
+                'adresse'=>$validated['adresse'],
+                'region'=>$validated['region'],
+        ]
+
+        );
+
+    return redirect()->route('admin')->withSuccesshopital('Ajout de l\'hopital a  réussie avec succès');
+
+
+}
+
+// fonction qui permet de lister tous les hopitaux ainsi que les medecins
     public function admin():View{
         $list_medecin=Medecin::all();
         $list_hopital=Hopital::all();
@@ -76,6 +105,22 @@ class AdminController extends Controller
         Hopital::find($request->id)->update($request->only('id_medecin'));
 
         return back()->withMsg('affectation reussie !');
+    }
+    //SUPPRESSION D'UN MEDECIN
+    public function delete_medecin($id){
+
+        $medecin=Medecin::find($id);
+        $medecin->delete();
+        return redirect()->route('admin');
+
+    }
+
+    //SUPPRESSION DIUN HOPITAL
+    public function delete_hopital($id){
+
+        $hopital=Hopital::find($id);
+        $hopital->delete();
+        return redirect()->route('admin');
 
     }
 
