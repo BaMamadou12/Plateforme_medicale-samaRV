@@ -54,6 +54,24 @@
         @endif
 
         {{-- Message apres ajout d'un medecin dans la base de donnee FIN DE LA SESSION --}}
+        {{-- Message apres ajout d'un medecin dans la base de donnee--}}
+
+        @if(session('successhopital'))
+            <div class="mt-10 rounded-md bg-green-50 flex content-center w-2/3 mx-auto  p-4" id="closer">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-green-800">{{ session('successhopital') }}</p>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+        {{-- Message apres ajout d'un medecin dans la base de donnee FIN DE LA SESSION --}}
 
         <div class="mt-12 pb-20 border-b-[1.5px] border-gray-300">
             <div class=" flex items-center justify-between">
@@ -97,10 +115,10 @@
                                 <a href="{{ route("consultation") }}" class="bg-green-200 py-1 px-2 rounded"> affecter </a>
                             </button>
                         </form>
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
-                            </button>
+                        <form action="{{ route("delete_medecin",$medecin->id) }}" method="post">
+                            @csrf
+                             @method('DELETE')
+                            <button type="submit" class="bg-red-300 py-1 px-2 rounded">Supprimer</button>
                         </form>
                     </div>
                 </div>
@@ -129,7 +147,7 @@
             </div>
 
             <div class="mt-6 bg-white rounded text-sm overflow-hidden shadow-md">
-                
+
                 <div class="flex items-center bg-gray-100 px-4 text-[small] ">
                     <span class="w-3/12 px-2 py-3">Nom</span>
                     <span class="w-2/12 px-2 py-3">Ville</span>
@@ -145,17 +163,19 @@
                     <span class="w-3/12 px-2 py-1">{{$hopital->nom}}</span>
                     <span class="w-2/12 px-2 py-1">{{$hopital->ville}}</span>
                     <span  class="w-3/12 px-2 py-1">{{$hopital->adresse}}</span>
-                    <span  class="w-3/12 px-2 py-1">{{$hopital->medecin->prenom}} {{$hopital->medecin->nom}}</span>
+                    <span  class="w-3/12 px-2 py-1">@if($hopital->medecin) {{ $hopital->medecin->prenom }} {{ $hopital->medecin->nom }} @else <span> non disponible </span> @endif</span>
+
+
                     <div class="w-2/12 text-xs flex gap-4">
                         <form action="">
                             <button>
                                 <a href="{{ route("admin.hopital.edit", $hopital->id) }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
                             </button>
-                        </form>
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
-                            </button>
+                        </form >
+                        <form action="{{route('delete_hopital',$hopital->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="bg-red-300 py-1 px-2 rounded">Supprimer</button>
                         </form>
                     </div>
                 </div>

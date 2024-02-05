@@ -13,7 +13,8 @@ class Hopital extends Model
         'adresse',
         'email',
         'telephone',
-        'ville'
+        'ville',
+        'region'
     ];
     use HasFactory;
     public function medecin(){
