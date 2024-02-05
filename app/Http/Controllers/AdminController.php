@@ -71,4 +71,12 @@ class AdminController extends Controller
         return redirect('admin')->with(['message', 'mise a jour reusssi']);
     }
 
+    public function affecter(Request $request){
+
+        Hopital::find($request->id)->update($request->only('id_medecin'));
+
+        return back()->withMsg('affectation reussie !');
+
+    }
+
 }

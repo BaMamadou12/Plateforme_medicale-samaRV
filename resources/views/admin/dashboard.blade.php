@@ -1,8 +1,21 @@
 @extends("layout")
 
 @section("section")
-    <section class="w-[70%] mx-auto relative mb-12">
-
+    @if(session('msg'))
+    <div class="mt-10 rounded-md bg-green-100 flex content-center w-3/12 mx-auto absolute z-1200 top-12 right-2 p-4" id="closer">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm font-medium text-green-800">{{ session('msg') }}</p>
+            </div>
+        </div>
+    </div>
+    @endif
+    <section class="w-[70%] mx-auto relative mb-12 z-0" id="sect-sibling">
         <div class="flex gap-2 items-center mt-8">
             <div class="px-2 py-2 rounded-lg bg-green-300">
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,12 +104,8 @@
                     <span  class="w-3/12 px-2 py-1">{{$medecin->specialite }}</span>
                     <span class="w-2/12 px-2 py-1">{{$medecin->telephone}}</span>
                     <span class="w-2/12 px-2 py-1">{{$medecin->disponibilite}}</span>
-                    <div class="w-2/12 text-xs flex gap-2">
-                        <form action="">
-                            <button>
-                                <a href="{{ route("consultation") }}" class="bg-green-200 py-1 px-2 rounded"> affecter </a>
-                            </button>
-                        </form>
+                    <div class="w-2/12 text-xs flex gap-2 items-center justify-center">
+                        <button class="bg-green-200 py-1 px-2 rounded" id="btn-affecter" data-id-medecin="{{$medecin->id}}" >affecter</button>
                         <form action="">
                             <button>
                                 <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
@@ -130,7 +139,7 @@
 
             <div class="mt-6 bg-white rounded text-sm overflow-hidden shadow-md">
                 
-                <div class="flex items-center bg-gray-100 px-4 text-[small] ">
+                <div class="flex items-center bg-gray-100 px-4 text-[small]">
                     <span class="w-3/12 px-2 py-3">Nom</span>
                     <span class="w-2/12 px-2 py-3">Ville</span>
                     <span class="w-3/12 px-2 py-3">Adresse</span>
@@ -146,12 +155,8 @@
                     <span class="w-2/12 px-2 py-1">{{$hopital->ville}}</span>
                     <span  class="w-3/12 px-2 py-1">{{$hopital->adresse}}</span>
                     <span  class="w-3/12 px-2 py-1">{{$hopital->medecin->prenom}} {{$hopital->medecin->nom}}</span>
-                    <div class="w-2/12 text-xs flex gap-4">
-                        <form action="">
-                            <button>
-                                <a href="{{ route("admin.hopital.edit", $hopital->id) }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
-                            </button>
-                        </form>
+                    <div class="w-2/12 text-xs flex gap-2 items-center justify-cente">
+                        <a href="{{ route("admin.hopital.edit", $hopital->id) }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
                         <form action="">
                             <button>
                                 <a href="{{ route("consultation") }}" class=" bg-red-300 py-1 px-2 rounded"> supprimer</a>
@@ -166,4 +171,66 @@
         </div>
 
     </section>
+
+
+
+    <script>
+        const btnAffecter = document.querySelectorAll('#btn-affecter');
+        btnAffecter.forEach((item)=>{
+            item.addEventListener('click', (e)=>{
+                const id = item.getAttribute('data-id-medecin');
+                let section = document.createElement('section');
+                let sectSibling = document.getElementById('sect-sibling')
+                let parent = document.querySelector('main');
+                let classValue = `w-full h-[100vh] flex items-center justify-center z-1200 fixed top-0 transition-all ease-in-out duration-300 bg-[rgba(0,0,0,.6)]`
+                section.setAttribute('class', classValue); 
+                section.setAttribute('id', 'sect-affecter'); 
+                section.innerHTML = `
+                <div class="w-1/2 bg-white h-60 rounded flex flex-col items-center px-6 py-4 shadow-lg relative z-1200 
+                    transition-all duration-800 ease-in-out animate-affect">
+                    <h1 class="mb-10 tracking-[.4px] text-2xl font-kanit ">Affecter Un Hôpital à Un Médecin</h1>
+                    <form action="{{route('affecter')}}" method="post" class="w-full flex flex-col" id="affect">
+                        @csrf
+                        @method('PUT')
+                        <input type="hidden" value="${id}" name="id_medecin">
+                        <select name="id" id="hop" class="px-4 py-3 bg-gray-100 rounded-lg outline-none border border-gray-300
+                        focus:border-[#2ea8bf] transition duration-100 ease">
+                            <option value="" selected>Selectionnner un hopital</option>
+                            @foreach($list_hopital as $h)
+                                <option value="{{$h->id}}">{{$h->nom}}</option>
+                            @endforeach
+                        </select>
+                        <div class="text-center mt-10">
+                            <button type="submit" class="px-6 py-2 bg-green-300 rounded mr-2 transition duration-200 hover:bg-[#92f1b4]"  >Valider</button>
+                            <button type="button" class="px-6 py-2 bg-red-300 rounded transition duration-200 hover:bg-[#fcaeae]" id="Acloser" >Annuler</button>
+                        </div>
+                    </form>
+                </div>`
+                parent.insertBefore(section, sectSibling)
+                Acloser = document.getElementById('Acloser').addEventListener('click', AffectCloser)
+                let affect = document.getElementById('affect');
+                let hop = document.getElementById('hop');
+                affect.addEventListener('submit',Affect)
+                hop.addEventListener('change', (e)=>{e.target.classList.remove('border-red-500')})
+
+            })  
+        })
+
+        function Affect(e){
+            e.preventDefault();
+            let hop = document.getElementById('hop');
+            if(hop.value == ""){
+                hop.classList.add('border-red-500')
+            }else{
+                hop.classList.remove('border-red-500')
+                e.target.submit();
+            }
+            
+        }
+        function AffectCloser(e){
+            x = document.getElementById('sect-affecter');
+            document.querySelector('main').removeChild(x);
+        }
+        
+    </script>
 @endsection

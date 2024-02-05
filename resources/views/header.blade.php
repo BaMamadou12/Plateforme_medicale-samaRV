@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
     <title>Plateforme De Prise De rendez-vous </title>
 </head>
-<body class="bg-green-50 font-verdana text-gray-600 " id="body">
+<body class="bg-green-50 font-verdana text-gray-600 relative"id="body">
     <header id="header" class="px-12 py-1.5 bg-white flex items-center justify-between w-full text-sm transition-all
     ease-in-out duration-200 shadow-sm">
         <div class="logoSante">

@@ -1,8 +1,8 @@
 @include("header")
 
-<main>
-    @yield("section")
-</main>
+    <main>
+        @yield("section")
+    </main>
 
 @include("footer")
 

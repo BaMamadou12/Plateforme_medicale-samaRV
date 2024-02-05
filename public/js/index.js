@@ -20,7 +20,7 @@ document.body.onload = function(){
       if(closer && main){
           main.removeChild(closer);
       }
-  }, 5000)
+  }, 4000)
 };
 
 
@@ -122,6 +122,10 @@ function reorganize (){
 function f(){
     document.getElementById("filter").submit();
 }
+
+
+// affecter un hopital à un medecin
+
 
 
 

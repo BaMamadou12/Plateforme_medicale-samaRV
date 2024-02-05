@@ -51,6 +51,7 @@ Route::post('/patient/rv_demain', [RendezvousController::class, 'rvdemain'])->na
 Route::get('/admin', [AdminController::class ,'admin'])->name('admin');
 Route::get('/admin/medecin', [AdminController::class ,'medecin'])->name('admin.medecin');
 Route::post('/admin/medecin', [AdminController::class ,'addmedecin'])->name('admin.addmedecin');
+Route::put('/admin/affecter', [AdminController::class ,'affecter'])->name('affecter');
 
 
 Route::get('/admin/hopital', [AdminController::class ,'hopital'])->name('admin.hopital');
@@ -62,6 +63,9 @@ Route::put('/admin/hopital/update-{id}', [AdminController::class ,'update'])->na
 
 Route::get('/consultation', [ConsultationController::class ,'index'])->name('consultation');
 Route::post('/consultation',[ConsultationController::class,'consultation'])->name('consultation');
+
+
+
 
 //route de deconnexion
 
