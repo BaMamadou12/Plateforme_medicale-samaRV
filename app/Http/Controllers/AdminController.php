@@ -78,8 +78,11 @@ public function addhopital(Request $request){
     public function admin():View{
         $list_medecin=Medecin::all();
         $list_hopital=Hopital::all();
+        $medecin_actif=Hopital::whereNotNull('id_medecin')->count();
+        $medecin_dispo=Medecin::all()->count();
+        $nombre_hopitaux=Hopital::all()->count();
 
-        return view('admin.dashboard',compact('list_medecin','list_hopital'));
+        return view('admin.dashboard',compact('list_medecin','list_hopital','medecin_actif','medecin_dispo','nombre_hopitaux'));
     }
 
     public function medecin(){
@@ -109,11 +112,21 @@ public function addhopital(Request $request){
     //SUPPRESSION D'UN MEDECIN
     public function delete_medecin($id){
 
-        $medecin=Medecin::find($id);
-        $medecin->delete();
-        return redirect()->route('admin');
+        $medecin = Medecin::find($id);
+        $hopitals = Hopital::where('id_medecin', $id)->get();
 
+        // Mettre à null l'id_medecin pour chaque hôpital lié
+        foreach ($hopitals as $hopital) {
+            $hopital->id_medecin = null;
+            $hopital->save();
+        }
+
+        // Supprimer le médecin
+        $medecin->delete();
+
+        return redirect()->route('admin');
     }
+
 
     //SUPPRESSION DIUN HOPITAL
     public function delete_hopital($id){

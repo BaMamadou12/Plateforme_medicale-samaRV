@@ -109,7 +109,7 @@
                     duration-100 ease">
                 </div>
 
-                @error('tel')
+                @error('telephone')
                 <div class="text-red-800 text-[small] mt-2">le numero de téléphone est obligatoire</div>
                 @enderror
             </div>
