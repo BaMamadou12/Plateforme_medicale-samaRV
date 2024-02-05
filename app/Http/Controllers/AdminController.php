@@ -104,15 +104,17 @@ public function addhopital(Request $request){
     }
 
     public function affecter(Request $request){
-
+        $bool = true;
+        try {
+            Hopital::find($request->id)->update($request->only('id_medecin'));
+        } catch (\PDOException $th) {
+            $bool = false;
+        }
         
-
-        $bool = Hopital::find($request->id)->update($request->only('id_medecin'));
-        dd($bool);
         if($bool){
             return back()->withMsg('affectation reussie !');
         }else{
-            return back()->withMsgError('Médecin Deja affecté !'); 
+            return back()->withMsg_error('Médecin Dèja affecté !'); 
         }
     }
     //SUPPRESSION D'UN MEDECIN
