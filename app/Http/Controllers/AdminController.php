@@ -50,10 +50,10 @@ public function addhopital(Request $request){
 
         $validated = $request->validate(
             [
-                'nom' => ['required', 'string', 'between:2,25'],
-                'adresse'=>['required','string','between:3,25'],
+                'nom' => ['required', 'string', 'between:2,255'],
+                'adresse'=>['required','string','between:3,255'],
                 'email' => ['required', 'email', 'unique:hopitals'],
-                'telephone' => ['required', 'string', 'digits:9', 'unique:hopitals'],
+                'telephone' => ['required', 'string', 'unique:hopitals'],
                 'ville' => ['required', 'string'],
                 'region' => ['required', 'string'],
             ]
@@ -104,10 +104,18 @@ public function addhopital(Request $request){
     }
 
     public function affecter(Request $request){
-
-        Hopital::find($request->id)->update($request->only('id_medecin'));
-
-        return back()->withMsg('affectation reussie !');
+        $bool = true;
+        try {
+            Hopital::find($request->id)->update($request->only('id_medecin'));
+        } catch (\PDOException $th) {
+            $bool = false;
+        }
+        
+        if($bool){
+            return back()->withMsg('affectation reussie !');
+        }else{
+            return back()->withMsg_error('Médecin Dèja affecté !'); 
+        }
     }
     //SUPPRESSION D'UN MEDECIN
     public function delete_medecin($id){

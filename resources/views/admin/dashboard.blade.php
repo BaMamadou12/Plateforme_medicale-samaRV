@@ -1,8 +1,11 @@
 @extends("layout")
 
 @section("section")
+    {{-- les notifications éphémeres : --}}
+
+    {{-- Message apres ajout avoir affecté un médecin dans la base de données --}}
     @if(session('msg'))
-    <div class="mt-10 rounded-md bg-green-100 flex content-center w-3/12 mx-auto absolute z-1200 top-12 right-2 p-4" id="closer">
+    <div class="mt-10 rounded-md bg-green-100 flex content-center w-4/12 mx-auto absolute z-1200 top-12 right-2 px-4 py-3" id="closer">
         <div class="flex">
             <div class="flex-shrink-0">
                 <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -15,6 +18,59 @@
         </div>
     </div>
     @endif
+
+    {{-- Message apres ajout avoir affecté un médecin dans la base de données --}}
+    @if(session('msg_error'))
+    <div class="mt-10 rounded-md bg-red-100 flex content-center w-4/12 mx-auto absolute z-1200 top-12 right-2 px-4 py-3" id="closer">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm font-medium text-red-800">{{ session('msg_error') }}</p>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    {{-- Message apres ajout d'un medecin dans la base de donnee FIN DE LA SESSION --}}
+    @if(session('success'))
+            <div class="mt-10 rounded-md bg-green-100 flex content-center min-w-4/12 mx-auto absolute z-1200 top-12 right-2 px-4 py-3" id="closer"">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-green-800">{{ session('success') }}</p>
+                    </div>
+                </div>
+            </div>
+        @endif
+
+
+    {{-- Message apres ajout d'un hopital dans la base de donnee--}}
+    @if(session('successhopital'))
+        <div class="mt-10 rounded-md bg-green-100 flex content-center w-4/12 mx-auto absolute z-1200 top-12 right-2 px-4 py-3" id="closer">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm font-medium text-green-800">{{ session('successhopital') }}</p>
+                </div>
+            </div>
+        </div>
+    @endif
+
+
+
+
     <section class="w-[70%] mx-auto relative mb-12 z-0" id="sect-sibling">
         <div class="flex gap-2 items-center mt-8">
             <div class="px-2 py-2 rounded-lg bg-green-300">
@@ -48,43 +104,6 @@
             </div>
 
         </div>
-
-        {{-- Message apres ajout d'un medecin dans la base de donnee--}}
-
-        @if(session('success'))
-            <div class="mt-10 rounded-md bg-green-50 flex content-center w-2/3 mx-auto  p-4" id="closer">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <p class="text-sm font-medium text-green-800">{{ session('success') }}</p>
-                    </div>
-                </div>
-            </div>
-        @endif
-
-        {{-- Message apres ajout d'un medecin dans la base de donnee FIN DE LA SESSION --}}
-        {{-- Message apres ajout d'un hopital dans la base de donnee--}}
-
-        @if(session('successhopital'))
-            <div class="mt-10 rounded-md bg-green-50 flex content-center w-2/3 mx-auto  p-4" id="closer">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <p class="text-sm font-medium text-green-800">{{ session('successhopital') }}</p>
-                    </div>
-                </div>
-            </div>
-        @endif
-
-        {{-- Message apres ajout d'un hopital dans la base de donnee FIN DE LA SESSION --}}
 
         <div class="mt-12 pb-20 border-b-[1.5px] border-gray-300">
             <div class=" flex items-center justify-between">
