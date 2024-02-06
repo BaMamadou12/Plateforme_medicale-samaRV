@@ -19,6 +19,24 @@
     </div>
     @endif
 
+    {{-- Mise a jour d'un hopital --}}
+    @if(session('message'))
+            <div class="mt-10 rounded-md bg-green-100 flex content-center min-w-4/12 mx-auto absolute z-1200 top-12 right-2 px-4 py-3" id="closer"">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium text-green-800">{{ session('message') }}</p>
+                    </div>
+                </div>
+            </div>
+    @endif
+
+    
+
     {{-- Message apres ajout avoir affecté un médecin dans la base de données --}}
     @if(session('msg_error'))
     <div class="mt-10 rounded-md bg-red-100 flex content-center w-4/12 mx-auto absolute z-1200 top-12 right-2 px-4 py-3" id="closer">
@@ -49,7 +67,7 @@
                     </div>
                 </div>
             </div>
-        @endif
+    @endif
 
 
     {{-- Message apres ajout d'un hopital dans la base de donnee--}}
@@ -190,7 +208,7 @@
                         <span class="w-3/12 px-2 py-1">{{$hopital->nom}}</span>
                         <span class="w-2/12 px-2 py-1">{{$hopital->ville}}</span>
                         <span  class="w-3/12 px-2 py-1">{{$hopital->adresse}}</span>
-                        <span  class="w-3/12 px-2 py-1">@if($hopital->medecin ) {{$hopital->medecin->prenom}} {{$hopital->medecin->nom}}@else <span>non disponible</span>@endif</span>
+                        <span  class="w-3/12 px-2 py-1">@if($hopital->medecin ) {{$hopital->medecin->prenom}} {{$hopital->medecin->nom}}@else non disponible @endif</span>
                         <div class="w-2/12 text-xs flex gap-2 items-center justify-cente">
                             <a href="{{ route("admin.hopital.edit", $hopital->id) }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
                             <form action="{{route('delete_hopital',$hopital->id)}}" method="post">

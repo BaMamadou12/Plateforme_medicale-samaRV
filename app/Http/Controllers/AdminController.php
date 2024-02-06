@@ -100,18 +100,19 @@ public function addhopital(Request $request){
 
     public function update(Request $request, $id){
         Hopital::find($id)->update($request->all());
-        return redirect('admin')->with(['message', 'mise a jour reusssi']);
+        return redirect('admin')->with('message', 'mise a jour reusssi');
     }
 
     public function affecter(Request $request){
-        $bool = true;
+        
         try {
+            $bool = true;
             Hopital::find($request->id)->update($request->only('id_medecin'));
         } catch (\PDOException $th) {
             $bool = false;
         }
         
-        if($bool){
+        if(isset($bool) && $bool){
             return back()->withMsg('affectation reussie !');
         }else{
             return back()->withMsg_error('Médecin Dèja affecté !'); 
