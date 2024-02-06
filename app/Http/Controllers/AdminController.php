@@ -13,7 +13,7 @@ use Illuminate\View\View;
 class AdminController extends Controller
 {
     public function __construct(){
-        // $this->middleware('auth:admin');
+         $this->middleware('admin');
     }
 
     public function addmedecin(Request $request){

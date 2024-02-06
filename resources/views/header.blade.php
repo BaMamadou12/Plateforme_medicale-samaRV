@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,12 +85,24 @@
         </nav>
 
         <div>
-            @if(Auth::guard('web')->check() )
+            @if(Auth::guard('web')->check() && Auth::guard('web')->user())
 
                 <a href="{{route("patient")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
                     rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
-                    {{ auth()->user()->prenom   }}
-                    {{auth()->user()->nom}}
+                    {{ Auth::guard('web')->user()->prenom }}
+                    {{ Auth::guard('web')->user()->nom }}
+                </a>
+
+                <a href="{{route("logout")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
+                rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
+                    Déconnexion
+                </a>
+            @elseif(Auth::guard('medecin')->check() && Auth::guard('medecin')->user())
+
+                <a href="{{route("medecin")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
+                    rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
+                    {{ Auth::guard('medecin')->user()->prenom }}
+                    {{ Auth::guard('medecin')->user()->nom }}
                 </a>
 
                 <a href="{{route("logout")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
@@ -97,6 +110,18 @@
                     Déconnexion
                 </a>
 
+            @elseif(Auth::guard('admin')->check()  && Auth::guard('admin')->user())
+
+                <a href="{{route("admin")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
+                    rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
+                    {{ Auth::guard('admin')->user()->role }}
+
+                </a>
+
+                <a href="{{route("logout")}}" class="inline-block px-6 py-1.5 border border-green-200 text-green-800
+                rounded-lg hover:bg-green-200 hover:text-gray-600 transition duration-800 hover:ease">
+                    Déconnexion
+                </a>
             @else
                 <a href="{{route("login")}}" class="inline-block px-6 py-1.5 rounded-lg hover:bg-green-50
                  transition duration-800 hover:ease">
@@ -108,5 +133,8 @@
                 </a>
             @endif
 
+
+
         </div>
     </header>
+

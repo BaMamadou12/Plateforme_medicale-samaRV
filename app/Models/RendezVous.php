@@ -28,5 +28,6 @@ class RendezVous extends Model
         return $this->belongsTo('App\Models\Medecin', 'id_medecin', 'id');
     }
 
+
     use HasFactory;
 }

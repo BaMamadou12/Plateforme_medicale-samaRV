@@ -54,4 +54,5 @@ class User extends Authenticatable
 
         return $this->hasMany('App\Models\RendezVous','id_patient','id');
     }
+
 }
