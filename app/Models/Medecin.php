@@ -24,4 +24,7 @@ class Medecin extends Authenticatable
 
         return $this->hasOne('App\Models\Hopital','id_medecin','id');
     }
+    public function rendezvous(){
+        return $this->hasMany('App\Models\RendezVous',);
+    }
 }
