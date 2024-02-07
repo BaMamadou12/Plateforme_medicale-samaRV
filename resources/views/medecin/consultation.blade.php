@@ -6,10 +6,11 @@
     my-12 ">
 
         <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Registre De Consultation Generale</h1>
-        <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
+        <form action="{{route('consultation', [$idM, $idP])}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
             @csrf
 
 {{--            PARTIE SYMPTOMES--}}
+            <input type="hidden" name="size" value='11' id='size'>
 
             <div class="w-[100%] mb-8" >
                 <div class="flex flex-col">
@@ -23,10 +24,12 @@
                             <button class="text-xs px-3 py-2 rounded-lg bg-green-200" id="add-sympt">ajouter</button>
                         </div>
                     </div>
+
+
+
                     <ul class="flex flex-wrap gap-2 items-center text-xs mb-4" id="sympt-parent">
                         {{-- liste des symptomes saisi manuellement par le medecin est affichée ici a l'aide du js--}}
                     </ul>
-
 
 
 {{--                    les symptomes les plus frequents chez les patients j'en ai selectionné 11--}}
@@ -89,11 +92,11 @@
             <div class="w-[47%] mb-8">
                 <div class="flex flex-col">
                     <label for="exam" class="mb-2 italic font-kanit">Autre Examen para clinique : </label>
-                    <select name="exam" id="exam" class="bg-green-50 grow px-4
+                    <select name="examen" id="exam" class="bg-green-50 grow px-4
                     py-2 rounded-lg text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                     duration-100 ease">
-                        <option value="M">Non</option>
-                        <option value="F">Oui</option>
+                        <option value="non">Non</option>
+                        <option value="oui">Oui</option>
                     </select>
                 </div>
             </div>

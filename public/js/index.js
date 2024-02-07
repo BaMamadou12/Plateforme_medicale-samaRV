@@ -61,9 +61,9 @@ addSympt.addEventListener('click', function(e){
     let li;
     let input;
     if (sympt.value) {
-        let size = document.querySelectorAll("#sympt-container input").length;
+        let size = document.querySelector("#size");
         li = document.createElement('li');
-        li.className = "flex gap-4 items-center px-4 py-0.5 bg-green-50 rounded-full";
+        li.className = "flex gap-4 items-center px-4 py-0.5 bg-green-50 rounded-xl";
         li.innerHTML = `
             <p>${sympt.value}</p>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
@@ -74,9 +74,10 @@ addSympt.addEventListener('click', function(e){
         ul.appendChild(li);
         // type="checkbox" name="symp1" id="sympt" value="maux_de_tete"
         let input = document.createElement('input');
+        size.value = `${Number(size.value) + 1}`;
         input.setAttribute('type', 'hidden');
-        input.setAttribute('name', 'sympt'+(size + 1));
-        input.setAttribute('id', 'sympt'+(size + 1));
+        input.setAttribute('name', 'sympt'+(size.value));
+        input.setAttribute('id', 'sympt'+(size.value));
         input.value = sympt.value;
         parent.appendChild(input);
         sympt.value = "";
@@ -85,13 +86,12 @@ addSympt.addEventListener('click', function(e){
         deleteSympt = document.querySelectorAll("#sympt-parent li svg");
         deleteSympt.forEach((item)=>{
             item.addEventListener("click", (e)=>{
-                // let size = document.querySelectorAll("#sympt-container input").length;
                 let val = e.currentTarget.parentNode.children[0].textContent;
                 let inputs = document.querySelectorAll("#sympt-container > input");
-                let cible ;
                 inputs.forEach(item => {
                     if(item.value === val){
                         document.querySelector("#sympt-container").removeChild(item);
+                        size.value = `${Number(size.value) - 1}`;
                     }
                 })
                 if(e.currentTarget.parentNode.parentNode){
