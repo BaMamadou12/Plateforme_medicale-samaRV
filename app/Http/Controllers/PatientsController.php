@@ -12,6 +12,7 @@ use Illuminate\View\View;
 class PatientsController extends Controller
 {
 
+
     //Seul ce qui sont connecter a la plateforme peuvent aceder a cette page
     public function __construct(){
         $this->middleware('auth');

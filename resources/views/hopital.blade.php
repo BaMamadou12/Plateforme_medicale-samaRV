@@ -48,8 +48,9 @@
                         </svg>
                         filtrage :
                     </h3>
-                    <form action="" method="get" id="filter" >
-                        <select name="" id="" onchange="f()" class="px-4 py-1.5 rounded bg-green-100 text-xs">
+                    <form action="{{route('hopital')}}" method="get" id="filter" >
+                        @csrf
+                        <select name="filtre" id="" onchange="f()" class="px-4 py-1.5 rounded bg-green-100 text-xs">
                             <option value="">Filtrer par région</option>
                             <option value="Dakar">Dakar</option>
                             <option value="Thies">Thies</option>
@@ -67,11 +68,16 @@
                             <option value="Kédougou">Kédougou</option>
                         </select>
                     </form>
-                    <form action="" method="get">
-                        <button type="submit" class="px-4 py-1.5 rounded bg-green-100 text-xs">par nom</button>
+                    <form action="{{route('hopital')}}" method="get">
+                        @csrf
+                        <input type="hidden" name="filtrenom" value="nom" >
+                        <button type="submit"   class="px-4 py-1.5 rounded bg-green-100 text-xs">par nom</button>
                     </form>
-                    <form action="">
-                        <button type="submit" class="px-4 py-1.5 rounded bg-green-100 text-xs">par ville</button>
+                    <form action="{{route('hopital')}}" method="get">
+                        @csrf
+                        <input type="hidden" name="filtreville" value="ville">
+
+                        <button type="submit"  class="px-4 py-1.5 rounded bg-green-100 text-xs">par ville</button>
                     </form>
                 </div>
             </div>
@@ -79,12 +85,20 @@
 
 
     <div class="bg-green-100">
+        {{--MESSAGE D'ERREUR LOSQU'ON NE TROUVE PAS D'HOPITAL A LA REGION SPECIFIEE--}}
+
+
+
+
+
+
+        {{--MESSAGE D'ERREUR LOSQU'ON NE TROUVE PAS D'HOPITAL A LA REGION SPECIFIEE--}}
 
     </div>
     <section class="w-[80%]  min-h-[100vh] mx-auto p-4 grid gap-6 grid-cols-3 grid-rows-3 ">
 
         {{-- debut  de la liste des hopitaux--}}
-        @foreach($request as $info)
+        @foreach($hopitaux as $info)
         <div class="min-h-[300px] bg-[#fefefe] rounded-xl shadow-md overflow-hidden pt-2 pb-4 px-3">
             <img src="{{ asset("images/hdd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]" >
             <div class="mb-4">
@@ -95,12 +109,26 @@
                 <p class="text-[small]"> Adresse : <span class="text-gray-500
                 text-[small]">{{$info->adresse}}</span></p>
                 <p class="text-[small]"> Tel : <span class="text-gray-500 text-[small]">{{$info->telephone}}</span></p>
-                <p class="text-[small]"> Médecin : <span class="text-gray-500 text-[small]">{{ $info->medecin->prenom }}  {{ $info->medecin->nom }}</span></p>
+                <p class="text-[small]"> Médecin :
+                    <span class="text-gray-500 text-[small]">
+        @if(($info->medecin))
+                            @if($info->medecin->id)
+                                {{ $info->medecin->prenom }} {{ $info->medecin->nom }}
+                            @else
+                                 Indisponible
+                            @endif
+                        @else
+                            Indisponible
+         @endif
+    </span>
+                </p>
+
             </div>
             <button class="px-4 py-1.5 bg-green-200 rounded-lg text-xs hover:bg-green-300 transition
             duration-100 ease-in-out">
-                <?php $id_medecin=$info->medecin->id ?>
-                <a href="{{route("rv",compact('id_medecin'))}}">Prenez Rendez-vous</a>
+                    <?php $id_medecin = ($info->medecin) ? $info->medecin->id : null; ?>
+                <a href="{{ route('rv', ['id_medecin' => $id_medecin]) }}" class="px-4 py-1.5 bg-green-200 rounded-lg text-xs hover:bg-green-300 transition duration-100 ease-in-out">Prenez Rendez-vous</a>
+
             </button>
         </div>
         @endforeach

@@ -11,6 +11,12 @@ use Illuminate\View\View;
 
 class RendezvousController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('CheckRV'); // Utilisation du middleware CheckRV
+    }
+
     public function rvtoday(Request $request){
         $heure = $request->input('crenaux');
 
@@ -33,7 +39,9 @@ class RendezvousController extends Controller
             $nombre = RendezVous::whereDate('date', Carbon::today())->count();
             if ($nombre <=30 ){
                 $nombre_rv_parjour = RendezVous::whereDate('date', Carbon::today())->count();
-                $rang = $nombre_rv_parjour + 1;
+
+                $rang = ($nombre_rv_parjour == 0) ? 1 : $nombre_rv_parjour + 1;
+
 
                 RendezVous::create([
                     'heure' => $heure,
@@ -77,8 +85,10 @@ class RendezvousController extends Controller
 
             $nombre = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(1))->count();
             if ($nombre <=30 ){
+
                 $nombre_rv_parjour = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(1))->count();
-                $rang=$nombre_rv_parjour +1;
+                $rang = ($nombre_rv_parjour == 0) ? 1 : $nombre_rv_parjour + 1;
+
                 RendezVous::create([
                     'heure' => $heure,
                     'id_patient' => auth()->user()->getAuthIdentifier(),
@@ -120,7 +130,7 @@ class RendezvousController extends Controller
             $nombre = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(2))->count();
             if ($nombre <=30 ){
                 $nombre_rv_par_jour = RendezVous::whereDate('date', Carbon::tomorrow()->addDays(2))->count();
-                $rang=$nombre_rv_par_jour +1;
+                $rang = ($nombre_rv_par_jour == 0) ? 1 : $nombre_rv_par_jour + 1;
                 RendezVous::create([
                     'heure' => $heure,
                     'id_patient' => auth()->user()->getAuthIdentifier(),
@@ -139,12 +149,11 @@ class RendezvousController extends Controller
         }
 
     }
-
-
     // la methode qui permet de retourner la vue des rendez-vous
 
     public function rv(Request $request):View{
         $id_medecin=$request->id_medecin;
+
         return view("patient.rv",compact('id_medecin'));
 
     }

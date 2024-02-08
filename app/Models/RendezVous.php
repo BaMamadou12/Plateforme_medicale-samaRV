@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\View\View;
 
-class RendezVous extends Model
+class RendezVous extends Model implements AuthenticatableContract
 {
+    use Authenticatable;
 
     protected $fillable =[
         'heure',
@@ -15,6 +18,7 @@ class RendezVous extends Model
         'id_patient',
         'id_medecin',
         'date',
+        'rang'
     ];
 
 
