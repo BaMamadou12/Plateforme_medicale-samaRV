@@ -76,8 +76,8 @@ public function addhopital(Request $request){
 
 // fonction qui permet de lister tous les hopitaux ainsi que les medecins
     public function admin():View{
-        $list_medecin=Medecin::all();
-        $list_hopital=Hopital::all();
+        $list_medecin = Medecin::orderBy('created_at', 'desc')->get();
+        $list_hopital = Hopital::orderBy('created_at', 'desc')->get();
         $medecin_actif=Hopital::whereNotNull('id_medecin')->count();
         $medecin_dispo=Medecin::all()->count();
         $nombre_hopitaux=Hopital::all()->count();
@@ -104,18 +104,18 @@ public function addhopital(Request $request){
     }
 
     public function affecter(Request $request){
-        
+
         try {
             $bool = true;
             Hopital::find($request->id)->update($request->only('id_medecin'));
         } catch (\PDOException $th) {
             $bool = false;
         }
-        
+
         if(isset($bool) && $bool){
             return back()->withMsg('affectation reussie !');
         }else{
-            return back()->withMsg_error('Médecin Dèja affecté !'); 
+            return back()->withMsg_error('Médecin Dèja affecté !');
         }
     }
     //SUPPRESSION D'UN MEDECIN
