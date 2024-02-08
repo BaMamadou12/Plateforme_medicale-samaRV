@@ -66,8 +66,8 @@ Route::delete('/admin/hopital/{id}',[AdminController::class,'delete_hopital'])->
 
 
 
-Route::get('/consultation', [ConsultationController::class ,'index'])->name('consultation');
-Route::post('/consultation',[ConsultationController::class,'consultation'])->name('consultation');
+Route::get('/consultation/{idM}-{idP}', [ConsultationController::class ,'index'])->name('consultation');
+Route::post('/consultation/{idM}-{idP}',[ConsultationController::class,'consultation'])->name('consultation');
 
 
 
