@@ -12,6 +12,8 @@ use App\Http\Controllers\MedecinsController;
 use App\Http\Controllers\PatientsController;
 use App\Http\Controllers\PharmaciesController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Middleware\CheckRV;
+
 
 
 Route::get('/', [AccueilController::class ,'acceuil'])->name('accueil');

@@ -8,13 +8,15 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\View\View;
+use App\Http\Middleware\CheckRV;
+
 
 class RendezvousController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('CheckRV'); // Utilisation du middleware CheckRV
+        $this->middleware('checkrv'); // Utilisation du middleware CheckRV
     }
 
     public function rvtoday(Request $request){
