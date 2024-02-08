@@ -73,7 +73,7 @@
                         <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
 
                             <a href="{{ route("consultation", [$rendezvous->patient->id, $rendezvous->medecin->id]) }}">
-
+                                Consulter le patient
                             </a>
                         </span>
                     </div>

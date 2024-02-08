@@ -37,7 +37,7 @@ Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 
 
-Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv')->middleware('checkrv');
+Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
 Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday'])->name('rv_today');
 
 

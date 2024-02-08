@@ -99,7 +99,7 @@
 
         {{-- debut  de la liste des hopitaux--}}
         @foreach($hopitaux as $info)
-        <div class="min-h-[300px] bg-[#fefefe] rounded-xl shadow-md overflow-hidden pt-2 pb-4 px-3">
+        <div class="min-h-[300px] bg-[#fefefe] rounded-xl shadow-sm overflow-hidden pt-2 pb-4 px-3 border">
             <img src="{{ asset("images/hdd.jpg") }}" alt="" class="rounded-lg mb-4 h-[190px]" >
             <div class="mb-4">
                 <h3 class="mb-2 px-2 border-l-4 border-green-600 font-medium  italic font-kanit">
@@ -111,18 +111,17 @@
                 <p class="text-[small]"> Tel : <span class="text-gray-500 text-[small]">{{$info->telephone}}</span></p>
                 <p class="text-[small]"> Médecin :
                     <span class="text-gray-500 text-[small]">
-        @if(($info->medecin))
+                        @if(($info->medecin))
                             @if($info->medecin->id)
                                 {{ $info->medecin->prenom }} {{ $info->medecin->nom }}
                             @else
-                                 Indisponible
+                                    Indisponible
                             @endif
                         @else
                             Indisponible
-         @endif
-    </span>
+                        @endif
+                    </span>
                 </p>
-
             </div>
             <button class="px-4 py-1.5 bg-green-200 rounded-lg text-xs hover:bg-green-300 transition
             duration-100 ease-in-out">
