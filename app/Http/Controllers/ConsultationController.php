@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RendezVous;
+use App\Models\Consultation;
 use Illuminate\Http\Request;
 
 class ConsultationController extends Controller
@@ -23,10 +25,27 @@ class ConsultationController extends Controller
 
         $symptomes = substr($symptomes, 0, -2);
 
-        // dd($symptomes);
-        dd($request->observation);
+        $request->validate([
+            'diagnostic' => 'required',
+            'observation' => 'required',
+        ]);
+
+        Consultation::create([
+            'plaintes_Symptomes' => $symptomes,
+            'autre_Examens_Para_Clinique' => $request->examen,
+            'traitement' =>  $request->traitement,
+            'diagnostic' => $request->diagnostic,
+            'observations' => $request->observation,
+            'id_medecin' => intval($idM),
+            'id_patient' => intval($idP),
+        ]);
+
+        RendezVous::where('id_medecin', $idM)->where('id_patient', $idP)->update(['statut' => 'valider']);
+
+
 
         
 
+        return redirect()->route('medecin')->with('succes', 'patient(e) consulté(e) avec succées');
     }
 }

@@ -104,11 +104,11 @@
 
             <div class="w-[47%] mb-8 ">
                 <div class="flex flex-col">
-                    <label for="ordonnance" class="mb-2 italic font-kanit">Traitement et ordonnances  : </label>
-                    <select name="ordonnance" id="ordonnance" class="bg-green-50 grow px-4 py-2 rounded-lg text-[small]
+                    <label for="traitement" class="mb-2 italic font-kanit">Traitement et ordonnances  : </label>
+                    <select name="traitement" id="traitement" class="bg-green-50 grow px-4 py-2 rounded-lg text-[small]
                     border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
-                        <option value="M">Prescrire de médicaments</option>
-                        <option value="F">Hospitaliser le patient</option>
+                        <option value="Prescrire de médicaments">Prescrire de médicaments</option>
+                        <option value="Hospitaliser le patient">Hospitaliser le patient</option>
                     </select>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                         </div>
                         <div id="obs-container">
                             {{--                            le input de prochain Rv est intégré directement a partir du javascript--}}
-                            <input type="hidden" name="observation" value="patient no suivi.">
+                            <input type="hidden" name="observation" value="no">
                         </div>
                     </div>
                 </div>
