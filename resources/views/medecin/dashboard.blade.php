@@ -60,25 +60,25 @@
                             $age = 'Date de naissance non valide';
                         }
                     @endphp
-                <div class="flex border-t border-gray-200 items-center px-4 py-3">
-                    <div class="w-1/12">
-                        <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">{{$rendezvous->rang}}</span>
+
+                    @if($rendezvous->statut === 'encours')
+                    <div class="flex border-t border-gray-200 items-center px-4 py-3">
+                        <div class="w-1/12">
+                            <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">{{$rendezvous->rang}}</span>
+                        </div>
+                        <span class="w-3/12 px-2 py-1">{{$rendezvous->patient->prenom }} {{$rendezvous->patient->nom }}</span>
+                        <span  class="w-2/12 px-2 py-1"> {{ $age}} ans</span>
+                        <span class="w-1/12 px-2 py-1">{{$rendezvous->patient->sexe}}</span>
+                        <span class="w-3/12 px-2 py-1">{{$rendezvous->patient->adresse}}</span>
+                        <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
+
+                            <a href="{{ route("consultation", [$rendezvous->patient->id, $rendezvous->medecin->id]) }}">
+
+                            </a>
+                        </span>
                     </div>
-                    <span class="w-3/12 px-2 py-1">{{$rendezvous->patient->prenom }} {{$rendezvous->patient->nom }}</span>
-                    <span  class="w-2/12 px-2 py-1"> {{ $age}} ans</span>
-                    <span class="w-1/12 px-2 py-1">{{$rendezvous->patient->sexe}}</span>
-                    <span class="w-3/12 px-2 py-1">{{$rendezvous->patient->adresse}}</span>
-                    <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
-
-                        <a href="{{ route("consultation", [$rendezvous->patient->id, $rendezvous->medecin->id]) }}">
-
-                        </a>
-                    </span>
-                </div>
-
+                    @endif
                 @endforeach
-
-
             </div>
 
         </div>
@@ -125,7 +125,7 @@
                     <span class="w-1/12 px-2 py-1">{{$rendezvous->patient->sexe}}</span>
                     <span class="w-3/12 px-2 py-1">{{$rendezvous->patient->adresse}}</span>
                     <span class="w-3/12 px-2 py-1 bg-green-100 rounded-lg text-[small] text-center">
-                        <a href="{{route("consultation", [$rendezvous->patient->id, $rendezvous->medecin->id])}}">
+                        <a href="{{route("consultation", [$rendezvous->medecin->id, $rendezvous->patient->id])}}">
                             Consulter le patient
                         </a>
                     </span>

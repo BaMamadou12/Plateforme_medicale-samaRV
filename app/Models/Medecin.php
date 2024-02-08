@@ -27,4 +27,9 @@ class Medecin extends Authenticatable
     public function rendezvous(){
         return $this->hasMany('App\Models\RendezVous',);
     }
+
+    public function consultation(){
+
+        return $this->hasMany(Consultation::class);
+    }
 }

@@ -51,10 +51,10 @@ class RendezvousController extends Controller
                     'rang'=>$rang,
                 ]);
 
-                return redirect()->route('rv')->with('success','Votre prise de rendez-vous est prise en compte ');
+                return redirect()->route('patient')->with('success','Votre prise de rendez-vous est prise en compte ');
 
             }else{
-                return back()->with('nombreAtteint','le nombre de consultation journaliere atteinte !!!');
+                return back()->with('nombreAtteint','le nombre de consultation journalière atteinte !!!');
             }
 
 

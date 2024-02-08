@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Consultation extends Model
 {
@@ -14,16 +16,16 @@ class Consultation extends Model
         'diagnostic',
         'traitement',
         'observations',
+        'id_medecin',
         'id_patient',
-        'id_medecin'
     ];
 
 
-    public function patient(){
+    public function patient(): BelongsTo{
 
         return $this->belongsTo('App\Models\User','id_patient','id');
     }
-    public function medecin()
+    public function medecin() : BelongsTo
     {
         return $this->belongsTo('App\Models\Medecin', 'id_medecin', 'id');
     }
