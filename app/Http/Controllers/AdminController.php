@@ -45,36 +45,43 @@ class AdminController extends Controller
 
 
     }
-//methode qui permet d'ajouter un hopital
-public function addhopital(Request $request){
+    //methode qui permet d'ajouter un hopital
+    public function addhopital(Request $request){
 
-        $validated = $request->validate(
-            [
-                'nom' => ['required', 'string', 'between:2,255'],
-                'adresse'=>['required','string','between:3,255'],
-                'email' => ['required', 'email', 'unique:hopitals'],
-                'telephone' => ['required', 'string', 'unique:hopitals'],
-                'ville' => ['required', 'string'],
-                'region' => ['required', 'string'],
+            $validated = $request->validate(
+                [
+                    'nom' => ['required', 'string', 'between:2,255'],
+                    'adresse'=>['required','string','between:3,255'],
+                    'email' => ['required', 'email', 'unique:hopitals'],
+                    'telephone' => ['required', 'string', 'unique:hopitals'],
+                    'ville' => ['required', 'string'],
+                    'region' => ['required', 'string'],
+                    'image' => 'required|image'
+                    
+                ]
+            );
+
+            $image = time() . '.'. request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('images/hopitaux'), $image);
+
+            Hopital::create([
+                    'nom' => $validated['nom'],
+                    'ville' => $validated['ville'],
+                    'email' => $validated['email'],
+                    'telephone' => $validated['telephone'],
+                    'adresse'=>$validated['adresse'],
+                    'region'=>$validated['region'],
+                    'image'=>$image,
             ]
-        );
-        Hopital::create([
-                'nom' => $validated['nom'],
-                'ville' => $validated['ville'],
-                'email' => $validated['email'],
-                'telephone' => $validated['telephone'],
-                'adresse'=>$validated['adresse'],
-                'region'=>$validated['region'],
-        ]
 
-        );
+            );
 
-    return redirect()->route('admin')->withSuccesshopital('Ajout de l\'hopital a  réussie avec succès');
+        return redirect()->route('admin')->withSuccesshopital('Ajout de l\'hopital a  réussie avec succès');
 
 
-}
+    }
 
-// fonction qui permet de lister tous les hopitaux ainsi que les medecins
+    // fonction qui permet de lister tous les hopitaux ainsi que les medecins
     public function admin():View{
         $list_medecin = Medecin::orderBy('created_at', 'desc')->get();
         $list_hopital = Hopital::orderBy('created_at', 'desc')->get();
@@ -99,7 +106,13 @@ public function addhopital(Request $request){
     }
 
     public function update(Request $request, $id){
-        Hopital::find($id)->update($request->all());
+        
+        $data = $request->only('nom', 'ville', 'email', 'tel', 'adresse', );
+        $image = time() . '.'. request()->image->getClientOriginalExtension();
+        $data['image'] = $image;
+        request()->image->move(public_path('images/hopitaux'), $image);        
+
+        Hopital::find($id)->update($data);
         return redirect('admin')->with('message', 'mise a jour reusssi');
     }
 

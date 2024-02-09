@@ -150,6 +150,7 @@
 
 
 
+
             <div class="mt-4 w-full flex justify-center">
                 <button type="submit" class="px-8 py-3  rounded-lg bg-green-400 hover:bg-[#4DCF7D] transition duration-100 ease-in mb-4"> S'inscrire</button>
             </div>

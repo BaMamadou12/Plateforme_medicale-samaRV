@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('ville');
             $table->string('adresse');
             $table->string('telephone');
+            $table->string('image');
             $table->unsignedBigInteger('id_medecin')->nullable()->unique();
             $table->timestamps();
         });

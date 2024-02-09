@@ -5,7 +5,7 @@
     <section class="min-h-full w-7/12 mx-auto relative p-8 flex justify-center  bg-green-100 rounded-lg flex-col
         my-12 ">
         <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Formulaire de modification d'un hopital</h1>
-        <form method="POST" action="{{route('admin.hopital.update',$hopital->id)}}" class="flex flex-wrap relative w-full justify-between items-center">
+        <form method="POST" action="{{route('admin.hopital.update',$hopital->id)}}" class="flex flex-wrap relative w-full justify-between items-center" enctype="multipart/form-data">
             
             @csrf
             @method('PUT')
@@ -110,6 +110,19 @@
 
                 @error('tel')
                     
+                @enderror
+            </div>
+
+            <div class="w-[47%] mb-8">
+                <div class="flex flex-col">
+                    <label for="img" class="mb-2 text-[small]"> image : </label>
+
+                    <input type="file" name="image" id="img"  accept="images/*" value=""
+                           class="border bg-green-50 px-1 py-2 rounded text-xs outline-none focus:border-[#2ea8bf] transition
+                    duration-100 ease">
+                </div>
+                @error('image')
+                    <div class="text-red-800 text-[small] mt-2">image requis</div>
                 @enderror
             </div>
 

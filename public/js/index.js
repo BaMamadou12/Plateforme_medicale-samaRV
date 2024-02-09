@@ -124,7 +124,7 @@ function f(){
 }
 
 
-// affecter un hopital à un medecin
+
 
 
 

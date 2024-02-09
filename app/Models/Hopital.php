@@ -15,7 +15,8 @@ class Hopital extends Model
         'telephone',
         'ville',
         'region',
-        'id_medecin'
+        'id_medecin',
+        'image'
     ];
     use HasFactory;
     public function medecin(){

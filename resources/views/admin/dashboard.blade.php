@@ -123,7 +123,7 @@
 
         </div>
 
-        <div class="mt-12 pb-20 border-b-[1.5px] border-gray-300">
+        <div class="mt-12 pb-20 ">
             <div class=" flex items-center justify-between">
 
                 <div class="flex items-center justify-center gap-4">
@@ -139,27 +139,27 @@
 
             </div>
 
-            <div class="mt-6 bg-white rounded text-sm overflow-hidden shadow-md text-[small]">
+            <div class="mt-6 bg-white rounded text-sm overflow-hidden shadow-sm border text-[small]">
 
-                <div class="flex items-center bg-gray-100 px-4">
-                    <span class="w-3/12 px-2 py-3">Prénom et Nom</span>
-                    <span class="w-3/12 px-2 py-3">Spécialité</span>
-                    <span class="w-2/12 px-2 py-3">téléphone</span>
-                    <span class="w-2/12 px-2 py-3">disponibilité</span>
-                    <span class="w-2/12 px-2 py-3">Action</span>
+                <div class="flex items-center bg-gray-100 px-3">
+                    <span class="w-[170px] px-2 py-3 border-r">Prénom et Nom</span>
+                    <span class="w-[170px] px-2 py-3 border-r">Spécialité</span>
+                    <span class="w-[130px] px-2 py-3 border-r">téléphone</span>
+                    <span class="w-[100px] px-2 py-3 border-r">disponibilité</span>
+                    <span class="pl-3 py-3 w-[180px]">Action</span>
                 </div>
 
                 {{--Lister les medecins qui se trouve dans la base de donnee--}}
                 @foreach($list_medecin as $medecin)
 
 
-                <div class="flex border-t border-gray-200 items-center px-4 py-3 text-[small]">
+                <div class="flex border-t border-gray-200 items-center px-3  text-[small]">
 
-                    <span class="w-3/12 px-2 py-1">{{$medecin->prenom }} {{ $medecin->nom }}</span>
-                    <span  class="w-3/12 px-2 py-1">{{$medecin->specialite }}</span>
-                    <span class="w-2/12 px-2 py-1">{{$medecin->telephone}}</span>
-                    <span class="w-2/12 px-2 py-1">{{$medecin->disponibilite}}</span>
-                    <div class="w-2/12 text-xs flex gap-2 items-center justify-center">
+                    <span class="w-[170px] px-2 border-r py-3">{{$medecin->prenom }} {{ $medecin->nom }}</span>
+                    <span  class="w-[170px] px-2 border-r py-3">{{$medecin->specialite }}</span>
+                    <span class="w-[130px] px-2 border-r py-3">{{$medecin->telephone}}</span>
+                    <span class="w-[100px] px-2 border-r py-3">{{$medecin->disponibilite}}</span>
+                    <div class=" text-xs pl-3 flex justify-center gap-2 w-[180px]">
                         <button class="bg-green-200 py-1 px-2 rounded" id="btn-affecter" data-id-medecin="{{$medecin->id}}" >affecter</button>
                         <form action="{{ route("delete_medecin",$medecin->id) }}" method="post">
                             @csrf
@@ -192,24 +192,24 @@
 
             </div>
 
-            <div class="mt-6 bg-white rounded text-sm overflow-hidden shadow-md">
+            <div class="mt-6 bg-white rounded text-sm overflow-hidden hadow-sm border">
 
                 <div class="flex items-center bg-gray-100 px-4 text-[small]">
-                    <span class="w-3/12 px-2 py-3">Nom</span>
-                    <span class="w-2/12 px-2 py-3">Ville</span>
-                    <span class="w-3/12 px-2 py-3">Adresse</span>
-                    <span class="w-3/12 px-2 py-3">Médecin Chef</span>
-                    <span class="w-2/12 px-2 py-3">Action</span>
+                    <span class="w-[190px] px-2 py-3 border-r">Nom</span>
+                    <span class="w-[130px] px-2 py-3 border-r">Ville</span>
+                    <span class="w-[130px] px-2 py-3 border-r">Adresse</span>
+                    <span class="w-[170px] px-2 py-3 border-r">Médecin Chef</span>
+                    <span class="w-[170px] pl-3 py-3">Action</span>
                 </div>
 
                 {{-- LIISTE DES HOPITAUx QUI SONT DISPONIBLE DANS LA BASE DE DONNEE --}}
                 @foreach($list_hopital as $hopital)
-                    <div class="flex border-t border-gray-200 items-center px-4 py-3 text-[small]">
-                        <span class="w-3/12 px-2 py-1">{{$hopital->nom}}</span>
-                        <span class="w-2/12 px-2 py-1">{{$hopital->ville}}</span>
-                        <span  class="w-3/12 px-2 py-1">{{$hopital->adresse}}</span>
-                        <span  class="w-3/12 px-2 py-1">@if($hopital->medecin ) {{$hopital->medecin->prenom}} {{$hopital->medecin->nom}}@else non disponible @endif</span>
-                        <div class="w-2/12 text-xs flex gap-2 items-center justify-cente">
+                    <div class="flex border-t border-gray-200 items-center px-4  text-[small]">
+                        <span class="w-[190px] px-2 border-r py-3">{{$hopital->nom}}</span>
+                        <span class="w-[130px] px-2 border-r py-3">{{$hopital->ville}}</span>
+                        <span  class="w-[130px] px-2 border-r py-3">{{$hopital->adresse}}</span>
+                        <span  class="w-[170px] px-2 border-r py-3">@if($hopital->medecin ) {{$hopital->medecin->prenom}} {{$hopital->medecin->nom}}@else non disponible @endif</span>
+                        <div class="w-[170px] text-xs pl-3 flex gap-2">
                             <a href="{{ route("admin.hopital.edit", $hopital->id) }}" class="bg-green-200 py-1 px-2 rounded"> modifier </a>
                             <form action="{{route('delete_hopital',$hopital->id)}}" method="post">
                                 @csrf

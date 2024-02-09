@@ -6,7 +6,7 @@
     my-12 ">
 
         <h1 class="text-3xl font-kanit italic tracking-wide mb-12">Formulaire d'ajout d'un hopital</h1>
-        <form action="{{route('admin.addhopital')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
+        <form action="{{route('admin.addhopital')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center" enctype="multipart/form-data">
             @csrf
 
             <div class="w-[47%] mb-8" >
@@ -111,6 +111,19 @@
 
                 @error('telephone')
                 <div class="text-red-800 text-[small] mt-2">le numero de téléphone est obligatoire</div>
+                @enderror
+            </div>
+
+            <div class="w-[47%] mb-8">
+                <div class="flex flex-col">
+                    <label for="img" class="mb-2 text-[small]"> image : </label>
+
+                    <input type="file" name="image" id="img"  accept="images/*" value="{{ @old('image') }}"
+                           class="border bg-green-50 px-1 py-2 rounded text-xs outline-none focus:border-[#2ea8bf] transition
+                    duration-100 ease">
+                </div>
+                @error('image')
+                    <div class="text-red-800 text-[small] mt-2">confirmation de votre mot de passe</div>
                 @enderror
             </div>
 
