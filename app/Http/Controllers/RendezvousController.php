@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hopital;
 use App\Models\RendezVous;
 
 use DateTime;
@@ -156,7 +157,13 @@ class RendezvousController extends Controller
     public function rv(Request $request):View{
         $id_medecin=$request->id_medecin;
 
-        return view("patient.rv",compact('id_medecin'));
+        if ($id_medecin==null){
+             $message=1;
+            $hopitaux = Hopital::with('medecin')->get();
+            return \view('hopital',compact('message','hopitaux'));
+        }
+
+        return view("patient.rv",compact('id_medecin',));
 
     }
 }
