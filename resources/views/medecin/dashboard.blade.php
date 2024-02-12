@@ -61,7 +61,6 @@
                         }
                     @endphp
 
-                    @if($rendezvous->statut === 'encours')
                     <div class="flex border-t border-gray-200 items-center px-4 py-3">
                         <div class="w-1/12">
                             <span class="px-4 py-2 bg-green-50 text-center rounded-lg font-kanit font-semibold">{{$rendezvous->rang}}</span>
@@ -77,7 +76,6 @@
                             </a>
                         </span>
                     </div>
-                    @endif
                 @endforeach
             </div>
 

@@ -22,7 +22,7 @@
             Mes Rendez-vous
         </h1>
 
-        @if($info_rv->all())
+        @if(count($info_rv) > 0)
             @foreach($info_rv as $info)
                 <div class="relative bg-amber-200 rounded-xl p-4 text-[small] flex items-center gap-6 mb-6">
                     <!-- ... -->
@@ -44,7 +44,7 @@
                 </div>
             @endforeach
         @else
-            <div class="bg-green-100 p-6 w-4/12 flex justify-center items-center rounded-xl">
+            <div class="bg-green-100 p-10 w-4/12 flex justify-center items-center rounded-xl">
                 <a href="{{route('hopital')}}">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-14 h-14">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -59,7 +59,7 @@
                 Mes Consultations
             </h1>
 {{--                 liste des consultation effectuer a travers le plateforme--}}
-            @if($consultations->all())
+            @if(count($consultations) > 0)
                 @foreach($consultations as $cons)
                     <div class="bg-green-200 rounded-xl p-4 mb-6 shadow-xs boder text-xs flex gap-4 items-center">
                         <div>
@@ -104,12 +104,10 @@
                     </div>
                 @endforeach
             @else
-                <div class="bg-green-100 p-6 w-4/12 flex justify-center items-center rounded-xl">
-                    <a href="{{route('hopital')}}">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-14 h-14">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                        </svg>
-                    </a> 
+                <div class="bg-green-100 px-6 py-10 w-4/12 flex justify-center items-center rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-14 h-14">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Zm3.75 11.625a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                    </svg>
                 </div>
             @endif
         </div>

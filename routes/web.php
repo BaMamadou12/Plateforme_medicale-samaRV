@@ -32,19 +32,20 @@ Route::get('/auth/logout',[LoginController::class , 'logout'])->name('logout');
 Route::get('/auth/register', [RegisterController::class ,'register'])->name('register');
 Route::post('/auth/register',[RegisterController::class,'validateInscription']);
 
-Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 
 
 
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
+Route::get('/medecin/edit-{id}', [MedecinsController::class ,'edit'])->name('medecin.edit');
+Route::put('/medecin/edit-{id}', [MedecinsController::class ,'update']);
 
+
+Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
+Route::get('/patient/edit-{id}', [PatientsController::class ,'edit'])->name('patient.edit');
+Route::put('/patient/edit-{id}', [PatientsController::class ,'update']);
 
 Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
 Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday'])->name('rv_today');
-
-
-
-
 Route::post('/patient/rv_apres',[RendezvousController::class,'rvapres'])->name('rv_apres');
 Route::post('/patient/rv_demain', [RendezvousController::class, 'rvdemain'])->name('rv_demain');
 
@@ -68,8 +69,8 @@ Route::delete('/admin/hopital/{id}',[AdminController::class,'delete_hopital'])->
 
 
 
-Route::get('/consultation/{idM}-{idP}', [ConsultationController::class ,'index'])->name('consultation');
-Route::post('/consultation/{idM}-{idP}',[ConsultationController::class,'consultation'])->name('consultation');
+Route::get('/consultation/{idP}-{idM}', [ConsultationController::class ,'index'])->name('consultation');
+Route::post('/consultation/{idP}-{idM}',[ConsultationController::class,'consultation'])->name('consultation');
 
 
 

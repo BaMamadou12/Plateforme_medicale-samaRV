@@ -1,14 +1,30 @@
 //changer la position du header en position statique
-
 document.onscroll = function (e){
-    if(scrollY > 20){
+    if(scrollY > 0){
         document.querySelector('header').classList.add("nav");
         document.querySelector('body').style = "padding-top: 88px;";
-    }else if(scrollY < 5){
+    }else{
         document.querySelector('header').classList.remove("nav");
         document.querySelector('body').style = "";
     }
 }
+
+
+// Gestion des utilisateurs 
+const user = document.getElementById('user');
+const userItem = document.querySelector('#user-item');
+const chDown = document.querySelector('svg#ch-down');
+
+user.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    userItem.classList.toggle('user-click');
+    chDown.classList.toggle('-rotate-180');
+});
+document.body.addEventListener('click', (e)=>{
+    userItem.classList.remove('user-click');
+    chDown.classList.remove('-rotate-180');
+});
+
 
 
 // Messages éphémères : le message disparait après 5 seconds
@@ -122,6 +138,7 @@ function reorganize (){
 function f(){
     document.getElementById("filter").submit();
 }
+
 
 
 

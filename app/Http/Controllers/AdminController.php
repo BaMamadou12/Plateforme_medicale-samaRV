@@ -106,12 +106,13 @@ class AdminController extends Controller
     }
 
     public function update(Request $request, $id){
-        
+        $oldImg = Hopital::find($id)->image;
+        unlink(public_path('images/hopitaux/').$oldImg);
+
         $data = $request->only('nom', 'ville', 'email', 'tel', 'adresse', );
         $image = time() . '.'. request()->image->getClientOriginalExtension();
         $data['image'] = $image;
         request()->image->move(public_path('images/hopitaux'), $image);        
-
         Hopital::find($id)->update($data);
         return redirect('admin')->with('message', 'mise a jour reusssi');
     }

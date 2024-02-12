@@ -14,7 +14,7 @@ class ConsultationController extends Controller
     }
 
 
-    public function consultation(Request $request, $idM, $idP){
+    public function consultation(Request $request, $idP, $idM){
         $symptomes = '';
         for($i = 1; $i <= $request->size; $i++){
             $sympt = 'sympt'.$i;

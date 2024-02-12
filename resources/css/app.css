@@ -31,3 +31,10 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px; 
 }
 
+.user-click{
+    left:0; 
+    opacity:1;
+    visibility: visible;
+}
+
+

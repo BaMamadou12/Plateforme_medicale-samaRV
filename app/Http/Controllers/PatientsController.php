@@ -25,4 +25,9 @@ class PatientsController extends Controller
         // dd($consultations);
         return  view('patient.dashboard',compact('info_rv', 'consultations'));
     }
+
+    public function edit($id){
+        $patient = User::find($id)->get();
+        return view('patient.edit', compact('patient'));
+    }
 }

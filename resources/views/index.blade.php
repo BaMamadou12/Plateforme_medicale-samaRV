@@ -40,7 +40,13 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam facilis corrupti perspiciatis cupiditate 
                     officiis aut a labore unde, dolorum cum dolore nisi quis esse deserunt, quod dolorem officia? Dolore, et!
                 </p>
-                <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:underline hover:tracking-wide">lire article &#129042;</a>
+                <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:underline hover:tracking-wide">
+                    <span>lire article</span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                      
+                </a>
             </div>
 
             <div class="px-6 py-4 bg-white rounded-lg border">
@@ -54,7 +60,13 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam facilis corrupti perspiciatis cupiditate 
                     officiis aut a labore unde, dolorum cum dolore nisi quis esse deserunt, quod dolorem officia? Dolore, et!
                 </p>
-                <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:tracking-wide hover:underline">lire article &#129042;</a>
+                <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:underline hover:tracking-wide">
+                    <span>lire article</span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                      
+                </a>
             </div>
 
             <div class="px-6 py-4 bg-white rounded-lg border">
@@ -68,7 +80,13 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam facilis corrupti perspiciatis cupiditate 
                     officiis aut a labore unde, dolorum cum dolore nisi quis esse deserunt, quod dolorem officia? Dolore, et!
                 </p>
-                <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:tracking-wide hover:underline">lire article &#129042;</a>
+                <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:underline hover:tracking-wide">
+                    <span>lire article</span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                      
+                </a>
             </div>
 
             <div class="px-6 py-4 bg-white rounded-lg border">
@@ -82,16 +100,26 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam facilis corrupti perspiciatis cupiditate 
                     officiis aut a labore unde, dolorum cum dolore nisi quis esse deserunt, quod dolorem officia? Dolore, et!
                 </p>
-                <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:tracking-wide hover:underline">lire article &#129042;</a>
+                <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:underline hover:tracking-wide">
+                    <span>lire article</span> 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                      
+                </a>
             </div>
 
         </div>
 
-        <div class="text-right px-4">
-            <a href="" class="px-4 hover:underline py-2 text-teal-600 hover:bg-green-100 rounded-lg transition-all duration-100 ease-in-out 
+        <div class="text-right px-4 ">
+            <a href="" class="inline-block px-4 hover:underline py-2 text-teal-600 hover:bg-green-100 rounded-lg transition-all duration-100 ease-in-out 
             hover:tracking-tighter text-sm">
-                Plus d'articles &#129042;
+                <span class="">Plus d'articles</span> 
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h inline-block">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>  
             </a>
+            
         </div>
         
     </section>
