@@ -102,8 +102,6 @@
 
     </div>
     <section class="w-[80%]  min-h-[100vh] mx-auto p-4 grid gap-6 grid-cols-3 grid-rows-3 ">
-
-        {{-- debut  de la liste des hopitaux--}}
         @foreach($hopitaux as $info)
         <div class="min-h-[300px] bg-[#fefefe] rounded-xl shadow-sm overflow-hidden pt-2 pb-4 px-3 border">
             <img src="{{ asset("images/hopitaux/".$info->image) }}" alt="" class="rounded-lg mb-4 h-[190px]" >
@@ -137,11 +135,9 @@
             </button>
         </div>
         @endforeach
-
-  {{--  fin de la liste des hopitaux--}}
-
-
-
     </section>
-
+    <div class="flex gap-2 items-center justify-center m-6">
+         {{ $hopitaux->links('pagination') }}
+    </div>
+    
 @endsection

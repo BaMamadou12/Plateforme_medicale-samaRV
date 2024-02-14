@@ -28,7 +28,7 @@ class HopitalsController extends Controller
 
         // Vérifiez le cas où aucun filtre n'est appliqué
         if (!$filtre && !$filtreNom && !$filtreVille) {
-            $hopitaux = $hopitaux->get();
+            $hopitaux = $hopitaux->paginate(9);
             return view("hopital", compact('hopitaux'));
         }
 
@@ -45,7 +45,7 @@ class HopitalsController extends Controller
 
 
         //  récupérer les données filtrées
-        $hopitaux = $hopitaux->get();
+        $hopitaux = $hopitaux->paginate(9);
 
         // Retourner la vue avec les données filtrées
         return view("hopital", compact('hopitaux'));
