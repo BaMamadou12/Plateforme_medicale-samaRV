@@ -1,3 +1,4 @@
+
 @extends('layout')
 
 @section('section')
@@ -7,9 +8,9 @@
                 <div class="border w-28 h-28 flex items-center justify-center rounded-full bg-gray-300">
                     <img src="{{asset('images/user.png')}}" class="w-16 h-16">
                 </div>
-                <div class="mb-4"> 
-                    <h3 class="text-3xl font-medium font-kanit text-center">Djibril</h3>
-                    <p class="text-center">Djibril@gmail.com</p>
+                <div class="mb-4">
+                    <h3 class="text-3xl font-medium font-kanit text-center">{{$medecin->prenom}}</h3>
+                    <p class="text-center">{{$medecin->email}}</p>
                 </div>
             </div>
             <div class="flex gap-2 tt justify-center items-center">
@@ -20,7 +21,7 @@
 
             </div>
         </div>
-        
+
     </section>
 
     <template id="edit-profile">
@@ -35,13 +36,13 @@
                     </svg>
                 </div>
             </div>
-            <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
+            <form action="{{route('medecin.update',Auth::guard('medecin')->user()->id)}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
                 @csrf
-
+                @method('put')
                 <div class="w-[47%] mb-8" >
                     <div class="flex flex-col">
                         <label for="nom" class="mb-2 text-xs"> nom : </label>
-                        <input type="text" name="nom" id="nom" placeholder="votre nom" value="{{ @old('nom') }}"
+                        <input type="text" name="nom" id="nom" placeholder="votre nom" value="{{ $medecin->nom}}"
                             class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                 <div class="w-[47%] mb-8">
                     <div class="flex flex-col">
                         <label for="prenom" class="mb-2 text-xs"> prénom : </label>
-                        <input type="text" name="prenom" id="prenom" placeholder="votre prenom"  value="{{ @old('prenom')}}" 
+                        <input type="text" name="prenom" id="prenom" placeholder="votre prenom"  value="{{$medecin->prenom}}"
                         class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
 
@@ -58,7 +59,7 @@
                 <div class="w-[47%] mb-8 ">
                     <div class="flex flex-col">
                         <label for="email" class="mb-2 text-xs"> email : </label>
-                        <input type="email" name="email" id="email" placeholder="exemple@gmail.com"  value="{{ @old ('email') }}" 
+                        <input type="email" name="email" id="email" placeholder="exemple@gmail.com"  value="{{$medecin->email}}"
                         class="bg-gray-50 grow px-4 py-2 rounded text-[small] border  border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
@@ -66,7 +67,7 @@
                 <div class="w-[47%] mb-8">
                     <div class="flex flex-col">
                         <label for="adresse" class="mb-2 text-xs"> spécialité: </label>
-                        <input type="text" name="adresse" id="adresse" placeholder="votre adresse"  value="{{ @old('adresse') }}" 
+                        <input type="text" name="specialite" id="adresse" placeholder="votre specialite"  value="{{ $medecin->specialite}}"
                         class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
@@ -74,10 +75,10 @@
                 <div class="w-[47%] mb-8">
                     <div class="flex flex-col">
                         <label for="tel" class="mb-2 text-xs"> téléphone : </label>
-                        <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{ @old('tel') }}"
+                        <input type="text" name="telephone" id="tel" placeholder="ex: 786211297"  value="{{$medecin->telephone }}"
                             class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                                 duration-100 ease">
-                    </div> 
+                    </div>
                 </div>
 
 
@@ -99,9 +100,9 @@
                     </svg>
                 </div>
             </div>
-            <form action="{{route('register')}}" method="post" class="flex flex-col flex-wrap relative w-full justify-between items-center">
+            <form action="{{route('update.password',Auth::guard('medecin')->user()->id)}}" method="post" class="flex flex-col flex-wrap relative w-full justify-between items-center">
                 @csrf
-
+                @method('put')
                 <div class="w-[80%] mb-8 ">
                     <div class="flex flex-col">
                         <label for="password" class="mb-2 text-[small]"> nouveau mot de passe : </label>
@@ -109,7 +110,7 @@
                                class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
-    
+
                 <div class="w-[80%] mb-8 ">
                     <div class="flex flex-col">
                         <label for="confirm" class="mb-2 text-[small]"> répéter le mot de passe : </label>
@@ -129,4 +130,3 @@
 
 
 
- 

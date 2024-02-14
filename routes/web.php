@@ -37,12 +37,14 @@ Route::post('/auth/register',[RegisterController::class,'validateInscription']);
 
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
 Route::get('/medecin/edit/{id}', [MedecinsController::class ,'edit'])->name('medecin.edit');
-Route::put('/medecin/edit/{id}', [MedecinsController::class ,'update']);
+Route::put('/medecin/update/{id}', [MedecinsController::class ,'update'])->name('medecin.update');
+Route::put('/medecin/updatepassword/{id}', [MedecinsController::class ,'updatepassword'])->name('update.password');
 
 
 Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
 Route::get('/patient/edit/{id}', [PatientsController::class ,'edit'])->name('patient.edit');
-Route::put('/patient/edit/{id}', [PatientsController::class ,'update']);
+Route::put('/patient/update/{id}', [PatientsController::class ,'update'])->name('patient.update');
+Route::put('/patient/updatepassword/{id}', [PatientsController::class ,'updatepassword'])->name('changer.password');
 
 Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
 Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday'])->name('rv_today');
