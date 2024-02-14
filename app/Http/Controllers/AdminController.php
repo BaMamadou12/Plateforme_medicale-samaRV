@@ -84,8 +84,8 @@ class AdminController extends Controller
 
     // fonction qui permet de lister tous les hopitaux ainsi que les medecins
     public function admin():View{
-        $list_medecin = Medecin::orderBy('created_at', 'desc')->get();
-        $list_hopital = Hopital::orderBy('created_at', 'desc')->get();
+        $list_medecin = Medecin::orderBy('created_at', 'desc')->paginate(8);
+        $list_hopital = Hopital::orderBy('created_at', 'desc')->paginate(8);
         $medecin_actif=Hopital::whereNotNull('id_medecin')->count();
         $medecin_dispo=Medecin::all()->count();
         $nombre_hopitaux=Hopital::all()->count();

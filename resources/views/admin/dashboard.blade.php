@@ -173,6 +173,9 @@
                 @endforeach
                 {{-- FIN de Chaque tour de boucle --}}
             </div>
+            <div class="flex gap-2 items-center justify-center m-6">
+                {{ $list_medecin->links('pagination') }}
+           </div>
 
         </div>
 
@@ -213,7 +216,7 @@
                                 <img src="{{asset('images/hopitaux/'.$hopital->image)}}" alt="" class="h-7">
                             </span>
                         </span>
-                        <span class="w-[22%] px-2 border-r py-3">{{$hopital->nom}}</span>
+                        <span class="w-[25%] px-2 border-r py-3">{{$hopital->nom}}</span>
                         <span class="w-[20%] px-2 border-r py-3">{{$hopital->ville}}</span>
                         <span  class="w-[20%] px-2 border-r py-3">{{$hopital->adresse}}</span>
                         <span  class="w-[20%] px-2 border-r py-3">@if($hopital->medecin ) {{$hopital->medecin->prenom}} {{$hopital->medecin->nom}}@else non disponible @endif</span>
@@ -230,6 +233,9 @@
                 {{--FIN POUR CHAQUE TOUR DE BOUCLE --}}
 
             </div>
+            <div class="flex gap-2 items-center justify-center m-6">
+                {{ $list_hopital->links('pagination') }}
+           </div>
         </div>
 
     </section>
