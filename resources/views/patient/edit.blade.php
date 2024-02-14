@@ -7,9 +7,9 @@
                 <div class="border w-28 h-28 flex items-center justify-center rounded-full bg-gray-300">
                     <img src="{{asset('images/user.png')}}" class="w-16 h-16">
                 </div>
-                <div class="mb-4"> 
-                    <h3 class="text-3xl font-medium font-kanit text-center">Mouhamad gaye</h3>
-                    <p class="text-center">amethgaye@gmail.com</p>
+                <div class="mb-4">
+                    <h3 class="text-3xl font-medium font-kanit text-center">{{$patient->prenom }}</h3>
+                    <p class="text-center">{{$patient->email}}</p>
                 </div>
             </div>
             <div class="flex gap-2 tt justify-center items-center">
@@ -20,7 +20,7 @@
 
             </div>
         </div>
-        
+
     </section>
 
     <template id="edit-profile">
@@ -35,13 +35,13 @@
                     </svg>
                 </div>
             </div>
-            <form action="{{route('register')}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
+            <form action="{{route('patient.update' ,Auth::guard('web')->user()->id)}}" method="post" class="flex flex-wrap relative w-full justify-between items-center">
                 @csrf
-
+                @method('put')
                 <div class="w-[47%] mb-8" >
                     <div class="flex flex-col">
                         <label for="nom" class="mb-2 text-xs"> nom : </label>
-                        <input type="text" name="nom" id="nom" placeholder="votre nom" value="{{ @old('nom') }}"
+                        <input type="text" name="nom" id="nom" placeholder="votre nom" value="{{$patient->nom }}"
                             class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="w-[47%] mb-8">
                     <div class="flex flex-col">
                         <label for="prenom" class="mb-2 text-xs"> prénom : </label>
-                        <input type="text" name="prenom" id="prenom" placeholder="votre prenom"  value="{{ @old('prenom')}}" 
+                        <input type="text" name="prenom" id="prenom" placeholder="votre prenom"  value="{{ $patient->prenom}}"
                         class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
 
@@ -58,7 +58,7 @@
                 <div class="w-[47%] mb-8 ">
                     <div class="flex flex-col">
                         <label for="email" class="mb-2 text-xs"> email : </label>
-                        <input type="email" name="email" id="email" placeholder="exemple@gmail.com"  value="{{ @old ('email') }}" 
+                        <input type="email" name="email" id="email" placeholder="exemple@gmail.com"  value="{{ $patient->email }}"
                         class="bg-gray-50 grow px-4 py-2 rounded text-[small] border  border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="w-[47%] mb-8">
                     <div class="flex flex-col">
                         <label for="adresse" class="mb-2 text-xs"> adresse : </label>
-                        <input type="text" name="adresse" id="adresse" placeholder="votre adresse"  value="{{ @old('adresse') }}" 
+                        <input type="text" name="adresse" id="adresse" placeholder="votre adresse"  value="{{ $patient->adresse }}"
                         class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
@@ -74,17 +74,17 @@
                 <div class="w-[47%] mb-8">
                     <div class="flex flex-col">
                         <label for="tel" class="mb-2 text-xs"> téléphone : </label>
-                        <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{ @old('tel') }}"
+                        <input type="text" name="tel" id="tel" placeholder="ex: 786211297"  value="{{$patient->tel }}"
                             class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition
                                 duration-100 ease">
-                    </div> 
+                    </div>
                 </div>
 
                 <div class="w-[47%] mb-8">
                     <div class="flex flex-col">
                         <label for="date" class="mb-2 text-xs"> date de naiss : </label>
 
-                        <input type="date" name="date" id="date" value="{{ @old('date') }}" 
+                        <input type="date" name="date" id="date" value="{{$patient->date }}"
                         class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                     <div class="flex flex-col">
                         <label for="lieux" class="mb-2 text-xs"> lieux de naissance : </label>
 
-                        <input type="text" name="lieux" id="lieux" placeholder="ex : Touba"  value="{{ @old('lieux') }}"
+                        <input type="text" name="lieux" id="lieux" placeholder="ex : Touba"  value="{{$patient->lieux}}"
                             class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
@@ -116,9 +116,9 @@
                     </svg>
                 </div>
             </div>
-            <form action="{{route('register')}}" method="post" class="flex flex-col flex-wrap relative w-full justify-between items-center">
+            <form action="{{route('changer.password',Auth::guard('web')->user()->id)}}" method="post" class="flex flex-col flex-wrap relative w-full justify-between items-center">
                 @csrf
-
+              @method('put')
                 <div class="w-[80%] mb-8 ">
                     <div class="flex flex-col">
                         <label for="password" class="mb-2 text-[small]"> nouveau mot de passe : </label>
@@ -126,7 +126,7 @@
                                class="bg-gray-50 grow px-4 py-2 rounded text-[small] border border-gray-300 outline-none focus:border-[#2ea8bf] transition duration-100 ease">
                     </div>
                 </div>
-    
+
                 <div class="w-[80%] mb-8 ">
                     <div class="flex flex-col">
                         <label for="confirm" class="mb-2 text-[small]"> répéter le mot de passe : </label>
@@ -146,4 +146,3 @@
 
 
 
- 

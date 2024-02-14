@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Patient;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 use App\Models\RendezVous;
 use App\Models\Consultation;
@@ -27,7 +28,37 @@ class PatientsController extends Controller
     }
 
     public function edit($id){
-        $patient = User::find($id)->get();
+        $patient = User::find($id);
         return view('patient.edit', compact('patient'));
+    }
+    public function update(Request $request,$id){
+
+
+        $data=[
+            'nom'=>$request->nom,
+            'prenom'=>$request->prenom,
+            'email'=>$request->email,
+            'tel'=>$request->tel,
+            'adresse'=>$request->adresse,
+            'lieux'=>$request->lieux,
+            'date'=>$request->date,
+
+        ];
+        User::find($id)->update($data);
+
+        return redirect()->route('patient.edit',$id);
+    }
+    public function updatepassword(Request $request,$id){
+
+        $validated=$request->validate([
+                'password' => ['required', 'string', 'min:8', 'confirmed'],
+            ]
+        );
+        $validated['password']=Hash::make($validated['password']);
+        $data=[
+            'password' => $validated['password']
+        ];
+        User::find($id)->update($data);
+        return redirect()->route('patient.edit',$id);
     }
 }

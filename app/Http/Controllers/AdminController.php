@@ -58,7 +58,7 @@ class AdminController extends Controller
                     'ville' => ['required', 'string'],
                     'region' => ['required', 'string'],
                     'image' => 'required|image'
-                    
+
                 ]
             );
 
@@ -113,7 +113,7 @@ class AdminController extends Controller
         $data = $request->only('nom', 'ville', 'email', 'tel', 'adresse', );
         $image = time() . '.'. request()->image->getClientOriginalExtension();
         $data['image'] = $image;
-        request()->image->move(public_path('images/hopitaux'), $image);        
+        request()->image->move(public_path('images/hopitaux'), $image);
         Hopital::find($id)->update($data);
         return redirect('admin')->with('message', 'mise a jour reusssi');
     }
@@ -139,7 +139,7 @@ class AdminController extends Controller
         $medecin = Medecin::find($id);
         $hopital = Hopital::where('id_medecin', $id)->where('id', $medecin->hopital->id)->get();
         $rendezvous = RendezVous::where('id_medecin', $id)->get();
-        
+
         // Mettre à null l'id_medecin pour chaque hôpital lié
         foreach ($rendezvous as $rv) {
             $rv->id_medecin = null;
@@ -149,8 +149,8 @@ class AdminController extends Controller
         foreach($hopital as $h){
             $h->id_medecin = null;
             $h->save();
-        }  
-        
+        }
+
 
         // Supprimer le médecin
         $medecin->delete();
