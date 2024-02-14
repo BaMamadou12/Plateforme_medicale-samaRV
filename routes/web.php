@@ -36,13 +36,13 @@ Route::post('/auth/register',[RegisterController::class,'validateInscription']);
 
 
 Route::get('/medecin', [MedecinsController::class ,'medecin'])->name('medecin');
-Route::get('/medecin/edit-{id}', [MedecinsController::class ,'edit'])->name('medecin.edit');
-Route::put('/medecin/edit-{id}', [MedecinsController::class ,'update']);
+Route::get('/medecin/edit/{id}', [MedecinsController::class ,'edit'])->name('medecin.edit');
+Route::put('/medecin/edit/{id}', [MedecinsController::class ,'update']);
 
 
 Route::get('/patient', [PatientsController::class ,'patient'])->name('patient');
-Route::get('/patient/edit-{id}', [PatientsController::class ,'edit'])->name('patient.edit');
-Route::put('/patient/edit-{id}', [PatientsController::class ,'update']);
+Route::get('/patient/edit/{id}', [PatientsController::class ,'edit'])->name('patient.edit');
+Route::put('/patient/edit/{id}', [PatientsController::class ,'update']);
 
 Route::get('/patient/rv', [RendezvousController::class ,'rv'])->name('rv');
 Route::post('/patient/rv_today',[RendezvousController::class,'rvtoday'])->name('rv_today');
@@ -62,15 +62,15 @@ Route::delete('/admin/medecin/{id}',[AdminController::class,'delete_medecin'])->
 
 Route::get('/admin/hopital', [AdminController::class ,'hopital'])->name('admin.hopital');
 Route::post('/admin/hopital', [AdminController::class ,'addhopital'])->name('admin.addhopital');
-Route::get('/admin/hopital/edit-{id}', [AdminController::class ,'edit'])->name('admin.hopital.edit');
-Route::put('/admin/hopital/update-{id}', [AdminController::class ,'update'])->name('admin.hopital.update');
+Route::get('/admin/hopital/edit/{id}', [AdminController::class ,'edit'])->name('admin.hopital.edit');
+Route::put('/admin/hopital/update/{id}', [AdminController::class ,'update'])->name('admin.hopital.update');
 Route::delete('/admin/hopital/{id}',[AdminController::class,'delete_hopital'])->name('delete_hopital');
 
 
 
 
-Route::get('/consultation/{idP}-{idM}', [ConsultationController::class ,'index'])->name('consultation');
-Route::post('/consultation/{idP}-{idM}',[ConsultationController::class,'consultation'])->name('consultation');
+Route::get('/consultation/{idP}/{idM}', [ConsultationController::class ,'index'])->name('consultation');
+Route::post('/consultation/{idP}/{idM}',[ConsultationController::class,'consultation'])->name('consultation');
 
 
 

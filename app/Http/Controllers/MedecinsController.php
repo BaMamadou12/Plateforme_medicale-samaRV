@@ -28,8 +28,8 @@ class MedecinsController extends Controller
     }
 
     public function edit($id){
-        $medecin = Medecin::find($id);
-        dd($medecin);
+        $medecin = Medecin::find($id)->get();
+        return view('medecin.edit', compact('medecin'));
 
     }
 }

@@ -1,3 +1,4 @@
+
 //changer la position du header en position statique
 document.onscroll = function (e){
     if(scrollY > 0){
@@ -41,85 +42,94 @@ document.body.onload = function(){
 
 
 // observation : suivi et planification des rendez-vous futurs ou non
-obs1 = document.querySelector("#obs1")
-obs2 = document.querySelector("#obs2")
-obsContainer = document.querySelector("#obs-container");
+try {
+    obs1 = document.querySelector("#obs1")
+    obs2 = document.querySelector("#obs2")
+    obsContainer = document.querySelector("#obs-container");
 
-obs2.addEventListener('click', function(e){
-    e.preventDefault();
-    this.classList.add("bg-green-400")
-    obs1.classList.remove("bg-green-400")
-    obsContainer.innerHTML = `<input type="hidden" name="observation" value="patient no suivi.">`;
-})
+    obs2.addEventListener('click', function(e){
+        e.preventDefault();
+        this.classList.add("bg-green-400")
+        obs1.classList.remove("bg-green-400")
+        obsContainer.innerHTML = `<input type="hidden" name="observation" value="patient no suivi.">`;
+    })
 
-obs1.addEventListener('click', function(e){
-    e.preventDefault();
-    this.classList.add("bg-green-400")
-    obs2.classList.remove("bg-green-400")
-    obsContainer.innerHTML = `
-                    <label for="" class="text-[small] font-kanit">Prochain RV : </label>
-                    <input type="date" name="observation" class="bg-green-50 grow px-4 py-1 rounded-lg text-xs
-                    border border-gray-300 w-[70%]
-                    outline-none focus:border-[#2ea8bf] transition duration-100 ease">`;
-})
+    obs1.addEventListener('click', function(e){
+        e.preventDefault();
+        this.classList.add("bg-green-400")
+        obs2.classList.remove("bg-green-400")
+        obsContainer.innerHTML = `
+                        <label for="" class="text-[small] font-kanit">Prochain RV : </label>
+                        <input type="date" name="observation" class="bg-green-50 grow px-4 py-1 rounded-lg text-xs
+                        border border-gray-300 w-[70%]
+                        outline-none focus:border-[#2ea8bf] transition duration-100 ease">`;
+    })
+} catch (error) {
+    console.log('pass')
+}
 
 
 // Ajouter un symptome specifique
-parent = document.querySelector("#sympt-container");
-addSympt = document.querySelector("#add-sympt");
-ul = document.querySelector("#sympt-parent");
-let deleteSympt;
+try {
+    parent = document.querySelector("#sympt-container");
+    addSympt = document.querySelector("#add-sympt");
+    ul = document.querySelector("#sympt-parent");
+    let deleteSympt;
 
 
-addSympt.addEventListener('click', function(e){
-    e.preventDefault();
-    let sympt = document.querySelector("#sympt");
-    let li;
-    let input;
-    if (sympt.value) {
-        let size = document.querySelector("#size");
-        li = document.createElement('li');
-        li.className = "flex gap-4 items-center px-4 py-0.5 bg-green-50 rounded-xl";
-        li.innerHTML = `
-            <p>${sympt.value}</p>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
-                 width="16" class="cursor-pointer">
-                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224
-                224-56 56-224-224-224 224Z"/></svg>
-        `;
-        ul.appendChild(li);
-        // type="checkbox" name="symp1" id="sympt" value="maux_de_tete"
-        let input = document.createElement('input');
-        size.value = `${Number(size.value) + 1}`;
-        input.setAttribute('type', 'hidden');
-        input.setAttribute('name', 'sympt'+(size.value));
-        input.setAttribute('id', 'sympt'+(size.value));
-        input.value = sympt.value;
-        parent.appendChild(input);
-        sympt.value = "";
+    addSympt.addEventListener('click', function(e){
+        e.preventDefault();
+        let sympt = document.querySelector("#sympt");
+        let li;
+        let input;
+        if (sympt.value) {
+            let size = document.querySelector("#size");
+            li = document.createElement('li');
+            li.className = "flex gap-4 items-center px-4 py-0.5 bg-green-50 rounded-xl";
+            li.innerHTML = `
+                <p>${sympt.value}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+                    width="16" class="cursor-pointer">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224
+                    224-56 56-224-224-224 224Z"/></svg>
+            `;
+            ul.appendChild(li);
+            // type="checkbox" name="symp1" id="sympt" value="maux_de_tete"
+            let input = document.createElement('input');
+            size.value = `${Number(size.value) + 1}`;
+            input.setAttribute('type', 'hidden');
+            input.setAttribute('name', 'sympt'+(size.value));
+            input.setAttribute('id', 'sympt'+(size.value));
+            input.value = sympt.value;
+            parent.appendChild(input);
+            sympt.value = "";
 
-        // supprimer des symptomes
-        deleteSympt = document.querySelectorAll("#sympt-parent li svg");
-        deleteSympt.forEach((item)=>{
-            item.addEventListener("click", (e)=>{
-                let val = e.currentTarget.parentNode.children[0].textContent;
-                let inputs = document.querySelectorAll("#sympt-container > input");
-                inputs.forEach(item => {
-                    if(item.value === val){
-                        document.querySelector("#sympt-container").removeChild(item);
-                        size.value = `${Number(size.value) - 1}`;
+            // supprimer des symptomes
+            deleteSympt = document.querySelectorAll("#sympt-parent li svg");
+            deleteSympt.forEach((item)=>{
+                item.addEventListener("click", (e)=>{
+                    let val = e.currentTarget.parentNode.children[0].textContent;
+                    let inputs = document.querySelectorAll("#sympt-container > input");
+                    inputs.forEach(item => {
+                        if(item.value === val){
+                            document.querySelector("#sympt-container").removeChild(item);
+                            size.value = `${Number(size.value) - 1}`;
+                        }
+                    })
+                    if(e.currentTarget.parentNode.parentNode){
+                        e.currentTarget.parentNode.parentNode.removeChild(e.currentTarget.parentNode);
                     }
+                    reorganize ();
+
                 })
-                if(e.currentTarget.parentNode.parentNode){
-                    e.currentTarget.parentNode.parentNode.removeChild(e.currentTarget.parentNode);
-                }
-                reorganize ();
-
             })
-        })
-    }
+        }
 
-});
+    });
+} catch (error) {
+    
+}
+
 function reorganize (){
     let x = document.querySelectorAll("#sympt-container > input");
     let i = 12;
@@ -140,7 +150,47 @@ function f(){
 }
 
 
+// editer un profile et mot de passe
+try {
+    const btnProfile = document.getElementById('btn-profile');
+    const btnPassword = document.getElementById('btn-password');
 
+    btnPassword.addEventListener('click', showFormPass);
+    btnProfile.addEventListener('click', showFormProfile);
+} catch (error) {
+    
+}
+
+function showFormPass(e){
+    const template = document.getElementById('edit-password');
+    const btn = document.querySelectorAll('div.tt button');
+    btn.forEach((item)=>{item.classList.remove('bg-green-400')})
+    e.target.classList.add('bg-green-400');
+    addTo(template);
+    
+}
+function showFormProfile(e){
+    const template = document.getElementById('edit-profile');
+    const btn = document.querySelectorAll('div.tt button');
+    btn.forEach((item)=>{item.classList.remove('bg-green-400')})
+    e.target.classList.add('bg-green-400');
+    addTo(template);
+}
+
+function addTo(template){
+    const clone = template.content.cloneNode(true)
+    const container = document.getElementById('profile-container');
+    const profileCloser = clone.querySelector('#profile-closer');
+
+    container.innerHTML = "";
+    container.classList.add('px-4', 'py-2');
+    container.append(clone);
+    profileCloser.addEventListener('click',deletForm);
+}
+
+function deletForm(){
+    document.getElementById('profile-container').innerHTML = "";
+}
 
 
 

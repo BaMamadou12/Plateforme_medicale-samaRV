@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rendez_vouses', function (Blueprint $table) {
-            $table->id();
+            $table->id()    ;
             $table->string('heure');
             $table->string('statut')->default('encours');
             $table->date('date');
             $table->integer('rang')->nullable();
-            $table->unsignedBigInteger('id_patient');
-            $table->unsignedBigInteger('id_medecin');
+            $table->unsignedBigInteger('id_patient')->nullable();
+            $table->unsignedBigInteger('id_medecin')->nullable();
 
 
             //declaration de la cle etrangere

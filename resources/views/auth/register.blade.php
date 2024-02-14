@@ -108,8 +108,6 @@
                 <div class="text-red-800 text-[small] mt-2">champ required</div>
 
                 @enderror
-
-
             </div>
 
             <div class="w-[47%] mb-8">

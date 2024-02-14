@@ -30,8 +30,8 @@
             <div class="w-1/2 mb-12">
                 <form action="#" class="w-full relative mb-3" method="get" >
                     <input type="text" name="" id="" placeholder="Recherche rapide"
-                           class="px-4 py-3 w-full rounded-lg pl-10 bg-[#fbfcfc] outline-none border
-                           focus:border-green-300 text-sm shadow-sm shadow-green-100">
+                           class="px-4 py-3 w-full rounded-lg pl-10 bg-white shadow-sm outline-none border
+                           focus:border-green-300 text-sm ">
 
                     <button class="absolute left-3 top-3" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"

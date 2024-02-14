@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hopital;
 use App\Models\Medecin;
+use App\Models\RendezVous;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
@@ -136,13 +137,20 @@ class AdminController extends Controller
     public function delete_medecin($id){
 
         $medecin = Medecin::find($id);
-        $hopitals = Hopital::where('id_medecin', $id)->get();
-
+        $hopital = Hopital::where('id_medecin', $id)->where('id', $medecin->hopital->id)->get();
+        $rendezvous = RendezVous::where('id_medecin', $id)->get();
+        
         // Mettre à null l'id_medecin pour chaque hôpital lié
-        foreach ($hopitals as $hopital) {
-            $hopital->id_medecin = null;
-            $hopital->save();
+        foreach ($rendezvous as $rv) {
+            $rv->id_medecin = null;
+            $rv->id_patient = null;
+            $rv->save();
         }
+        foreach($hopital as $h){
+            $h->id_medecin = null;
+            $h->save();
+        }  
+        
 
         // Supprimer le médecin
         $medecin->delete();
