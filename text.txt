@@ -1,0 +1,213 @@
+les hopitaux au senegal 
+Centre Hospitalier Abass Ndao.
+Centre National Hospitalier d'Enfants Albert Royer.
+Centre Hospitalier Aristide le Dantec.
+Centre Hospitalier National Universitaire de Fann.
+Centre National d'Appareillage Orthopédique (CNAO)
+
+
+Villes	THIES
+Nom	Saint Jean de Dieu
+Adresse	Rue M Doucoure,Diakhao,
+Telephone	33 951 19 41
+e-mail	chsjdth@orange.sn
+
+Villes	PIKINE
+Nom	H pital de PIKINE
+Adresse	Camp de Thiaroye, Pikine
+T l phone	33-853-00-71
+33-853-00-69
+
+Pays	SENEGAL
+Villes	Rufisque,
+Nom	H pital Youssou Mbargane Diop
+Adresse	Rufusque
+T l phone	33 836 22 99
+e-mail
+
+Villes	MBOUR
+Nom	H pital D partemental de Mbour
+Adresse	Mbour
+T l phone	33 957 10 30
+
+Villes	D A K A R
+Nom	Centre de sant  Nabil Choucair
+Adresse	patte d oie
+T l phone	33 835 98 88
+e-mail	
+
+Pays	SENEGAL
+Villes	BAMBEY
+Nom	H pital de Bambey
+Adresse	Route de Bambey
+T l phone	33 973 61 35
+e-mail
+
+
+Pays	SENEGAL
+Villes	MBACKE DIOURBEL
+Nom	EPSH TOUBA NDAMATOU
+Adresse	Touba
+T l phone	33 978 13 70
+e-mail	cstouba@yahoo.fr
+
+
+Pays	SENEGAL
+Villes	FATICK
+Nom	H pital R gional de Fatick
+Adresse	
+T l phone	33 941 11 18
+e-mail	
+
+Villes	KAOLACK
+Nom	Centre Hospitalier Régional El hadji Ibrahima NIASS Kaolack
+Adresse	Av Valdiodio Ndiaye, Kaolack
+T l phone	33 938 41 51 
+33 938 41 42 
+33 941 17 37
+e-mail	infos@hopital-kaolack.org
+Site Web	www.hopital-kaolack.org
+
+Saint Jean de Dieu
+H pital Youssou Mbargane Diop
+H pital de PIKINE
+H pital D partemental de Mbour
+
+EPSH TOUBA NDAMATOU
+Centre Hospitalier Régional El hadji Ibrahima NIASS Kaolack
+h pital r gional de Kaffrine 
+H pital R gional de Fatick
+H pital d enfants de Diamniadio
+H pital de Bambey
+Esri, TomTom, Garmin, Foursquare, FAO, METI/NASA, USGS | Esri, TomTom, Garmin, Foursquare, FAO, METI/NASA, USGS
+ 
+Pays	SENEGAL
+Villes	DIAMNIADIO
+Nom	H pital d enfants de Diamniadio
+Adresse	Route Nationale RN2, Dakar
+T l phone	33 836 35 21
+e-mail	
+Site Web	
+Observations	
+
+Pays	SENEGAL
+Villes	KAFFRINE
+Nom	h pital r gional de Kaffrine
+Adresse	N 1, Kaffrine, S n gal
+T l phone	221 33 946 10 04
+e-mail	
+Site Web	
+Observations	
+
+Villes	LINGUERE
+Nom	H pital Magatte LO
+Adresse	Lingu re
+T l phone	33 968 10 05
+e-mail	
+Site Web	
+Observations	
+
+Villes	LOUGA
+Nom	H pital R gional de Louga
+Adresse	Grand Louga
+T l phone	33 967 11 07
+e-mail	
+Site Web	
+Observations	
+
+Pays	SENEGAL
+Villes	SAINT LOUIS
+Nom	H pital Ousmane Ngom
+Adresse	Eaux Claire derri re la SONATEL
+T l phone	
+33 961 92 85
+33 961 32 29
+e-mail	
+Site Web	
+Observations	
+
+Pays	SENEGAL
+Villes	NDIOUM
+Nom	H pital R gional de
+Adresse	Ndioum
+T l phone	221 33 965 3020
+e-mail	
+Site Web	
+Observations	
+
+Villes	MATAM
+Nom	H pital r gional de Ourossogui
+Adresse	Ourossogui
+T l phone	221 33 938 2777
+
+Villes	SEDHIOU
+Nom	H pital r gional de S dhiou
+Adresse	S dhiou
+T l phone	33 995 011
+
+Villes	ZIGUINCHOR
+Nom	H pital R gional de Ziguinchor
+Adresse	Avenue Emile Badiane, Ziguinchor, S n gal
+T l phone	221 33 991 11 54
+
+Villes	KOLDA
+Nom	H pital R gional de Kolda
+Adresse	Route de Velingara
+T l phone	33 996 22 87
+
+Villes	KEDOUGOU
+Nom	H pital r gional de K dougou
+Adresse	N2, Kedougou
+T l phone	33 985 10 04
+
+
+Villes : TAMBACOUNDA
+Nom : Hopital Régional Tambacounda
+Adresse	: Av Leopold Senghor,
+Telephone : 33 981 12 17
+
+
+Hôpital Principal de Dakar
+1, Av. Nelson Mandela, Dakar
+Zone : Dakar Plateau, Médina
+
+Hôpital d’enfants Albert Royer
+Avenue Cheikh Anta Diop, Hôpital Fann, Dakar
+Zone : Point E, Fann, Mermoz, Ouakam
+
+Centre Hospitalier Abass N’dao
+Boulevard Gueule Tapée, Dakar
+Zone : Point E, Fann, Mermoz, Ouakam
+
+Centre hospitalier de Fann
+Av. Cheikh Anta Diop, Dakar
+Zone : Point E, Fann, Mermoz, Ouakam
+Biochimie et Hématologie
+Anatomie pathologie
+Bactériologie Virologie
+Parasitologie Virologie
+Imagerie Médicale
+
+Centre National de Transfusion Sanguine
+Avenue Cheikh Anta Diop, Dakar
+Zone : Point E, Fann, Mermoz, Ouakam
+
+Lundi - Vendredi : 8h - 19 h
+Samedi : 9h30 - 17h30
+Dimanche : 9h30 - 15 h
+
+Hopital Fann
+Avenue Cheikh Anta DIOP - Code postal : 5035, Dakar / Sénégal
++221 33 869 18 18
++221 33 825 09 09
+
+1, Avenue Nelson Mandela - B.P. 3006 - DAKAR (Sénégal)
+Standard : (221) 33 839.50.50 Secrétariat Direction : (221) 33 839.50.02 - 33 839.50.03
+(221) 33 839.50.88
+communication@hpd.sn
+
+Centre Hospitalier Universitaire Aristide Le Dantec
+30, Avenue Pasteur, BP: 3001 - Dakar / Sénégal
+Standard: 33-889-38-00 / Accueil: 33-889-38-77 / Urgences Chirurgicales: 33-889-38-76
+33-823-58-96
+h.dantec@sentoo.sn
