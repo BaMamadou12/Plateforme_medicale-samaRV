@@ -7,11 +7,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{--    <link rel="stylesheet" href="{{asset('css/style.css')}}">--}}
+
     @vite('resources/css/app.css')
     <title>Plateforme De Prise De rendez-vous </title>
 </head>
-<body class="bg-[#f6fcf7] font-verdana text-gray-600 relative"id="body">
-    <header id="header" class="px-12 py-1.5 bg-white flex items-center justify-between w-full text-sm transition-all
+<body class="bg-[#f6fcf7] font-poppins text-base text-gray-600 relative" id="body">
+    <header id="header" class="px-12 py-1.5 bg-white flex items-center justify-between w-full transition-all
     ease-in-out duration-200 shadow-sm">
         <div class="logoSante">
             <a href=""  class="flex items-center">
@@ -79,10 +80,10 @@
             </ul>
         </nav>
 
-        <div>
+        <div class="text-sm">
             @if(Auth::guard('web')->check() && Auth::guard('web')->user())
 
-                <div class="relative px-2 py-1.5 border rounded-[8px] cursor-pointer text-xs mr-4" id="user">
+                <div class="relative px-2 py-1.5 border rounded-[8px] cursor-pointer mr-4" id="user">
                     <div class="flex gap-2 items-center">
                         <svg fill="none" class="w-6 h-6" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m18 10c0 4.4183-3.5817 8-8 8-4.41828 0-8-3.5817-8-8 0-4.41828 3.58172-8 8-8 4.4183 0 8 3.58172 8 8zm-6-3c0 1.10457-.8954 2-2 2-1.10457 0-2-.89543-2-2s.89543-2 2-2c1.1046 0 2 .89543 2 2zm-2.00007 4c-2.01754 0-3.75599 1.195-4.54619 2.9157 1.10029 1.2763 2.72891 2.0843 4.54624 2.0843 1.81732 0 3.44592-.8079 4.54622-2.0842-.7902-1.7208-2.5287-2.9158-4.54627-2.9158z" fill="#4a5568" fill-rule="evenodd"/></svg>
                         <span>
@@ -112,7 +113,7 @@
                 </div>
             @elseif(Auth::guard('medecin')->check() && Auth::guard('medecin')->user())
 
-                <div class="relative px-2 py-1.5 border rounded-[8px] cursor-pointer text-xs mr-4" id="user">
+                <div class="relative px-2 py-1.5 border rounded-[8px] cursor-pointermr-4" id="user">
                     <div class="flex gap-2 items-center">
                         <svg fill="none" class="w-6 h-6" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m18 10c0 4.4183-3.5817 8-8 8-4.41828 0-8-3.5817-8-8 0-4.41828 3.58172-8 8-8 4.4183 0 8 3.58172 8 8zm-6-3c0 1.10457-.8954 2-2 2-1.10457 0-2-.89543-2-2s.89543-2 2-2c1.1046 0 2 .89543 2 2zm-2.00007 4c-2.01754 0-3.75599 1.195-4.54619 2.9157 1.10029 1.2763 2.72891 2.0843 4.54624 2.0843 1.81732 0 3.44592-.8079 4.54622-2.0842-.7902-1.7208-2.5287-2.9158-4.54627-2.9158z" fill="#4a5568" fill-rule="evenodd"/></svg>
                         <span>
@@ -143,7 +144,7 @@
 
             @elseif(Auth::guard('admin')->check()  && Auth::guard('admin')->user())
 
-                <div class="relative px-2 py-1.5 border rounded-[8px] cursor-pointer text-xs mr-4" id="user">
+                <div class="relative px-2 py-1.5 border rounded-[8px] cursor-pointer mr-4" id="user">
                     <div class="flex gap-2 items-center">
                         <svg fill="none" class="w-6 h-6" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m18 10c0 4.4183-3.5817 8-8 8-4.41828 0-8-3.5817-8-8 0-4.41828 3.58172-8 8-8 4.4183 0 8 3.58172 8 8zm-6-3c0 1.10457-.8954 2-2 2-1.10457 0-2-.89543-2-2s.89543-2 2-2c1.1046 0 2 .89543 2 2zm-2.00007 4c-2.01754 0-3.75599 1.195-4.54619 2.9157 1.10029 1.2763 2.72891 2.0843 4.54624 2.0843 1.81732 0 3.44592-.8079 4.54622-2.0842-.7902-1.7208-2.5287-2.9158-4.54627-2.9158z" fill="#4a5568" fill-rule="evenodd"/></svg>
                         <span>
@@ -173,7 +174,7 @@
                     
                 </div>
             @else
-                <div class="flex items-center text-[small]">
+                <div class="flex items-center">
                     <a href="{{route("login")}}" class="flex items-center px-4 py-3 mr-2 rounded-[8px] transition-all duration-200 ease-in
                         hover:bg-green-100">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">

@@ -8,8 +8,10 @@ export default {
     theme: {
         fontFamily:{
             'kanit': ['Kanit', 'sans-serif'],
-            'verdana':['Verdana', 'serif'],
-            'copp': ['Copperplate Gothic', 'serif']
+            'poppins':['Poppins', 'sans-serif'],
+            'verdana': ['verdana', 'sans-serif'],
+            'montserrat': ['Montserrat', 'sans-serif'],
+            
         },
         extend: {
             zIndex: {
