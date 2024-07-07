@@ -87,8 +87,9 @@
                     <h2 class="font-semibold">journée de don de sang à l'hopital principal de Dakar </h2>
                 </div>
                 <p class="mb-4 text-gray-500">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam facilis corrupti perspiciatis cupiditate 
-                    officiis aut a labore unde, dolorum cum dolore nisi quis esse deserunt, quod dolorem officia? Dolore, et!
+                    Le 10 juillet 2024 marquera une journée importante pour l'Hôpital Principal de Dakar, qui organise 
+                    une grande campagne de don de sang. Cet événement, crucial pour la santé publique, 
+                    vise à mobiliser la population afin de répondre aux besoins croissants en transfusions sanguines.
                 </p>
                 <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:underline hover:tracking-wide">
                     <span>lire article</span> 
@@ -104,11 +105,12 @@
                     <span class="px-4 border-l-2 border-gray-400 text-gray-400">14 décembre, 2024</span>
                 </div>
                 <div class="mb-4">
-                    <h2 class="font-semibold">journée de don de sang à l'hopital principal de Dakar </h2>
+                    <h2 class="font-semibold">Un cas d'urgence à Hôpital Abass Ndaw</h2>
                 </div>
                 <p class="mb-4 text-gray-500">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam facilis corrupti perspiciatis cupiditate 
-                    officiis aut a labore unde, dolorum cum dolore nisi quis esse deserunt, quod dolorem officia? Dolore, et!
+                    Nous faisons appel à votre générosité et à votre sens du devoir civique pour répondre à une situation 
+                    d'urgence vitale à l'Hôpital Abass Ndao. Un patient en état critique nécessite une transfusion sanguine 
+                    immédiate pour survivre, et nous avons un besoin urgent de donneurs de sang.
                 </p>
                 <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:underline hover:tracking-wide">
                     <span>lire article</span> 
@@ -124,11 +126,12 @@
                     <span class="px-4 border-l-2 border-gray-400 text-gray-400">14 décembre, 2024</span>
                 </div>
                 <div class="mb-4">
-                    <h2 class="font-semibold">journée de don de sang à l'hopital principal de Dakar </h2>
+                    <h2 class="font-semibold">Forum: Ensemble pour une Meilleure Santé Communautaire</h2>
                 </div>
                 <p class="mb-4 text-gray-500">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam facilis corrupti perspiciatis cupiditate 
-                    officiis aut a labore unde, dolorum cum dolore nisi quis esse deserunt, quod dolorem officia? Dolore, et!
+                    La Mairie de Dakar est ravie d'annoncer l'organisation d'un Forum sur la Santé, qui se tiendra le 11/07/2024, dans la mairie. 
+                    Cet événement est une initiative visant à promouvoir la santé et le bien-être au sein de notre communauté, 
+                    en offrant des informations, des ressources et des services essentiels à tous les citoyens.
                 </p>
                 <a href="" class="text-teal-600 font-semibold font-kanit  transition-all duration-100 ease-in hover:underline hover:tracking-wide">
                     <span>lire article</span> 
