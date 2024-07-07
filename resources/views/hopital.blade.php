@@ -22,9 +22,9 @@
             <div class="flex items-center">
                 <h1 class="text-3xl font-bold font-kanit italic tracking-wide mb-6 mt-2
                 px-4 py-2">
-                    Liste Des Hôpitaux Du Sénégal
+                    Liste Des Hôpitaux De la ville de Dakar
                 </h1>
-                <img src="{{ asset("images/sn.jpg") }}" alt="" class="w-10 rounded relative right-1 top-[-7px] ">
+                <img src="{{ asset("images/mairie.png") }}" alt="" class="w-14 rounded relative right-1 top-[-7px] ">
             </div>
 
             <div class="w-1/2 mb-12">

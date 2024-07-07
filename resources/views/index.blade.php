@@ -1,7 +1,7 @@
 @extends("layout")
 
 @section('section')
-    <section class="w-full h-[90vh] relative pb-8">
+    <section class="w-full h-[90vh] relative pb-8 mb-14">
         <div>
             <div class="op"></div>
             <img src="{{asset('images/index.jpg')}}" class="img" alt="">
@@ -11,20 +11,56 @@
             <h2 class="font-kanit text-white text-5xl font-bold mb-8 italic leading-[60px]">
                 Bienvenu Dans Votre Plateforme De Prise de Rendez-vous
             </h2>
-            {{--            <p class="text-green-100 mb-8">Prenez votre rendez-vous où que vous soyez dans les différents--}}
-            {{--                hôpitaux du Sénégal.</p>--}}
-
             <form action="#" method="get" class="flex gap-4">
                 <input type="text" name="" id="" placeholder="saisir un nom d'hôpital "
                        class="w-[82%] px-4 py-2 rounded outline-none outline focus:outline-green-500 transition-all
                        duration-200 ease-in">
                 <button type="submit" class="px-4 py-3 rounded bg-green-500 ">Rechercher</button>
             </form>
+
         </div>
     </section>
 
+    <section class="w-[80%] mx-auto mt-12 mb-14">
+        <h1 class="text-3xl font-medium font-kanit px-1 relative py-2 mb-6 before:absolute before:content[''] before:h-1  before:w-[40px]
+        before:bg-teal-600 before:rounded-lg before:bottom-0">
+        Prise en charge médicale
+        </h1>
+        
+        <div class="flex items-center justify-between gap-6">
+            <div class="w-1/2">
+                <div class="mb-10">
+                    <h1 class="text-2xl font-bold mb-5">Avez-vous des difficultés financières ?</h1>
+                    <p>La Ville de Dakar, dans le cadre de sa politique sociale, octroie des prises en charge
+                     médicales aux indigents ou nécessiteux habitant son périmètre communal dans les
+                     structures de santé partenaires à travers la Direction de l'Action Sanitaire et des Services
+                     Aux Personnes.</p>
+                 </div>
+                 <div class="flex items-center">
+                     <button class="px-6 py-3 rounded-lg border  font-medium mr-5 flex items-center gap-3 hover:bg-green-100">
+                         <a href="">Explorer plus</a> 
+                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#000000" fill="none">
+                            <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </button>
+                     <button class="px-6 py-3 rounded-lg bg-green-500 hover:bg-[#4DCF7D] font-medium flex items-center gap-3">
+                         <a href="{{ route('d.create') }}">Passer la demande</a>
+                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#000000" fill="none">
+                            <path d="M20 12L4 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M15 17C15 17 20 13.3176 20 12C20 10.6824 15 7 15 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </button>
+                 </div>
+            </div>
+            <div class="w-1/2">
+                <img src="{{asset('images/medi.png')}}" >
+            </div>
+        </div>
+        
+    </section>
+
     <section class="w-[80%] mx-auto mt-10 mb-12">
-        <h1 class="text-xl font-medium font-kanit px-1 relative py-2 mb-10 before:absolute before:content[''] before:h-1  before:w-[40px]
+        <h1 class="text-3xl font-medium font-kanit px-1 relative py-2 mb-10 before:absolute before:content[''] before:h-1  before:w-[40px]
         before:bg-teal-600 before:rounded-lg before:bottom-0">
             Nos Actualités
         </h1>
@@ -124,21 +160,23 @@
         
     </section>
 
+
     <section class="w-[80%] mx-auto mt-10 mb-12">
-        <h1 class="text-xl font-medium font-kanit px-1 relative py-2 mb-10 before:absolute before:content[''] before:h-1  before:w-[40px]
+        <h1 class="text-3xl font-medium font-kanit px-1 relative py-2 mb-6 before:absolute before:content[''] before:h-1  before:w-[40px]
         before:bg-teal-600 before:rounded-lg before:bottom-0">
-            Nos Partenaires
+        Nos partenaires
         </h1>
         
-        <div>
-            <div>
-
+        <div class="flex items-center gap-6">
+            
+            <div class="">
+                <img src="{{asset('images/mairie.png')}}" class="rounded-lg shadow-sm">
             </div>
-            <div>
-
+            <div class="">
+                <img src="{{asset('images/usaid.png')}}" class="rounded-lg shadow-sm">
             </div>
-            <div>
-
+            <div class="">
+                <img src="{{asset('images/sonatel.png')}}" class="rounded-lg shadow-sm">
             </div>
         </div>
         

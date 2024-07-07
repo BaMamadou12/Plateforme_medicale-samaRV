@@ -127,7 +127,7 @@
             <div class=" flex items-center justify-between">
 
                 <div class="flex items-center justify-center gap-4">
-                    <h2 class="font-kanit font-medium tracking-[.03rem] pl-2">liste des médecins :</h2>
+                    <h2 class="text-xl font-kanit font-medium tracking-[.03rem] pl-2">liste des médecins :</h2>
                     <form action="" method="get" class="flex items-center justify-center ">
                         <input type="text" placeholder="trouver un medecin"
                         class="text-xs px-3 py-1 rounded-md border outline-none focus:border-green-500">
@@ -185,7 +185,7 @@
             <div class=" flex items-center justify-between">
 
                 <div class="flex items-center justify-center gap-4">
-                    <h2 class="font-kanit font-medium tracking-[.03rem] pl-2">liste des hopitaux :</h2>
+                    <h2 class="text-xl font-kanit font-medium tracking-[.03rem] pl-2">liste des hopitaux :</h2>
                     <form action="" method="get" class="flex items-center justify-center ">
                         <input type="text" placeholder="trouver un hopital"
                         class="text-xs px-3 py-1 rounded-md border outline-none focus:border-green-500">
@@ -236,6 +236,21 @@
             <div class="flex gap-2 items-center justify-center m-6">
                 {{ $list_hopital->links('pagination') }}
            </div>
+        </div>
+
+
+        <div class="mt-20 ">
+            <div class=" flex items-center justify-between">
+
+                <h2 class="text-xl font-kanit font-medium tracking-[.03rem] pl-2">liste des demandes :</h2>
+
+            </div>
+
+            <div class="w-full bg-green-100 h-24 mt-4 rounded-lg">
+
+            </div>
+
+            
         </div>
 
     </section>

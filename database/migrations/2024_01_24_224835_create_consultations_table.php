@@ -22,7 +22,6 @@ return new class extends Migration
             $table->unsignedBigInteger('id_medecin');
 
             //declaration de la cle etrangere
-
             $table->foreign('id_patient')->references('id')->on('users');
             $table->foreign('id_medecin')->references('id')->on('medecins');
             $table->timestamps();

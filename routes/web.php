@@ -1,22 +1,25 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ConsultationController;
-use App\Http\Controllers\RendezvousController;
+use App\Http\Middleware\CheckRV;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\AproposController;
+use App\Http\Controllers\DemandeController;
 use App\Http\Controllers\HopitalsController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MedecinsController;
 use App\Http\Controllers\PatientsController;
-use App\Http\Controllers\PharmaciesController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Middleware\CheckRV;
+use App\Http\Controllers\PharmaciesController;
+use App\Http\Controllers\RendezvousController;
+use App\Http\Controllers\ConsultationController;
 
 
 
 Route::get('/', [AccueilController::class ,'acceuil'])->name('accueil');
+Route::get('/demandes', [DemandeController::class ,'create'])->name('d.create');
+Route::post('/demandes', [DemandeController::class ,'store'])->name('d.store');
 
 Route::get('/hopital', [HopitalsController::class ,'hopital'])->name('hopital');
 
